@@ -126,7 +126,7 @@ if(isset($_REQUEST['action']))
 
 
             $model->Actualizar($alm);
-            header('Location: crudusuarios.php');
+            header('Location: crudproductos.php');
             break;
 
         case 'registrar':
@@ -139,12 +139,12 @@ if(isset($_REQUEST['action']))
             $alm->__SET('id_categoria', $_REQUEST['categoria']);
 
             $model->Registrar($alm);
-            header('Location: crudusuarios.php');
+            header('Location: crudproductos.php');
             break;
 
         case 'eliminar':
             $model->Eliminar($_REQUEST['id_producto']);
-            header('Location: crudusuarios.php');
+            header('Location: crudproductos.php');
             break;
 
         case 'editar':
@@ -154,8 +154,7 @@ if(isset($_REQUEST['action']))
 }
 
 ?>
-  /
-
+  
        
    
   

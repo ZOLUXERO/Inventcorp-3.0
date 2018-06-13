@@ -75,7 +75,7 @@ else
 <ul class="nav nav-pills nav-stacked"> 
 <li class="active"><a href="../../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
 <li><a href="crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
-<li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="../Productos/crudproductos">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
