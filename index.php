@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>INVENTCORP</title>
+  <title>NOMBREDEPAGINA</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="vista/bootstrap/cover.css" rel="stylesheet">
+
   <script src="vista/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
@@ -25,7 +25,7 @@
         
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Bienvenido a InventCorp</h3>
+              <h3 class="panel-title">Bienvenido a NOMBREDEPAGINA</h3>
             </div>
             <div class="panel-body">
               <p>Páginas de inventarios, con programacion orientada a objetos, esta página fue hecha en lenguaje de programación PHP, HTML, CSS, SQL lo invitamos a explorar la pagina!</p><br>

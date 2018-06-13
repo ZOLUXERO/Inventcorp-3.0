@@ -38,7 +38,7 @@ else
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="<?php echo $ruta;?>../../index.php">INVENTCORP</a>
+      <a class="navbar-brand" href="<?php echo $ruta;?>../../index.php">NOMBREDEPAGINA</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo $ruta;?>../../index.php">Home</a></li>
