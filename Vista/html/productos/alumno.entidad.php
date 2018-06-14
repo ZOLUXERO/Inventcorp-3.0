@@ -1,15 +1,18 @@
 <?php
 
-class Proveedor
+class Alumno
 {
-    private $id;
-    private $nombre_proveedor;
-    private $materia_prima;
-    private $cantidad;
-    private $precio_materia;
-    private $email_proveedora;
-    private $telefono_proveedor;
-    private $estado_proveedor;
+    private $id_producto;
+    private $nombre_producto;
+    private $desc_producto;
+    private $stock;
+    private $precio_entrada;
+    private $precio_salida;
+    private $fecha_ingreso;
+    private $estado_producto;
+    private $id_categoria;
+    
+
 
     public function __GET($k){ return $this->$k; }
     public function __SET($k, $v){ return $this->$k = $v; }

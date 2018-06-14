@@ -1,6 +1,6 @@
 <?php
 
-class ProveedorModel
+class AlumnoModel
 {
     private $pdo;
 
@@ -8,7 +8,7 @@ class ProveedorModel
     {
         try
         {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+            $this->pdo = new PDO('mysql:host=localhost;dbname=inventcorp', 'root', '');
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);                
         }
         catch(Exception $e)
@@ -23,20 +23,24 @@ class ProveedorModel
         {
             $result = array();
 
-            $stm = $this->pdo->prepare("SELECT * FROM proveedores");
+            $stm = $this->pdo->prepare("SELECT * FROM productos");
             $stm->execute();
 
             foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
             {
-                $alm = new Proveedor();
+                $alm = new Alumno();
 
-                $alm->__SET('id', $r->id);
-                $alm->__SET('Nombre', $r->Nombre);
-                $alm->__SET('Apellido', $r->Apellido);
-                $alm->__SET('Sexo', $r->Sexo);
-                $alm->__SET('FechaNacimiento', $r->FechaNacimiento);
+                $alm->__SET('id_producto', $r->id_producto);
+                $alm->__SET('nombre_producto',  $r->nombre_producto);
+                $alm->__SET('desc_producto',  $r->desc_producto);
+                $alm->__SET('stock',       $r->stock);
+                $alm->__SET('precio_entrada', $r->precio_entrada);
+                $alm->__SET('precio_salida',      $r->precio_salida);
+                $alm->__SET('fecha_ingreso',    $r->fecha_ingreso);
+                $alm->__SET('id_categoria', $r->id_categoria);
 
                 $result[] = $alm;
+
             }
 
             return $result;
@@ -52,19 +56,22 @@ class ProveedorModel
         try 
         {
             $stm = $this->pdo
-                      ->prepare("SELECT * FROM proveedores WHERE id = ?");
+                      ->prepare("SELECT * FROM productos WHERE id_producto = ?");
                       
 
             $stm->execute(array($id));
             $r = $stm->fetch(PDO::FETCH_OBJ);
 
-            $alm = new Proveedor();
+            $alm = new Alumno();
 
-            $alm->__SET('id', $r->id);
-            $alm->__SET('Nombre', $r->Nombre);
-            $alm->__SET('Apellido', $r->Apellido);
-            $alm->__SET('Sexo', $r->Sexo);
-            $alm->__SET('FechaNacimiento', $r->FechaNacimiento);
+                $alm->__SET('id_producto', $r->id_producto);
+                $alm->__SET('nombre_producto',  $r->nombre_producto);
+                $alm->__SET('desc_producto',  $r->desc_producto);
+                $alm->__SET('stock',       $r->stock);
+                $alm->__SET('precio_entrada', $r->precio_entrada);
+                $alm->__SET('precio_salida',      $r->precio_salida);
+                $alm->__SET('fecha_ingreso',    $r->fecha_ingreso);
+                $alm->__SET('id_categoria', $r->id_categoria);
 
             return $alm;
         } catch (Exception $e) 
@@ -78,7 +85,7 @@ class ProveedorModel
         try 
         {
             $stm = $this->pdo
-                      ->prepare("DELETE FROM proveedores WHERE id = ?");                      
+                      ->prepare("DELETE FROM productos WHERE id_producto = ?");                      
 
             $stm->execute(array($id));
         } catch (Exception $e) 
@@ -87,25 +94,31 @@ class ProveedorModel
         }
     }
 
-    public function Actualizar(Proveedor $data)
+    public function Actualizar(Alumno $data)
     {
         try 
         {
-            $sql = "UPDATE proveedores SET 
-                        Nombre          = ?, 
-                        Apellido        = ?,
-                        Sexo            = ?, 
-                        FechaNacimiento = ?
-                    WHERE id = ?";
+            $sql = "UPDATE productos SET 
+                        nombre_producto          = ?, 
+                        desc_producto       = ?,
+                        stock          = ?, 
+                        precio_entrada = ?,
+                        precio_salida       = ?,
+                        fecha_ingreso          = ?, 
+                        id_categoria = ?
+                    WHERE id_producto = ?";
 
             $this->pdo->prepare($sql)
                  ->execute(
                 array(
-                    $data->__GET('Nombre'), 
-                    $data->__GET('Apellido'), 
-                    $data->__GET('Sexo'),
-                    $data->__GET('FechaNacimiento'),
-                    $data->__GET('id')
+                    $data->__GET('id_producto'),
+                    $data->__GET('nombre_producto'),
+                    $data->__GET('desc_producto'),
+                    $data->__GET('stock'),
+                    $data->__GET('precio_entrada'),
+                    $data->__GET('precio_salida'),
+                    $data->__GET('fecha_ingreso'),
+                    $data->__GET('id_categoria')
                     )
                 );
         } catch (Exception $e) 
@@ -114,21 +127,25 @@ class ProveedorModel
         }
     }
 
-    public function Registrar(Proveedor $data)
+    public function Registrar(Alumno $data)
     {
         try 
         {
-        $sql = "INSERT INTO proveedores (id, Nombre,Apellido,Sexo,FechaNacimiento) 
-                VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO productos (id_producto, nombre_producto, desc_producto , stock, precio_entrada, precio_salida, fecha_ingreso, estado_producto, id_categoria) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, 1 ,? )";
 
         $this->pdo->prepare($sql)
              ->execute(
             array(
-                $data->__GET('id'), 
-                $data->__GET('Nombre'), 
-                $data->__GET('Apellido'), 
-                $data->__GET('Sexo'),
-                $data->__GET('FechaNacimiento')
+                    $data->__GET('id_producto'),
+                    $data->__GET('nombre_producto'),
+                    $data->__GET('desc_producto'),
+                    $data->__GET('stock'),
+                    $data->__GET('precio_entrada'),
+                    $data->__GET('precio_salida'),
+                    $data->__GET('fecha_ingreso'),
+                    $data->__GET('id_categoria'),
+                    
                 )
             );
             

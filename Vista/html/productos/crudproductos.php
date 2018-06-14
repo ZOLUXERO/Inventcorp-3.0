@@ -31,7 +31,6 @@ else
 }
 ?>
 
-
 <html lang="en">
 
 <head>
@@ -58,6 +57,7 @@ else
       <li class="active"><a href="<?php echo $ruta;?>../../../index.php">Home</a></li>
       <li><a href="#">Acerca de nosotros</a></li>
       <li><a href="#">Contactenos</a></li>
+      <li><a href="<?php echo $ruta;?>../admon.php"">Mostrar tablas db</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="pull-right"><a href="<?php if(isset($_SESSION['session'])){echo $ruta.'../../../controlador/salir.php';} else { echo $ruta.'../seguridaddb.php';}?>"><span class="glyphicon glyphicon-log-out"></span> <?php if(isset($_SESSION["session"])){ echo "Salir";} else{echo "Logueo";}?></a></li>
@@ -71,18 +71,14 @@ else
 
 <div class="container">
 <div class="row">
-<div class="col-md-2 column margintop20"> <!--Columna de 2 espacios de 12 -->
+<div class="col-sm-3 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
 <ul class="nav nav-pills nav-stacked"> 
 <li class="active"><a href="../../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
 <li><a href="../usuarios/crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
-<li><a href="crudproveedores.php">Cree su Inventario<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a></li>
-<li><a href="#">Sus Inventarios<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="#">categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="../categorias/crudcategorias.php">categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-
-
 </ul>
 
 </div>
@@ -93,7 +89,7 @@ else
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">BASE DE DATOS PROVEEDORES</h3>
+<h3 class="panel-title">BASE DE DATOS USUARIOS</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -107,47 +103,52 @@ else
   </table>
 
 <?php
-require_once 'proveedores.entidad.php';
-require_once 'proveedores.model.php';
-
+require_once 'alumno.entidad.php';
+require_once 'alumno.model.php';
+require '../../../modelo/clases.php';
 // Logica
-$alm = new Proveedor();
-$model = new ProveedorModel();
+$alm = new Alumno();
+$model = new AlumnoModel();
+
+ //echo $_SESSION["idactor"];
 
 if(isset($_REQUEST['action']))
 {
     switch($_REQUEST['action'])
     {
         case 'actualizar':
-            $alm->__SET('id',              $_REQUEST['id']);
-            $alm->__SET('Nombre',          $_REQUEST['nombre_proveedor']);
-            $alm->__SET('Apellido',        $_REQUEST['materia_prima']);
-            $alm->__SET('Sexo',            $_REQUEST['Sexo']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
+            $alm->__SET('id_producto',              $_REQUEST['id']);
+            $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
+            $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
+            $alm->__SET('stock',            $_REQUEST['stock']);
+            $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
+            $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
+            $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
+            $alm->__SET('id_categoria', $_REQUEST['id_categoria']);
 
 
             $model->Actualizar($alm);
-            header('Location: crudproveedores.php');
+            header('Location: crudproductos.php');
             break;
 
         case 'registrar':
-            $alm->__SET('Nombre',          $_REQUEST['Nombre']);
-            $alm->__SET('Apellido',        $_REQUEST['Apellido']);
-            $alm->__SET('Sexo',            $_REQUEST['Sexo']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
+            $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
+            $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
+            $alm->__SET('stock',            $_REQUEST['stock']);
+            $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
+            $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
+            $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
+            $alm->__SET('id_categoria', $_REQUEST['id_categoria']);
+           
+
 
             $model->Registrar($alm);
-            header('Location: crudproveedores.php');
+            header('Location: crudproductos.php');
             break;
 
         case 'eliminar':
             $model->Eliminar($_REQUEST['id']);
-            header('Location: crudproveedores.php');
+            header('Location: crudproductos.php');
             break;
 
         case 'editar':
@@ -162,57 +163,135 @@ if(isset($_REQUEST['action']))
        
    
   
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-     <tr><td style="padding:5px"></td></tr>
+  <!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> !-->
+     <!--<tr><td style="padding:5px"></td></tr> !-->
    
 
               
             
-                <form action="?action=<?php echo $alm->id > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="pure-form pure-form-stacked" >
-                    <input type="hidden" name="id" value="<?php echo $alm->__GET('id'); ?>" />
+                <form action="?action=<?php echo $alm->id_producto > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="navbar-form navbar-default" >
+                    <input type="hidden" name="id" value="<?php echo $alm->__GET('id_producto'); ?>" >
+
                     <br />
-                   <table align="center"> 
+
+                    <!-- SI QUITAMOS EL TABLE ALIGN CENTER LOS CAMPOS QUEDAN A LO ALRGO !-->
+                   
+
+                        <div class="form-group">
                         <tr>
-                            <th >Crear Inventario</th>
-                            <td><input type="text" name="Nombre" value="<?php echo $alm->__GET('Nombre'); ?>"  /></td>
+                            <td >Producto</td>
+                            <td><input type="text" class="form-control" name="nombre_producto" value="<?php echo $alm->__GET('nombre_producto'); ?>" required></td>
                         </tr> 
-         
-                        
-                        
-                        
+                        </div>
+
+                    <tr><td style="padding:2px"></td></tr>
+
+                    <div class="form-group">
+                        <tr>
+                            <td >Descripcion</td>
+                            <td><input type="text" class="form-control" name="desc_producto" value="<?php echo $alm->__GET('desc_producto'); ?>"  required></td>
+                        </tr>
+
+                    </div>
+
+                                        <tr><td style="padding:2px"></td></tr>
+
+                    <div class="form-group">
+                        <tr>
+                            <td >Stock</td>
+                            <td><input type="text" class="form-control" name="stock" value="<?php echo $alm->__GET('stock'); ?>"  required></td>
+                        </tr>
+
+                    </div>
+
+
+                                        <tr><td style="padding:2px"></td></tr>
+
+                    <div class="form-group">
+                        <tr>
+                            <td >Precio de compra</td>
+                            <td><input type="text" class="form-control" name="precio_entrada" value="<?php echo $alm->__GET('precio_entrada'); ?>"  required></td>
+                        </tr>
+
+                    </div>
+
+                                        <tr><td style="padding:2px"></td></tr>
+
+                    <div class="form-group">
+                        <tr>
+                            <td >precio de venta</td>
+                            <td><input type="text" class="form-control" name="precio_salida" value="<?php echo $alm->__GET('precio_salida'); ?>"  required></td>
+                        </tr>
+
+                    </div>
+
+                                        <tr><td style="padding:2px"></td></tr>
+
+                    <div class="form-group">
+                        <tr>
+                            <td >fecha</td>
+                            <td><input type="text" class="form-control" name="fecha_ingreso" value="<?php echo $alm->__GET('fecha_ingreso'); ?>"  required></td>
+                        </tr>
+
+                    </div>
+
+                                        <tr><td style="padding:2px"></td></tr>
+                    <div class="form-group">
+                        <tr>
+                            <td  >Categorias</td>
+                            <td><input type="text" class="form-control" name="id_categoria" value="<?php echo $alm->__GET('id_categoria'); ?>" ></td>
+                        </tr>
+
+                    </div>
+
+                                                        
+                   
+
+                        <tr><td style="padding:2px"></td></tr>
                         <tr>
                             <td colspan="2" align="center">
-                                <button type="submit" class="pure-button pure-button-primary" >Guardar</button>
+                                <button type="submit" class="btn btn-default" >Guardar</button>
                             </td>
                         </tr>
                     </table>
                    
                 </form>
                 <br/>
-             
-             
-                    <table class="pure-table pure-table-horizontal" align="center">
-          
+
+             <div class="col-sm-12 col-md-12">
+
+             <div class="table-responsive">
+                    <table class="table table-hover table-striped" align="center">
+                    
                     <thead>
                         <tr>
-                            <th >Inventario</th>
-                            <th >Fecha Creacion</th>
-                            <th></th>
-                            <th></th>
+                            <tr style="color:#FFF; background-color:#369">
+                            <td style="font-family:Tahoma, Geneva, sans-serif">producto</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">descripccion</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">stock</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">precio compra</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">precio venta</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">fecha</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">categoria</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </thead>
                     
                     <?php foreach($model->Listar() as $r): ?>
                         <tr>
-                            <td><?php echo $r->__GET('Nombre'); ?></td>
-                            <td><?php echo $r->__GET('Apellido'); ?></td>
-                            <td><?php echo $r->__GET('Sexo') == 1 ? 'H' : 'F'; ?></td>
-                            <td><?php echo $r->__GET('FechaNacimiento'); ?></td>
+                            <td><?php echo $r->__GET('nombre_producto'); ?></td>
+                            <td><?php echo $r->__GET('desc_producto'); ?></td>
+                            <td><?php echo $r->__GET('stock'); ?></td>
+                            <td><?php echo $r->__GET('precio_entrada'); ?></td>
+                            <td><?php echo $r->__GET('precio_salida'); ?></td>
+                            <td><?php echo $r->__GET('fecha_ingreso'); ?></td>
+                            <td><?php echo $r->__GET('id_categoria'); ?></td>
                             <td>
-                                <a href="?action=editar&id=<?php echo $r->id; ?>">Editar</a>
+                                <a href="?action=editar&id=<?php echo $r->id_producto; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+                                <a href="?action=eliminar&id=<?php echo $r->id_producto; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
