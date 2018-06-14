@@ -168,7 +168,7 @@ if(isset($_REQUEST['action']))
 
                         <div class="form-group">
                         <tr>
-                            <td >Nombre</td>
+                            <td >Nombre Categoria</td>
                             <td><input type="text" class="form-control" name="Nombre" value="<?php echo $alm->__GET('Nombre'); ?>"  /></td>
                         </tr> 
                         </div>
@@ -183,30 +183,9 @@ if(isset($_REQUEST['action']))
 
                     </div>
 
-                        <tr><td style="padding:2px"></td></tr>
+                       
 
-                        <div class="form-group">
-                        <tr>
-                            <td  >Sexo</td>
-                            <td>
-                                <select class="form-control" name="Sexo" >
-                                    <option value="1" <?php echo $alm->__GET('Sexo') == 1 ? 'selected' : ''; ?>>Masculino</option>
-                                    <option value="2" <?php echo $alm->__GET('Sexo') == 2 ? 'selected' : ''; ?>>Femenino</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                    </div>
-
-                        <tr><td style="padding:2px"></td></tr>
-
-                        <div class="form-group">
-                        <tr>
-                            <td >Fecha</td>
-                            <td><input type="date" class="form-control" name="FechaNacimiento" value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
-                        </tr>
-
-                    </div>
+                      
 
                         <tr><td style="padding:2px"></td></tr>
                         <tr>

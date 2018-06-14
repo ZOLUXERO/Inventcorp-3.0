@@ -125,13 +125,13 @@ class ProveedorModel
              ->execute(
             array(
                 $data->__GET('id'), 
-                $data->__GET('Nombre'), 
+				$data->__GET('Nombre'), 
                 $data->__GET('Apellido'), 
                 $data->__GET('Sexo'),
                 $data->__GET('FechaNacimiento')
                 )
             );
-            
+			
         } catch (Exception $e) 
         {
             die($e->getMessage());
