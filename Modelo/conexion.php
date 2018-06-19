@@ -5,7 +5,7 @@ class conexion
 
 public function __construct()
 {	
-$this->con = new mysqli("localhost", "root", "", "inventcorpiii");
+$this->con = new mysqli("localhost", "root", "", "indentcord");
  
 if($this->con->connect_errno) {
 	die("Fallo al conectar a la BD: (". $this->con->connect_errno.")");

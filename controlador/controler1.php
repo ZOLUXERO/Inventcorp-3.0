@@ -86,4 +86,23 @@ if(isset($_POST["editar"]))
  
 }
 
+/*if(isset($_POST["editar1"])) 
+{		        
+			$id=$_REQUEST['iden'];
+			$nom=$_REQUEST['nom'];
+			$tel=$_REQUEST['tel']
+			$pass=$_REQUEST['pass'];
+			//$pass = password_hash($pass,PASSWORD_DEFAULT); // encripta contraseña
+ 
+		    $objeto= new clases;
+			$res=$objeto->editar1($id,$usu,$nom,$tel,$pass);
+   
+			header("location:../vista/html/admon.php?dato1=si"); 
+	        
+			$objeto->CloseDB();
+ 
+}
+*/
+
+
 ?>

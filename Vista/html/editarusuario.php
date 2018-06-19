@@ -33,7 +33,7 @@ $id=$_REQUEST['id'];
    <div class="panel panel-default">
    <!-- contenedor del titulo-->
    <div class="panel-heading">
-    <h3 class="panel-title">ESICION DE USUARIO</h3>
+    <h3 class="panel-title">EDICIÓN DE USUARIO</h3>
    </div>
     <!-- contenedor de descripcion ejercicios-->
    <div class="panel-body">
@@ -54,12 +54,11 @@ $id=$_REQUEST['id'];
 			   ?>    
                <table align="center" style="border-collapse:separate;border-spacing:5px">
 			   <tr>
-               <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333"></td><td style="color:#666"><input name="iden" type="hidden" value="<?php echo $row['idusuario']?>" style="width:320px"></td></tr>
-			   <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Nombre</td><td style="color:#666"><input name="nombre" type="text" value="<?php echo $row['nombre']?>" style="width:320px"></td></tr>
-               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Apellido</td><td style="color:#666"><input name="apellido" type="text" value="<?php echo $row['apellido']?>" style="width:320px"></td></tr>
-               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Usuario</td><td style="color:#666"><input name="usuario" type="text" value="<?php echo $row['usuario']?>" style="width:320px"></td></tr>
-			   <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333" width="300">Contraseña</td><td style="color:#666"><input name="pass" type="text" value="" style="width:320px"></td></tr>
-               <tr><td colspan="2"><hr></td></tr>
+               <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333"></td><td style="color:#666"><input name="iden" type="hidden" value="<?php echo $row['id_usuario']?>" style="width:320px"></td></tr>
+			   <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Nombre</td><td style="color:#666"><input name="nombre" type="text" value="<?php echo $row['nombre_usuario']?>" style="width:320px"></td></tr>
+               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Empresa</td><td style="color:#666"><input name="empresa" type="text" value="<?php echo $row['nombre_empresa']?>" style="width:320px"></td></tr>
+               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Telefono</td><td style="color:#666"><input name="apellido" type="text" value="<?php echo $row['telefono']?>" style="width:320px"></td></tr>
+
                <td align="center" style="font-family:Tahoma, Geneva, sans-serif" colspan="2"><input name="editar" type="submit" style="width:320px" value="Actualizar"></td></tr>
               
             
