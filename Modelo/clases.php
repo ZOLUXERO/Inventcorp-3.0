@@ -25,7 +25,7 @@
 	public function registro($usu,$nom,$ape,$numb,$cont)
 	{
 		//$q = "select * from usuario where usuario='$usu' and contrasena='$cont'";
-		$q = "insert into usuarios(email_usuario,nombre_usuario,nombre_empresa,contrasena,telefono,id_rol) values('$usu','$nom','$ape','$cont','$numb',2)";
+		$q = "insert into usuarios(email_usuario,nombre_usuario,cedula,contrasena,telefono,estado_usuario,id_rol) values('$usu','$nom','$ape','$cont','$numb',1,2)";
         $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
 		
 	}
