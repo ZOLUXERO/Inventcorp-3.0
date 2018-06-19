@@ -48,12 +48,12 @@ if (!empty($_SESSION["session"]))
   <input class="form-control input-sm" type="text" name="nom" class="form-control" placeholder="Nombre" required>
 </td></tr>
 <tr><td style="padding:2px"></td></tr>
-<tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Empresa</td><td>
-  <input class="form-control input-sm" type="text" name="ape" class="form-control" placeholder="Nombre empresa" required>
+<tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Cédula</td><td>
+  <input class="form-control input-sm" type="text" name="ape" class="form-control" placeholder="Cédula" required>
 </td></tr>
 <tr><td style="padding:2px"></td></tr>
-<tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">telefono</td><td>
-  <input class="form-control input-sm" type="text" name="numb" class="form-control" placeholder="Telefono" required>
+<tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td><td>
+  <input class="form-control input-sm" type="text" name="numb" class="form-control" placeholder="Teléfono" required>
 </td></tr>
 
 <tr><td style="padding:2px"></td></tr>
