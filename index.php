@@ -8,6 +8,8 @@
 
   <script src="vista/bootstrap/js/bootstrap.min.js"></script>
 
+    <link href="vista/bootstrap/cover.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
