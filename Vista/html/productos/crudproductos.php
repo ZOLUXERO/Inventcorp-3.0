@@ -120,7 +120,7 @@ if(isset($_REQUEST['action']))
             $alm->__SET('id_producto',              $_REQUEST['id']);
             $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
             $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
-            $alm->__SET('stock',            $_REQUEST['stock']);
+            $alm->__SET('cantidad',            $_REQUEST['cantidad']);
             $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
             $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
             $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
@@ -134,7 +134,7 @@ if(isset($_REQUEST['action']))
         case 'registrar':
             $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
             $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
-            $alm->__SET('stock',            $_REQUEST['stock']);
+            $alm->__SET('cantidad',            $_REQUEST['cantidad']);
             $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
             $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
             $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
@@ -198,8 +198,8 @@ if(isset($_REQUEST['action']))
 
                     <div class="form-group">
                         <tr>
-                            <td >Stock</td>
-                            <td><input type="text" class="form-control" name="stock" value="<?php echo $alm->__GET('stock'); ?>"  required></td>
+                            <td >Cantidad</td>
+                            <td><input type="text" class="form-control" name="cantidad" value="<?php echo $alm->__GET('cantidad'); ?>"  required></td>
                         </tr>
 
                     </div>
@@ -236,14 +236,20 @@ if(isset($_REQUEST['action']))
                     </div>
 
                                         <tr><td style="padding:2px"></td></tr>
-                    <div class="form-group">
+                     
+
+                     <div class="form-group">
                         <tr>
                             <td  >Categorias</td>
-                            <td><input type="text" class="form-control" name="id_categoria" value="<?php echo $alm->__GET('id_categoria'); ?>" ></td>
+                            <td>
+                                <select class="form-control" name="id_categoria"  >
+                                    <option value="1" <?php echo $alm->__GET('id_categoria') == 1 ? 'selected' : ''; ?>>Comida</option>
+                                    <option value="2" <?php echo $alm->__GET('id_categoria') == 2 ? 'selected' : ''; ?>>Medicamento</option>
+                                </select>
+                            </td>
                         </tr>
 
                     </div>
-
                                                         
                    
 
@@ -266,13 +272,13 @@ if(isset($_REQUEST['action']))
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">producto</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">descripccion</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">stock</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">precio compra</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">precio venta</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">fecha</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">categoria</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Cantidad</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -282,7 +288,7 @@ if(isset($_REQUEST['action']))
                         <tr>
                             <td><?php echo $r->__GET('nombre_producto'); ?></td>
                             <td><?php echo $r->__GET('desc_producto'); ?></td>
-                            <td><?php echo $r->__GET('stock'); ?></td>
+                            <td><?php echo $r->__GET('cantidad'); ?></td>
                             <td><?php echo $r->__GET('precio_entrada'); ?></td>
                             <td><?php echo $r->__GET('precio_salida'); ?></td>
                             <td><?php echo $r->__GET('fecha_ingreso'); ?></td>
@@ -299,13 +305,21 @@ if(isset($_REQUEST['action']))
                 <br/>
              </div>
               
-               
+            
                 </div>   
               </div>
             </div>
+
+
+
         </div>
+         <form method="post" action="exportar1.php">
+     <input type="submit" name="exportar" class="btn btn-success" value="Exportar" />
+    </form>
         </div>
        
+
+
 </div>
 </div>
 </div>
