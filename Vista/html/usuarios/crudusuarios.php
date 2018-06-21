@@ -37,7 +37,7 @@ else
 <?php //include_once '../../../controlador/control.php' ?>
 <title>Mi Proyecto</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 
@@ -51,7 +51,7 @@ else
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">INVENTCORP</a>
+      <a class="navbar-brand" href="../../../index.php">INVENTCORP</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo $ruta;?>../../../index.php">Home</a></li>
@@ -75,10 +75,10 @@ else
 <ul class="nav nav-pills nav-stacked"> 
 <li class="active"><a href="../../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
 <li><a href="crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
-<li><a href="../productos/crudproductos.php">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="#">categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="#">clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">Categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">Clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">Proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 </ul>
 
 </div>
@@ -203,7 +203,7 @@ if(isset($_REQUEST['action']))
                         <div class="form-group">
                         <tr>
                             <td >Fecha</td>
-                            <td><input type="date" class="form-control" name="FechaNacimiento" value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
+                            <td><input type="text" class="form-control" name="FechaNacimiento" value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
                         </tr>
 
                     </div>
@@ -259,11 +259,17 @@ if(isset($_REQUEST['action']))
               </div>
             </div>
         </div>
+         <form method="post" action="exportar1.php">
+     <input type="submit" name="exportar" class="btn btn-success" value="Exportar" />
+    </form>
         </div>
        
 </div>
+
 </div>
+
 </div>
+
 </div><!-- Cierra div ” row”-->
 </div><!-- Cierra div ” container”-->
     </body>
