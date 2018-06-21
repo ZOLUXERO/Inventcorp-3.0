@@ -17,28 +17,59 @@
 
   <body class="text-center">
 
+
+    
+
     <div class="cover-container2 d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
           <h3 class="masthead-brand">InventCorp</h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="borrar.php">Home</a>
             <a class="nav-link" href="#">Features</a>
             <a class="nav-link" href="#">Contact</a>
           </nav>
         </div>
       </header>
+   
 
 
-      
-      
+    
+
+
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Pagina principal.</h1>
-        <p class="lead">Páginas de inventarios, con programacion orientada a objetos, esta página fue hecha en lenguaje de programación PHP, HTML, CSS, SQL lo invitamos a explorar la pagina!</p>
-        <p class="lead">
-          <a href="Nuestrosproyectos.php" class="btn btn-lg btn-secondary">Nuestros proyectos</a>
-        </p>
-      </main>
+      
+      <div class="container marketing">
+
+      
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Página numero 1. <span class="text-muted">Prototipo 1</span></h2>
+          <p class="lead">Este prototipo de pagina es nuestra primer proyecto está hecho con programacion orientada a objetos, esta página ademas fue hecha en lenguajes de programación PHP, HTML, CSS, SQL lo invitamos a explorar la pagina!.</p>
+        </div>
+        <div class="col-md-5">
+           <a href="../../index.php"><img class="featurette-image img-responsive center-block" src="../imagenes/pagina.jpg" width="400" height="300"  alt="Generic placeholder image"></a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Página numero 2. <span class="text-muted">Prototipo 2</span></h2>
+          <p class="lead">Maneje su inventario de una manera mucho mas sencilla, deje de complicarse y registrese gratis.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <!-- ACA PUEDE IR CUALQUIER IMAGEN  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">!-->
+
+
+        </div>
+      </div>
+    </main>
+     
+
+      <hr class="featurette-divider">
 
       <footer class="mastfoot mt-auto">
         <div class="inner">

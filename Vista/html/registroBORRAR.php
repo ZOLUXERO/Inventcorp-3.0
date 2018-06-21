@@ -77,7 +77,7 @@
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Pagina hecha por <a href="https://getbootstrap.com/">Inventcorp</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+          <p>Pagina hecha por <a href="#">Inventcorp</a>, by <a href="#">Adsi</a>.</p>
         </div>
       </footer>
     </div>
