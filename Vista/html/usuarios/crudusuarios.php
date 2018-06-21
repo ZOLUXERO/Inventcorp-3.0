@@ -169,7 +169,7 @@ if(isset($_REQUEST['action']))
                         <div class="form-group">
                         <tr>
                             <td >Nombre</td>
-                            <td><input type="text" class="form-control" name="Nombre" value="<?php echo $alm->__GET('Nombre'); ?>"  /></td>
+                            <td><input type="text" class="form-control" name="Nombre" maxlength="20" value="<?php echo $alm->__GET('Nombre'); ?>"  /></td>
                         </tr> 
                         </div>
 
@@ -178,7 +178,7 @@ if(isset($_REQUEST['action']))
                     <div class="form-group">
                         <tr>
                             <td >Apellido</td>
-                            <td><input type="text" class="form-control" name="Apellido" value="<?php echo $alm->__GET('Apellido'); ?>"  /></td>
+                            <td><input type="text" class="form-control" name="Apellido" maxlength="20" value="<?php echo $alm->__GET('Apellido'); ?>"  /></td>
                         </tr>
 
                     </div>
@@ -189,7 +189,7 @@ if(isset($_REQUEST['action']))
                         <tr>
                             <td  >Sexo</td>
                             <td>
-                                <select class="form-control" name="Sexo" >
+                                <select class="form-control" name="Sexo"  >
                                     <option value="1" <?php echo $alm->__GET('Sexo') == 1 ? 'selected' : ''; ?>>Masculino</option>
                                     <option value="2" <?php echo $alm->__GET('Sexo') == 2 ? 'selected' : ''; ?>>Femenino</option>
                                 </select>
@@ -203,7 +203,7 @@ if(isset($_REQUEST['action']))
                         <div class="form-group">
                         <tr>
                             <td >Fecha</td>
-                            <td><input type="text" class="form-control" name="FechaNacimiento" value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
+                            <td><input type="text" class="form-control" name="FechaNacimiento"  value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
                         </tr>
 
                     </div>
