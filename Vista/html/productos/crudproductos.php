@@ -176,7 +176,7 @@ if(isset($_REQUEST['action']))
 
                     <!-- SI QUITAMOS EL TABLE ALIGN CENTER LOS CAMPOS QUEDAN A LO ALRGO !-->
                    
-
+                    <table align="center"> 
                         <div class="form-group">
                         <tr>
                             <td >Producto</td>
@@ -219,8 +219,8 @@ if(isset($_REQUEST['action']))
 
                     <div class="form-group">
                         <tr>
-                            <td >precio de venta</td>
-                            <td><input type="text" class="form-control" name="precio_salida" value="<?php echo $alm->__GET('precio_salida'); ?>"  required></td>
+                            <td >Precio de venta</td>
+                            <td><input type="textcrudp" class="form-control" name="precio_salida" value="<?php echo $alm->__GET('precio_salida'); ?>"  required></td>
                         </tr>
 
                     </div>
@@ -229,8 +229,8 @@ if(isset($_REQUEST['action']))
 
                     <div class="form-group">
                         <tr>
-                            <td >fecha</td>
-                            <td><input type="text" class="form-control" name="fecha_ingreso" value="<?php echo $alm->__GET('fecha_ingreso'); ?>"  required></td>
+                            <td >Fecha</td>
+                            <td><input type="date" class="form-control" name="fecha_ingreso" value="<?php echo $alm->__GET('fecha_ingreso'); ?>"  required></td>
                         </tr>
 
                     </div>

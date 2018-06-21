@@ -203,7 +203,7 @@ if(isset($_REQUEST['action']))
                         <div class="form-group">
                         <tr>
                             <td >Fecha</td>
-                            <td><input type="text" class="form-control" name="FechaNacimiento"  value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
+                            <td><input type="date" class="form-control" name="FechaNacimiento"  value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
                         </tr>
 
                     </div>
