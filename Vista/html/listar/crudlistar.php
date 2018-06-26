@@ -78,7 +78,7 @@ else
 <li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="../categorias/crudcategorias.php">categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 <li><a href="#">clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="../listar/crudlistar.php">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 </ul>
 
 </div>
@@ -117,38 +117,31 @@ if(isset($_REQUEST['action']))
     switch($_REQUEST['action'])
     {
         case 'actualizar':
-            $alm->__SET('id_producto',              $_REQUEST['id']);
-            $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
-            $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
-            $alm->__SET('cantidad',            $_REQUEST['cantidad']);
-            $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
-            $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
-            $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
-            $alm->__SET('id_categoria', $_REQUEST['id_categoria']);
+            $alm->__SET('id_proveedor_cliente',                  $_REQUEST['id']);
+            $alm->__SET('nombre_proveedor_cliente',              $_REQUEST['nombre_proveedor_cliente']);
+            $alm->__SET('email_proveedor_cliente',               $_REQUEST['email_proveedor_cliente']);
+            $alm->__SET('empresa',                               $_REQUEST['empresa']);
+            $alm->__SET('telefono_proveedor_cliente',            $_REQUEST['telefono_proveedor_cliente']);
 
 
             $model->Actualizar($alm);
-            header('Location: crudproductos.php');
+            header('Location: crudlistar.php');
             break;
 
         case 'registrar':
-            $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
-            $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
-            $alm->__SET('cantidad',            $_REQUEST['cantidad']);
-            $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
-            $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
-            $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
-            $alm->__SET('id_categoria', $_REQUEST['id_categoria']);
-           
+            $alm->__SET('nombre_proveedor_cliente',         $_REQUEST['nombre_proveedor_cliente']);
+            $alm->__SET('email_proveedor_cliente',          $_REQUEST['email_proveedor_cliente']);
+            $alm->__SET('empresa',                          $_REQUEST['empresa']);
+            $alm->__SET('telefono_proveedor_cliente',       $_REQUEST['telefono_proveedor_cliente']);
 
 
             $model->Registrar($alm);
-            header('Location: crudproductos.php');
+            header('Location: crudlistar.php');
             break;
 
         case 'eliminar':
             $model->Eliminar($_REQUEST['id']);
-            header('Location: crudproductos.php');
+            header('Location: crudlistar.php');
             break;
 
         case 'editar':
@@ -169,8 +162,8 @@ if(isset($_REQUEST['action']))
 
               
             
-                <form action="?action=<?php echo $alm->id_producto > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="navbar-form navbar-default" >
-                    <input type="hidden" name="id" value="<?php echo $alm->__GET('id_producto'); ?>" >
+                <form acti on="?action=<?php echo $alm->id_proveedor_cliente > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="navbar-form navbar-default" >
+                    <input type="hidden" name="id" value="<?php echo $alm->__GET('id_proveedor_cliente'); ?>" >
 
                     <br />
 
@@ -179,8 +172,8 @@ if(isset($_REQUEST['action']))
                     <table align="center"> 
                         <div class="form-group">
                         <tr>
-                            <td >Producto</td>
-                            <td><input type="text" class="form-control" name="nombre_producto" value="<?php echo $alm->__GET('nombre_producto'); ?>" required></td>
+                            <td >Nombre</td>
+                            <td><input type="text" class="form-control" name="nombre_proveedor_cliente" value="<?php echo $alm->__GET('nombre_proveedor_cliente'); ?>" required></td>
                         </tr> 
                         </div>
 
@@ -188,8 +181,8 @@ if(isset($_REQUEST['action']))
 
                     <div class="form-group">
                         <tr>
-                            <td >Descripcion</td>
-                            <td><input type="text" class="form-control" name="desc_producto" value="<?php echo $alm->__GET('desc_producto'); ?>"  required></td>
+                            <td >Email</td>
+                            <td><input type="text" class="form-control" name="email_proveedor_cliente" value="<?php echo $alm->__GET('email_proveedor_cliente'); ?>"  required></td>
                         </tr>
 
                     </div>
@@ -198,8 +191,8 @@ if(isset($_REQUEST['action']))
 
                     <div class="form-group">
                         <tr>
-                            <td >Cantidad</td>
-                            <td><input type="text" class="form-control" name="cantidad" value="<?php echo $alm->__GET('cantidad'); ?>"  required></td>
+                            <td >Empresa</td>
+                            <td><input type="text" class="form-control" name="empresa" value="<?php echo $alm->__GET('empresa'); ?>"  required></td>
                         </tr>
 
                     </div>
@@ -209,51 +202,17 @@ if(isset($_REQUEST['action']))
 
                     <div class="form-group">
                         <tr>
-                            <td >Precio de compra</td>
-                            <td><input type="text" class="form-control" name="precio_entrada" value="<?php echo $alm->__GET('precio_entrada'); ?>"  required></td>
+                            <td >Telefono</td>
+                            <td><input type="text" class="form-control" name="telefono_proveedor_cliente" value="<?php echo $alm->__GET('telefono_proveedor_cliente'); ?>"  required></td>
                         </tr>
 
                     </div>
 
-                                        <tr><td style="padding:2px"></td></tr>
+                                       
 
-                    <div class="form-group">
-                        <tr>
-                            <td >Precio de venta</td>
-                            <td><input type="textcrudp" class="form-control" name="precio_salida" value="<?php echo $alm->__GET('precio_salida'); ?>"  required></td>
-                        </tr>
-
-                    </div>
-
-                                        <tr><td style="padding:2px"></td></tr>
-
-                    <div class="form-group">
-                        <tr>
-                            <td >Fecha</td>
-                            <td><input type="date" class="form-control" name="fecha_ingreso" value="<?php echo $alm->__GET('fecha_ingreso'); ?>"  required></td>
-                        </tr>
-
-                    </div>
-
-                                        <tr><td style="padding:2px"></td></tr>
-                     
-
-                     <div class="form-group">
-                        <tr>
-                            <td  >Categorias</td>
-                            <td>
-                                <select class="form-control" name="id_categoria"  >
-                                    <option value="1" <?php echo $alm->__GET('id_categoria') == 1 ? 'selected' : ''; ?>>Comida</option>
-                                    <option value="2" <?php echo $alm->__GET('id_categoria') == 2 ? 'selected' : ''; ?>>Medicamento</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                    </div>
-                                                        
-                   
-
-                        <tr><td style="padding:2px"></td></tr>
+        
+                                      
+                    <tr><td style="padding:2px"></td></tr>
                         <tr>
                             <td colspan="2" align="center">
                                 <button type="submit" class="btn btn-default" >Guardar</button>
@@ -264,6 +223,7 @@ if(isset($_REQUEST['action']))
                 </form>
                 <br/>
 
+
              <div class="col-sm-12 col-md-12">
 
              <div class="table-responsive">
@@ -272,13 +232,10 @@ if(isset($_REQUEST['action']))
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Cantidad</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Nombre Proveedor</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Email Proveedor</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Empresa</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Teléfono Proveedor</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -286,18 +243,15 @@ if(isset($_REQUEST['action']))
                     
                     <?php foreach($model->Listar() as $r): ?>
                         <tr>
-                            <td><?php echo $r->__GET('nombre_producto'); ?></td>
-                            <td><?php echo $r->__GET('desc_producto'); ?></td>
-                            <td><?php echo $r->__GET('cantidad'); ?></td>
-                            <td><?php echo $r->__GET('precio_entrada'); ?></td>
-                            <td><?php echo $r->__GET('precio_salida'); ?></td>
-                            <td><?php echo $r->__GET('fecha_ingreso'); ?></td>
-                            <td><?php echo $r->__GET('id_categoria'); ?></td>
+                            <td><?php echo $r->__GET('nombre_proveedor_cliente'); ?></td>
+                            <td><?php echo $r->__GET('email_proveedor_cliente'); ?></td>
+                            <td><?php echo $r->__GET('empresa'); ?></td>
+                            <td><?php echo $r->__GET('telefono_proveedor_cliente'); ?></td>
                             <td>
-                                <a href="?action=editar&id=<?php echo $r->id_producto; ?>">Editar</a>
+                                <a href="?action=editar&id=<?php echo $r->id_proveedor_cliente; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="?action=eliminar&id=<?php echo $r->id_producto; ?>">Eliminar</a>
+                                <a href="?action=eliminar&id=<?php echo $r->id_proveedor_cliente; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
