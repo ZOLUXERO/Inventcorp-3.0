@@ -6,6 +6,7 @@ if (!empty($_SESSION["session"]))
   exit();
 }
 ?>
+<!--  ejemplo para control de versiones   -->
 
 <!DOCTYPE html>
 <html lang="en">
