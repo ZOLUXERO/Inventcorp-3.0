@@ -54,9 +54,9 @@ $id=$_REQUEST['id'];
 			   ?>    
                <table align="center" style="border-collapse:separate;border-spacing:5px">
 			   <tr>
-               <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333"></td><td style="color:#666"><input name="iden" type="hidden" value="<?php echo $row['id_usuario']?>" style="width:320px"></td></tr>
+               <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333"></td><td style="color:#666"><input name="iden" type="hidden" value="<?php echo $row['cedula']?>" style="width:320px"></td></tr>
 			   <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Nombre</td><td style="color:#666"><input name="nombre" type="text" value="<?php echo $row['nombre_usuario']?>" style="width:320px"></td></tr>
-               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Empresa</td><td style="color:#666"><input name="empresa" type="text" value="<?php echo $row['nombre_empresa']?>" style="width:320px"></td></tr>
+               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Email</td><td style="color:#666"><input name="empresa" type="text" value="<?php echo $row['email_usuario']?>" style="width:320px"></td></tr>
                <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Telefono</td><td style="color:#666"><input name="apellido" type="text" value="<?php echo $row['telefono']?>" style="width:320px"></td></tr>
 
                <td align="center" style="font-family:Tahoma, Geneva, sans-serif" colspan="2"><input name="editar" type="submit" style="width:320px" value="Actualizar"></td></tr>

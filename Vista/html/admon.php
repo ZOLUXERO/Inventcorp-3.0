@@ -64,12 +64,12 @@ require '../../modelo/clases.php';
 			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
 				?>
 			   <tr style="font-size:12px">
-			   <td align="center"><?php echo $row['id_usuario']?></td>
-			   <td align="center"><?php echo $row['nombre_usuario']?></td>
-               <td align="center"><?php echo $row['nombre_empresa']?></td>
+			   <td align="center"><?php echo $row['cedula']?></td>
+			   <td align="center"><?php echo $row['email_usuario']?></td>
+               <td align="center"><?php echo $row['nombre_usuario']?></td>
                <td align="center"><?php echo $row['telefono']?></td>
 			   <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
-               <td align="center"><center><a href="editarusuario.php?id=<?php echo $row['id_usuario']?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> <a href="../../controlador/controler2.php?id=<?php echo $row['id_usuario']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
+               <td align="center"><center><a href="editarusuario.php?id=<?php echo $row['cedula']?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> <a href="../../controlador/controler2.php?id=<?php echo $row['cedula']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
            
                     </tr>    
                         

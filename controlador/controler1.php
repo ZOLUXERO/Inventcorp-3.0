@@ -71,14 +71,13 @@ if(isset($_POST["registrar"])) {
 if(isset($_POST["editar"])) 
 {		        
 			$id=$_REQUEST['iden'];
-			$usu=$_REQUEST['usuario'];
 			$nom=$_REQUEST['nombre'];
-			$ape=$_REQUEST['apellido'];
-			$pass=$_REQUEST['pass'];
+			$ape=$_REQUEST['empresa'];
+			$pass=$_REQUEST['apellido'];
 			//$pass = password_hash($pass,PASSWORD_DEFAULT); // encripta contraseña
  
 		    $objeto= new clases;
-			$res=$objeto->editar($id,$usu,$nom,$ape,$pass);
+			$res=$objeto->editar($id,$nom,$ape,$pass);
    
 			header("location:../vista/html/admon.php?dato1=si"); 
 	        

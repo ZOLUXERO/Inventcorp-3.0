@@ -39,21 +39,21 @@
 	
 		public function usuarios1($id)
 	{
-		$q = "select * from usuarios where id_usuario='$id'";
+		$q = "select * from usuarios where cedula='$id'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
 		return $consulta;	
 	}
 	
 		public function borrar($id)
 	{
-		$q = "delete from usuarios where id_usuario='$id'";
+		$q = "delete from usuarios where cedula='$id'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
 		return $consulta;	
 	}
 	
-		public function editar($id,$nom,$usu,$pass)
+		public function editar($id,$nom,$ape,$pass)
 	{
-		$q = "update usuarios set nombre_usuario='$nom', nombre_empresa='$usu', contrasena='$pass' where id_usuario='$id'";
+		$q = "update usuarios set nombre_usuario='$nom', email_usuario='$ape', telefono='$pass' where cedula='$id'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
 		return $consulta;	
 	}
