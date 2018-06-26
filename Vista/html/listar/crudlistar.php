@@ -76,9 +76,9 @@ else
 <li class="active"><a href="../../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
 <li><a href="../usuarios/crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
 <li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="../categorias/crudcategorias.php">categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="#">clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-<li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="../categorias/crudcategorias.php">Categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">Clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+<li><a href="#">Proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
 </ul>
 
 </div>
