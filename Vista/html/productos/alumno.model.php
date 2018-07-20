@@ -30,10 +30,9 @@ class AlumnoModel
             {
                 $alm = new Alumno();
 
-                $alm->__SET('id_producto', $r->id_producto);
+                $alm->__SET('codigo_producto', $r->codigo_producto);
                 $alm->__SET('nombre_producto',  $r->nombre_producto);
                 $alm->__SET('desc_producto',  $r->desc_producto);
-                $alm->__SET('cantidad',       $r->cantidad);
                 $alm->__SET('precio_entrada', $r->precio_entrada);
                 $alm->__SET('precio_salida',      $r->precio_salida);
                 $alm->__SET('fecha_ingreso',    $r->fecha_ingreso);
@@ -56,7 +55,7 @@ class AlumnoModel
         try 
         {
             $stm = $this->pdo
-                      ->prepare("SELECT * FROM productos WHERE id_producto = ?");
+                      ->prepare("SELECT * FROM productos WHERE codigo_producto = ?");
                       
 
             $stm->execute(array($id));
@@ -64,10 +63,9 @@ class AlumnoModel
 
             $alm = new Alumno();
 
-                $alm->__SET('id_producto', $r->id_producto);
+                $alm->__SET('codigo_producto', $r->codigo_producto);
                 $alm->__SET('nombre_producto',  $r->nombre_producto);
                 $alm->__SET('desc_producto',  $r->desc_producto);
-                $alm->__SET('cantidad',       $r->cantidad);
                 $alm->__SET('precio_entrada', $r->precio_entrada);
                 $alm->__SET('precio_salida',      $r->precio_salida);
                 $alm->__SET('fecha_ingreso',    $r->fecha_ingreso);
@@ -85,7 +83,7 @@ class AlumnoModel
         try 
         {
             $stm = $this->pdo
-                      ->prepare("DELETE FROM productos WHERE id_producto = ?");                      
+                      ->prepare("DELETE FROM productos WHERE codigo_producto = ?");                      
 
             $stm->execute(array($id));
         } catch (Exception $e) 
@@ -100,25 +98,25 @@ class AlumnoModel
         {
             $sql = "UPDATE productos SET 
                         nombre_producto          = ?, 
-                        desc_producto       = ?,
-                        cantidad          = ?, 
+                        desc_producto       = ?, 
                         precio_entrada = ?,
                         precio_salida       = ?,
                         fecha_ingreso          = ?, 
                         id_categoria = ?
-                    WHERE id_producto = ?";
+                    WHERE codigo_producto = ?";
 
             $this->pdo->prepare($sql)
                  ->execute(
                 array(
+                    
                     $data->__GET('nombre_producto'),
                     $data->__GET('desc_producto'),
-                    $data->__GET('cantidad'),
                     $data->__GET('precio_entrada'),
                     $data->__GET('precio_salida'),
                     $data->__GET('fecha_ingreso'),
                     $data->__GET('id_categoria'),
-                    $data->__GET('id_producto')
+                    $data->__GET('codigo_producto')
+                   
                     )
                 );
         } catch (Exception $e) 
@@ -131,16 +129,15 @@ class AlumnoModel
     {
         try 
         {
-        $sql = "INSERT INTO productos (id_producto, nombre_producto, desc_producto , cantidad, precio_entrada, precio_salida, fecha_ingreso, estado_producto, id_categoria) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, 1 ,? )";
+        $sql = "INSERT INTO productos (codigo_producto, nombre_producto, desc_producto, precio_entrada, precio_salida, fecha_ingreso, estado_producto, id_categoria) 
+                VALUES (?, ?, ?, ?, ?, ?, 1 ,? )";
 
         $this->pdo->prepare($sql)
              ->execute(
             array(
-                    $data->__GET('id_producto'),
+                    $data->__GET('codigo_producto'),
                     $data->__GET('nombre_producto'),
                     $data->__GET('desc_producto'),
-                    $data->__GET('cantidad'),
                     $data->__GET('precio_entrada'),
                     $data->__GET('precio_salida'),
                     $data->__GET('fecha_ingreso'),

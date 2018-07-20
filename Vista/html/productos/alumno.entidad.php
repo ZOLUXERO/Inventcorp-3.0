@@ -2,10 +2,9 @@
 
 class Alumno
 {
-    private $id_producto;
+    private $codigo_producto;
     private $nombre_producto;
     private $desc_producto;
-    private $cantidad;
     private $precio_entrada;
     private $precio_salida;
     private $fecha_ingreso;

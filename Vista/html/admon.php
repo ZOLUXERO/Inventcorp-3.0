@@ -69,7 +69,8 @@ require '../../modelo/clases.php';
                <td align="center"><?php echo $row['nombre_usuario']?></td>
                <td align="center"><?php echo $row['telefono']?></td>
 			   <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
-               <td align="center"><center><a href="editarusuario.php?id=<?php echo $row['cedula']?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> <a href="../../controlador/controler2.php?id=<?php echo $row['cedula']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
+               <td align="center"><center><a href="editarusuario.php?id=<?php echo $row['cedula']?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> 
+                <a href="../../controlador/controler2.php?id=<?php echo $row['cedula']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
            
                     </tr>    
                         

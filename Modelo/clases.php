@@ -22,10 +22,10 @@
 		return $consulta;	
 	}
 	
-	public function registro($usu,$nom,$ape,$numb,$cont)
+	public function registro($usu,$nom1,$nom2,$nom3,$nom4,$ape,$tdo,$numb,$pass)
 	{
 		//$q = "select * from usuario where usuario='$usu' and contrasena='$cont'";
-		$q = "insert into usuarios(email_usuario,nombre_usuario,cedula,contrasena,telefono,estado_usuario,id_rol) values('$usu','$nom','$ape','$cont','$numb',1,2)";
+		$q = "insert into usuarios(documento,email_usuario,primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,contrasena,telefono,estado_usuario,tipo_documento,id_rol) values('$ape','$usu','$nom1','$nom2','$nom3','$nom4','$pass','$numb',1,'$tdo',3)";
         $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
 		
 	}
