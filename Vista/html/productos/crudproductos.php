@@ -296,8 +296,6 @@ else
 
 </div>
 </div>
-</div>
-</div><!-- Cierra div ” row”-->
-</div><!-- Cierra div ” container”-->
+
     </body>
 </html>
