@@ -1,142 +1,47 @@
 <?php
 
-class AlumnoModel
+ include("condb.php");
+
+class clases extends conexion
 {
-    private $pdo;
+    
 
-    public function __CONSTRUCT()
+    public function listar()
     {
-        try
-        {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);                
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
+        $q = "select * from alumnos order by Nombre";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
+        return $consulta;   
     }
 
-    public function Listar()
+    public function obtener($id)
     {
-        try
-        {
-            $result = array();
-
-            $stm = $this->pdo->prepare("SELECT * FROM alumnos");
-            $stm->execute();
-
-            foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-            {
-                $alm = new Alumno();
-
-                $alm->__SET('id', $r->id);
-                $alm->__SET('Nombre', $r->Nombre);
-                $alm->__SET('Apellido', $r->Apellido);
-                $alm->__SET('Sexo', $r->Sexo);
-                $alm->__SET('FechaNacimiento', $r->FechaNacimiento);
-
-                $result[] = $alm;
-            }
-
-            return $result;
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
+        $q = "select * from alumnos where id='$id'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
     }
 
-    public function Obtener($id)
+    public function eliminar($id)
     {
-        try 
-        {
-            $stm = $this->pdo
-                      ->prepare("SELECT * FROM alumnos WHERE id = ?");
-                      
-
-            $stm->execute(array($id));
-            $r = $stm->fetch(PDO::FETCH_OBJ);
-
-            $alm = new Alumno();
-
-            $alm->__SET('id', $r->id);
-            $alm->__SET('Nombre', $r->Nombre);
-            $alm->__SET('Apellido', $r->Apellido);
-            $alm->__SET('Sexo', $r->Sexo);
-            $alm->__SET('FechaNacimiento', $r->FechaNacimiento);
-
-            return $alm;
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
+        $q = "delete from alumnos where id='$id'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
     }
 
-    public function Eliminar($id)
+    public function actualizar($id,$nom,$ape,$sex,$fec)
     {
-        try 
-        {
-            $stm = $this->pdo
-                      ->prepare("DELETE FROM alumnos WHERE id = ?");                      
-
-            $stm->execute(array($id));
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
+        $q = "update alumnos set Nombre='$nom', Apellido='$ape', Sexo='$sex', FechaNacimiento='$fec' where id='$id'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
     }
 
-    public function Actualizar(Alumno $data)
+    public function registro($nom,$ape,$sex,$fec)
     {
-        try 
-        {
-            $sql = "UPDATE alumnos SET 
-                        Nombre          = ?, 
-                        Apellido        = ?,
-                        Sexo            = ?, 
-                        FechaNacimiento = ?
-                    WHERE id = ?";
-
-            $this->pdo->prepare($sql)
-                 ->execute(
-                array(
-                    $data->__GET('Nombre'), 
-                    $data->__GET('Apellido'), 
-                    $data->__GET('Sexo'),
-                    $data->__GET('FechaNacimiento'),
-                    $data->__GET('id')
-                    )
-                );
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
+        //$q = "select * from usuario where usuario='$usu' and contrasena='$cont'";
+        $q = "insert into alumnos(Nombre, Apellido, sexo, FechaNacimiento) values('$nom','$ape','$sex','$fec')";
+        $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
+        
     }
-
-    public function Registrar(Alumno $data)
-    {
-        try 
-        {
-        $sql = "INSERT INTO alumnos (id, Nombre,Apellido,Sexo,FechaNacimiento) 
-                VALUES (?, ?, ?, ?, ?)";
-
-        $this->pdo->prepare($sql)
-             ->execute(
-            array(
-                $data->__GET('id'), 
-				$data->__GET('Nombre'), 
-                $data->__GET('Apellido'), 
-                $data->__GET('Sexo'),
-                $data->__GET('FechaNacimiento')
-                )
-            );
-			
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
-    }
+  
 }
 
 ?>

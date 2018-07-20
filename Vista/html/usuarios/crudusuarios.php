@@ -9,7 +9,30 @@ exit();
 }  
 
 ?> 
+<?php
 
+require 'alumno.model.php';
+
+if (isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $update = true;
+
+    $objeto3 = new clases;
+    $res3 = $objeto3->obtener($id);
+
+    if (count($res3) == 1 ) {
+        $n = mysqli_fetch_array($res3);
+        $nom=$n['Nombre'];
+        $ape=$n['Apellido'];
+        $sex=$n['Sexo'];
+        $fec=$n['FechaNacimiento'];
+
+    }
+//$row = $res->fetch_array(MYSQLI_ASSOC)
+
+}
+
+?>
 
 <?php
 $dt="";
@@ -103,48 +126,10 @@ else
   </table>
 
 <?php
-require_once 'alumno.entidad.php';
-require_once 'alumno.model.php';
 
-// Logica
-$alm = new Alumno();
-$model = new AlumnoModel();
 
-if(isset($_REQUEST['action']))
-{
-    switch($_REQUEST['action'])
-    {
-        case 'actualizar':
-            $alm->__SET('id',              $_REQUEST['id']);
-            $alm->__SET('Nombre',          $_REQUEST['Nombre']);
-            $alm->__SET('Apellido',        $_REQUEST['Apellido']);
-            $alm->__SET('Sexo',            $_REQUEST['Sexo']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
 
-            $model->Actualizar($alm);
-            header('Location: crudusuarios.php');
-            break;
 
-        case 'registrar':
-            $alm->__SET('Nombre',          $_REQUEST['Nombre']);
-            $alm->__SET('Apellido',        $_REQUEST['Apellido']);
-            $alm->__SET('Sexo',            $_REQUEST['Sexo']);
-            $alm->__SET('FechaNacimiento', $_REQUEST['FechaNacimiento']);
-
-            $model->Registrar($alm);
-            header('Location: crudusuarios.php');
-            break;
-
-        case 'eliminar':
-            $model->Eliminar($_REQUEST['id']);
-            header('Location: crudusuarios.php');
-            break;
-
-        case 'editar':
-            $alm = $model->Obtener($_REQUEST['id']);
-            break;
-    }
-}
 
 ?>
   
@@ -155,68 +140,63 @@ if(isset($_REQUEST['action']))
   <!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> !-->
      <!--<tr><td style="padding:5px"></td></tr> !-->
    
+            <form method="post" action="controlador.php">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
 
-              
-            
-                <form action="?action=<?php echo $alm->id > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="navbar-form navbar-default" >
-                    <input type="hidden" name="id" value="<?php echo $alm->__GET('id'); ?>" />
+            <table align="center">
 
-                    <br />
-
-                    <!-- SI QUITAMOS EL TABLE ALIGN CENTER LOS CAMPOS QUEDAN A LO ALRGO !-->
-                   <table align="center"> 
-
-                        <div class="form-group">
+                <div class="form-group">
                         <tr>
                             <td >Nombre</td>
-                            <td><input type="text" class="form-control" name="Nombre" maxlength="20" value="<?php echo $alm->__GET('Nombre'); ?>"  /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>"  /></td>
                         </tr> 
-                        </div>
-
-                    <tr><td style="padding:2px"></td></tr>
-
-                    <div class="form-group">
+                </div>
+                <div class="form-group">
                         <tr>
                             <td >Apellido</td>
-                            <td><input type="text" class="form-control" name="Apellido" maxlength="20" value="<?php echo $alm->__GET('Apellido'); ?>"  /></td>
-                        </tr>
-
-                    </div>
-
-                        <tr><td style="padding:2px"></td></tr>
-
-                        <div class="form-group">
+                            <td><input type="text" class="form-control" name="ape" value="<?php echo $ape; ?>"  /></td>
+                        </tr> 
+                </div>
+                <div class="form-group">
                         <tr>
-                            <td  >Sexo</td>
-                            <td>
-                                <select class="form-control" name="Sexo"  >
-                                    <option value="1" <?php echo $alm->__GET('Sexo') == 1 ? 'selected' : ''; ?>>Masculino</option>
-                                    <option value="2" <?php echo $alm->__GET('Sexo') == 2 ? 'selected' : ''; ?>>Femenino</option>
+                            <td >sexo</td>
+                             <td>
+                                <select class="form-control" name="sex"  >
+                                    <option value="1" <?php echo $sex == 1 ? 'selected' : ''; ?>>Masculino</option>
+                                    <option value="2" <?php echo $sex == 2 ? 'selected' : ''; ?>>Femenino</option>
                                 </select>
                             </td>
-                        </tr>
-
-                    </div>
-
-                        <tr><td style="padding:2px"></td></tr>
-
-                        <div class="form-group">
+                        </tr> 
+                </div>
+                <div class="form-group">
                         <tr>
-                            <td >Fecha</td>
-                            <td><input type="date" class="form-control" name="FechaNacimiento"  value="<?php echo $alm->__GET('FechaNacimiento'); ?>"  /></td>
-                        </tr>
+                            <td >fecha</td>
+                            <td><input type="text" class="form-control" name="fec" value="<?php echo $fec; ?>"  /></td>
+                        </tr> 
+                </div>
 
-                    </div>
 
-                        <tr><td style="padding:2px"></td></tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <button type="submit" class="btn btn-default" >Guardar</button>
-                            </td>
-                        </tr>
-                    </table>
-                   
-                </form>
+                <tr>
+                        <td colspan="2" align="center">
+                                <?php if ($update == true): ?>
+                                    <button class="btn" type="submit" name="actualizar" style="background: #556B2F;" >Actualizar</button>
+                                <?php else: ?>
+                                    <button class="btn" type="submit" name="guardar" >Guardar</button>
+                                <?php endif ?>
+                        </td>
+                </tr>
+
+            </table>
+
+            </form>
+                    
+
+
+
+
+
+            
+                
                 <br/>
 
 			 <div class="col-sm-12 col-md-12">
@@ -236,20 +216,26 @@ if(isset($_REQUEST['action']))
                         </tr>
                     </thead>
                     
-                    <?php foreach($model->Listar() as $r): ?>
+                    <?php
+                        $objeto= new clases;
+                        $res=$objeto->listar();
+                     
+                     while($row = $res->fetch_array(MYSQLI_ASSOC)){
+                        ?>
                         <tr>
-                            <td><?php echo $r->__GET('Nombre'); ?></td>
-                            <td><?php echo $r->__GET('Apellido'); ?></td>
-                            <td><?php echo $r->__GET('Sexo') == 1 ? 'H' : 'F'; ?></td>
-                            <td><?php echo $r->__GET('FechaNacimiento'); ?></td>
+                            <td><?php echo $row['Nombre']; ?></td>
+                            <td><?php echo $row['Apellido']; ?></td>
+                            <td><?php echo $row['Sexo'] == 1 ? 'H' : 'F'; ?></td>
+                            <td><?php echo $row['FechaNacimiento']; ?></td>
                             <td>
-                                <a href="?action=editar&id=<?php echo $r->id; ?>">Editar</a>
+                                <a href="crudusuarios.php?edit=<?php echo $row['id']; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="?action=eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+                                <a href="controlador.php?del=<?php echo $row['id']; ?>">Eliminar</a>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                       <?php 
+                     } $objeto->CloseDB();?>
                 </table>  
                 <br/>
              </div>

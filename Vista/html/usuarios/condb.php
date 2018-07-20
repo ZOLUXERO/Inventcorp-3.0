@@ -1,5 +1,5 @@
 <?php
-
+	
 class conexion
 {
 
@@ -19,4 +19,13 @@ if($this->con->connect_errno) {
   } 
  
 }
+
+	$nom = "";
+	$ape = "";
+	$sex = "";
+	$fec = "";
+	$id = 0;
+	$update = false;
+
+
 ?>
