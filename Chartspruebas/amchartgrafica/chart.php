@@ -47,17 +47,7 @@
 
 </div>
 
-<div align="right" class="col-sm-3 col-md-3">
-<div class="panel panel-default">
 
-<div class="panel-heading">
-<h3 align="center" class="panel-title">BASE</h3>
-</div>
-
-<br /><br />
-
-</div>
-</div>
 
 <div class="col-sm-7 col-md-7">
 <div class="panel panel-default">
@@ -73,20 +63,56 @@
 <!-- Contenedor ejercicio-->
 
 
-
-
-
-
 <div class="container" style="width: 800px;" align="right">
 <?php
 include_once 'index.html'; 
 ?>
 <br/ ><br /><br/ >
 </div>
-          
+
+
               
-              </div>
-            </div>
+ </div>
+
+
+<div align="right" class="col-sm-3 col-md-3">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h3 align="center" class="panel-title">BASE</h3>
+</div>
+
+<br /><br />
+
+</div>
+</div>
+
+<div align="right" class="col-sm-3 col-md-3">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h3 align="center" class="panel-title">BASE</h3>
+</div>
+
+<br /><br />
+
+</div>
+</div>
+
+<div align="right" class="col-sm-3 col-md-3">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h3 align="center" class="panel-title">BASE</h3>
+</div>
+
+<br /><br />
+
+</div>
+</div>
+
+
+</div>
 
 
 
