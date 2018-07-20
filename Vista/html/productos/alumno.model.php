@@ -1,157 +1,47 @@
 <?php
 
-class AlumnoModel
+ include("condb.php");
+
+class clases extends conexion
 {
-    private $pdo;
+    
 
-    public function __CONSTRUCT()
+    public function listar()
     {
-        try
-        {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=inventcorp', 'root', '');
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);                
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
+        $q = "select * from productos order by codigo_producto";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
+        return $consulta;   
     }
 
-    public function Listar()
+    public function obtener($id)
     {
-        try
-        {
-            $result = array();
-
-            $stm = $this->pdo->prepare("SELECT * FROM productos");
-            $stm->execute();
-
-            foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-            {
-                $alm = new Alumno();
-
-                $alm->__SET('codigo_producto', $r->codigo_producto);
-                $alm->__SET('nombre_producto',  $r->nombre_producto);
-                $alm->__SET('desc_producto',  $r->desc_producto);
-                $alm->__SET('precio_entrada', $r->precio_entrada);
-                $alm->__SET('precio_salida',      $r->precio_salida);
-                $alm->__SET('fecha_ingreso',    $r->fecha_ingreso);
-                $alm->__SET('id_categoria', $r->id_categoria);
-
-                $result[] = $alm;
-
-            }
-
-            return $result;
-        }
-        catch(Exception $e)
-        {
-            die($e->getMessage());
-        }
+        $q = "select * from productos where codigo_producto='$id'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
     }
 
-    public function Obtener($id)
+    public function eliminar($id)
     {
-        try 
-        {
-            $stm = $this->pdo
-                      ->prepare("SELECT * FROM productos WHERE codigo_producto = ?");
-                      
-
-            $stm->execute(array($id));
-            $r = $stm->fetch(PDO::FETCH_OBJ);
-
-            $alm = new Alumno();
-
-                $alm->__SET('codigo_producto', $r->codigo_producto);
-                $alm->__SET('nombre_producto',  $r->nombre_producto);
-                $alm->__SET('desc_producto',  $r->desc_producto);
-                $alm->__SET('precio_entrada', $r->precio_entrada);
-                $alm->__SET('precio_salida',      $r->precio_salida);
-                $alm->__SET('fecha_ingreso',    $r->fecha_ingreso);
-                $alm->__SET('id_categoria', $r->id_categoria);
-
-            return $alm;
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
+        $q = "delete from productos where codigo_producto='$id'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
     }
 
-    public function Eliminar($id)
+    public function actualizar($cod, $nom, $des, $pen, $pas, $fec, $cat)
     {
-        try 
-        {
-            $stm = $this->pdo
-                      ->prepare("DELETE FROM productos WHERE codigo_producto = ?");                      
-
-            $stm->execute(array($id));
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
+        $q = "update productos set nombre_producto='$nom', desc_producto='$des', precio_entrada='$pen', precio_salida='$pas', fecha_ingreso='$fec', id_categoria='$cat' where codigo_producto='$cod'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
     }
 
-    public function Actualizar(Alumno $data)
+    public function registro($cod, $nom, $des, $pen, $pas, $fec, $cat)
     {
-        try 
-        {
-            $sql = "UPDATE productos SET 
-                        nombre_producto          = ?, 
-                        desc_producto       = ?, 
-                        precio_entrada = ?,
-                        precio_salida       = ?,
-                        fecha_ingreso          = ?, 
-                        id_categoria = ?
-                    WHERE codigo_producto = ?";
-
-            $this->pdo->prepare($sql)
-                 ->execute(
-                array(
-                    
-                    $data->__GET('nombre_producto'),
-                    $data->__GET('desc_producto'),
-                    $data->__GET('precio_entrada'),
-                    $data->__GET('precio_salida'),
-                    $data->__GET('fecha_ingreso'),
-                    $data->__GET('id_categoria'),
-                    $data->__GET('codigo_producto')
-                   
-                    )
-                );
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
+        //$q = "select * from usuario where usuario='$usu' and contrasena='$cont'";
+        $q = "insert into productos(codigo_producto, nombre_producto, desc_producto, precio_entrada, precio_salida, fecha_ingreso, estado_producto, id_categoria) values('$cod','$nom','$des','$pen','$pas','$fec',1,'$cat')";
+        $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
+        
     }
-
-    public function Registrar(Alumno $data)
-    {
-        try 
-        {
-        $sql = "INSERT INTO productos (codigo_producto, nombre_producto, desc_producto, precio_entrada, precio_salida, fecha_ingreso, estado_producto, id_categoria) 
-                VALUES (?, ?, ?, ?, ?, ?, 1 ,? )";
-
-        $this->pdo->prepare($sql)
-             ->execute(
-            array(
-                    $data->__GET('codigo_producto'),
-                    $data->__GET('nombre_producto'),
-                    $data->__GET('desc_producto'),
-                    $data->__GET('precio_entrada'),
-                    $data->__GET('precio_salida'),
-                    $data->__GET('fecha_ingreso'),
-                    $data->__GET('id_categoria'),
-                    
-                )
-            );
-            
-        } catch (Exception $e) 
-        {
-            die($e->getMessage());
-        }
-    }
+  
 }
 
 ?>
-

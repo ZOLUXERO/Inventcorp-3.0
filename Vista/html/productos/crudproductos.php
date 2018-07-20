@@ -9,7 +9,32 @@ exit();
 }  
 
 ?> 
+<?php
 
+require 'alumno.model.php';
+
+if (isset($_GET['edit'])) {
+    $cod = $_GET['edit'];
+    $update = true;
+
+    $objeto3 = new clases;
+    $res3 = $objeto3->obtener($cod);
+
+    if (count($res3) == 1 ) {
+        $n = mysqli_fetch_array($res3);
+        $nom=$n['nombre_producto'];
+        $des=$n['desc_producto'];
+        $pen=$n['precio_entrada'];
+        $pas=$n['precio_salida'];
+        $fec=$n['fecha_ingreso'];
+        $cat=$n['id_categoria'];
+
+    }
+//$row = $res->fetch_array(MYSQLI_ASSOC)
+
+}
+
+?>
 
 <?php
 $dt="";
@@ -102,169 +127,110 @@ else
   <tr><td style="color:#800000; font-family:Tahoma, Geneva, sans-serif" align="center">BASE DE DATOS</td></tr>
   </table>
 
-<?php
-require_once 'alumno.entidad.php';
-require_once 'alumno.model.php';
-require '../../../modelo/clases.php';
-// Logica
-$alm = new Alumno();
-$model = new AlumnoModel();
-
- //echo $_SESSION["idactor"];
-
-if(isset($_REQUEST['action']))
-{
-    switch($_REQUEST['action'])
-    {
-        case 'actualizar':
-            $alm->__SET('codigo producto',              $_REQUEST['id']);
-            $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
-            $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
-            $alm->__SET('cantidad',            $_REQUEST['cantidad']);
-            $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
-            $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
-            $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
-            $alm->__SET('id_categoria', $_REQUEST['id_categoria']);
 
 
-            $model->Actualizar($alm);
-            header('Location: crudproductos.php');
-            break;
+            <form method="post" action="controlador.php" class="navbar-form navbar-default">
+            <input type="hidden" name="id" value="<?php echo $cod; ?>">
 
-        case 'registrar':
-            $alm->__SET('codigo_producto',          $_REQUEST['codigo_producto']);
-            $alm->__SET('nombre_producto',          $_REQUEST['nombre_producto']);
-            $alm->__SET('desc_producto',        $_REQUEST['desc_producto']);
-            $alm->__SET('precio_entrada', $_REQUEST['precio_entrada']);
-            $alm->__SET('precio_salida',        $_REQUEST['precio_salida']);
-            $alm->__SET('fecha_ingreso',            $_REQUEST['fecha_ingreso']);
-            $alm->__SET('id_categoria', $_REQUEST['id_categoria']);
-           
+            <table align="center">
+
+                <div class="form-group">
+                        <tr>
+                            <?php if ($update == true): ?>
+                                    
+                            <?php else: ?>
+                                    <td >Codigo producto</td>
+                                    <td><input type="text" class="form-control" name="cod"/></td>
+                            <?php endif ?>
+                        </tr> 
+                </div>
 
 
-            $model->Registrar($alm);
-            header('Location: crudproductos.php');
-            break;
 
-        case 'eliminar':
-            $model->Eliminar($_REQUEST['id']);
-            header('Location: crudproductos.php');
-            break;
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >Nombre producto</td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>"  /></td>
+                        </tr> 
+                </div>
 
-        case 'editar':
-            $alm = $model->Obtener($_REQUEST['id']);
-            header('Location: crudedit.php');
-            break;
-    }
-}
 
-?>
-  
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >descripcion</td>
+                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>"  /></td>
+                        </tr> 
+                </div>
 
-       
-   
-  
-  <!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> !-->
-     <!--<tr><td style="padding:5px"></td></tr> !-->
-   
+
+
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >precio entrada</td>
+                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>"  /></td>
+                        </tr> 
+                </div>
+
+
+
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >precio salida</td>
+                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>"  /></td>
+                        </tr> 
+                </div>
+
+
+
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >fecha</td>
+                            <td><input type="date" class="form-control" name="fec" value="<?php echo $fec; ?>"  /></td>
+                        </tr> 
+                </div>
+
+
+
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >categoria</td>
+                             <td>
+                                <select class="form-control" name="cat"  >
+                                    <option value="1" <?php echo $cat == 1 ? 'selected' : ''; ?>>comida</option>
+                                    <option value="2" <?php echo $cat == 2 ? 'selected' : ''; ?>>medicamento</option>
+                                </select>
+                            </td>
+                        </tr> 
+                </div>
+
+
+                
+                <tr><td style="padding:2px"></td></tr>
+                <tr>
+                        <td colspan="2" align="center">
+                                <?php if ($update == true): ?>
+                                    <button  type="submit" name="actualizar" class="btn btn-success" >Actualizar</button>
+                                <?php else: ?>
+                                    <button  type="submit" name="guardar" class="btn btn-default" >Guardar</button>
+                                <?php endif ?>
+                        </td>
+                </tr>
+
+            </table>
+
+            </form>
+
 
               
             
-                <form action="?action=<?php echo $alm->codigo_producto > 0 ? 'actualizar' : 'registrar'; ?>" method="post" class="navbar-form navbar-default" >
-                    
-                    <input type="hidden" name="id" value="<?php echo $alm->__GET('codigo_producto'); ?>" > 
+           
 
-                    <br />
-
-                    <!-- SI QUITAMOS EL TABLE ALIGN CENTER LOS CAMPOS QUEDAN A LO ALRGO !-->
-                   
-                    <table align="center"> 
-
-                        <div class="form-group">
-                        <tr>
-                            <td >Codigo Producto</td>
-                            <td><input type="text" class="form-control" name="codigo_producto" value="<?php echo $alm->__GET('codigo_producto'); ?>" required></td>
-                        </tr> 
-                        </div>
-
-                         <tr><td style="padding:2px"></td></tr>
-
-                        <div class="form-group">
-                        <tr>
-                            <td >Producto</td>
-                            <td><input type="text" class="form-control" name="nombre_producto" value="<?php echo $alm->__GET('nombre_producto'); ?>" required></td>
-                        </tr> 
-                        </div>
-
-                    <tr><td style="padding:2px"></td></tr>
-
-                    <div class="form-group">
-                        <tr>
-                            <td >Descripcion</td>
-                            <td><input type="text" class="form-control" name="desc_producto" value="<?php echo $alm->__GET('desc_producto'); ?>"  required></td>
-                        </tr>
-
-                    </div>
-
-
-                                        <tr><td style="padding:2px"></td></tr>
-
-                    <div class="form-group">
-                        <tr>
-                            <td >Precio de compra</td>
-                            <td><input type="text" class="form-control" name="precio_entrada" value="<?php echo $alm->__GET('precio_entrada'); ?>"  required></td>
-                        </tr>
-
-                    </div>
-
-                                        <tr><td style="padding:2px"></td></tr>
-
-                    <div class="form-group">
-                        <tr>
-                            <td >Precio de venta</td>
-                            <td><input type="textcrudp" class="form-control" name="precio_salida" value="<?php echo $alm->__GET('precio_salida'); ?>"  required></td>
-                        </tr>
-
-                    </div>
-
-                                        <tr><td style="padding:2px"></td></tr>
-
-                    <div class="form-group">
-                        <tr>
-                            <td >Fecha</td>
-                            <td><input type="date" class="form-control" name="fecha_ingreso" value="<?php echo $alm->__GET('fecha_ingreso'); ?>"  required></td>
-                        </tr>
-
-                    </div>
-
-                                        <tr><td style="padding:2px"></td></tr>
-                     
-
-                     <div class="form-group">
-                        <tr>
-                            <td  >Categorias</td>
-                            <td>
-                                <select class="form-control" name="id_categoria"  >
-                                    <option value="1" <?php echo $alm->__GET('id_categoria') == 1 ? 'selected' : ''; ?>>Comida</option>
-                                    <option value="2" <?php echo $alm->__GET('id_categoria') == 2 ? 'selected' : ''; ?>>Medicamento</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                    </div>
-                                                        
-                   
-
-                        <tr><td style="padding:2px"></td></tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <button type="submit" class="btn btn-default" >Guardar</button>
-                            </td>
-                        </tr>
-                    </table>
-                   
-                </form>
-                <br/>
 
              <div class="col-sm-12 col-md-12">
 
@@ -286,23 +252,29 @@ if(isset($_REQUEST['action']))
                         </tr>
                     </thead>
                     
-                    <?php foreach($model->Listar() as $r): ?>
+                    <?php
+                    $objeto= new clases;
+                    $res=$objeto->listar();
+
+                     while($row = $res->fetch_array(MYSQLI_ASSOC)){
+                      ?>
                         <tr>
-                            <td><?php echo $r->__GET('codigo_producto'); ?></td>
-                            <td><?php echo $r->__GET('nombre_producto'); ?></td>
-                            <td><?php echo $r->__GET('desc_producto'); ?></td>
-                            <td><?php echo $r->__GET('precio_entrada'); ?></td>
-                            <td><?php echo $r->__GET('precio_salida'); ?></td>
-                            <td><?php echo $r->__GET('fecha_ingreso'); ?></td>
-                            <td><?php echo $r->__GET('id_categoria'); ?></td>
+                            <td><?php echo $row['codigo_producto']; ?></td>
+                            <td><?php echo $row['nombre_producto']; ?></td>
+                            <td><?php echo $row['desc_producto']; ?></td>
+                            <td><?php echo $row['precio_entrada']; ?></td>
+                            <td><?php echo $row['precio_salida']; ?></td>
+                            <td><?php echo $row['fecha_ingreso']; ?></td>
+                            <td><?php echo $row['id_categoria']; ?></td>
                             <td>
-                                <a href="crudedit.php?id=<?php echo $r->codigo_producto; ?>">Editar</a>
+                                <a href="crudproductos.php?edit=<?php echo $row['codigo_producto']; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="?action=eliminar&id=<?php echo $r->codigo_producto; ?>">Eliminar</a>
+                                <a href="controlador.php?del=<?php echo $row['codigo_producto']; ?>">Eliminar</a>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php 
+                   } $objeto->CloseDB();?>
                 </table>  
                 <br/>
              </div>

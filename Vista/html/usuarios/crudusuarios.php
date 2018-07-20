@@ -125,22 +125,9 @@ else
   <tr><td style="color:#800000; font-family:Tahoma, Geneva, sans-serif" align="center">BASE DE DATOS</td></tr>
   </table>
 
-<?php
 
-
-
-
-
-?>
-  
-
-       
    
-  
-  <!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> !-->
-     <!--<tr><td style="padding:5px"></td></tr> !-->
-   
-            <form method="post" action="controlador.php">
+            <form method="post" action="controlador.php" class="navbar-form navbar-default">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
 
             <table align="center">
@@ -151,12 +138,18 @@ else
                             <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>"  /></td>
                         </tr> 
                 </div>
+
+
+                <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
                             <td >Apellido</td>
                             <td><input type="text" class="form-control" name="ape" value="<?php echo $ape; ?>"  /></td>
                         </tr> 
                 </div>
+
+
+                <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
                             <td >sexo</td>
@@ -168,20 +161,24 @@ else
                             </td>
                         </tr> 
                 </div>
+
+
+                <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
                             <td >fecha</td>
-                            <td><input type="text" class="form-control" name="fec" value="<?php echo $fec; ?>"  /></td>
+                            <td><input type="date" class="form-control" name="fec" value="<?php echo $fec; ?>"  /></td>
                         </tr> 
                 </div>
 
 
+                <tr><td style="padding:2px"></td></tr>
                 <tr>
                         <td colspan="2" align="center">
                                 <?php if ($update == true): ?>
-                                    <button class="btn" type="submit" name="actualizar" style="background: #556B2F;" >Actualizar</button>
+                                    <button  type="submit" name="actualizar" class="btn btn-success" >Actualizar</button>
                                 <?php else: ?>
-                                    <button class="btn" type="submit" name="guardar" >Guardar</button>
+                                    <button  type="submit" name="guardar" class="btn btn-default" >Guardar</button>
                                 <?php endif ?>
                         </td>
                 </tr>
