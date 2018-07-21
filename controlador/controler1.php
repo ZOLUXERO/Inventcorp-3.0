@@ -22,16 +22,21 @@ if(isset($_POST["enviar"])) {
            if (password_verify($loginPassword,$actor["contrasena"]))
 		   {
 			 session_start();
-			 $_SESSION["session"]= $actor["nombre_usuario"]." / ".$actor["nombre_empresa"];
+			 $_SESSION["session"]= $actor["primer_nombre"];
+			 $_SESSION["doc"]= $actor["documento"];
+			 $_SESSION["idrol"]= $actor["id_rol"];
 		     $_SESSION["validar"]="true";  // Variable de sisión para controlar acceso a páginas
-			 if($actor["id_rol"]==2)
+			 if($actor["id_rol"]==1)
              {
-             header("location:../vista/html/usuarios/crudusuarios.php");  //Redirige a página de usuario
+               header("location:../vista/html/admon.php");  //Redirige a página de administrador
              }
-             else
-             {
-             header("location:../vista/html/admon.php");  //Redirige a página de administrador
-             }  
+             elseif ($actor["id_rol"]==2) {
+             	header("location:../vista/html/crudusuarios.php");
+             }
+             elseif ($actor["id_rol"]==3) {
+             	header("location:../index.php");
+             }
+              
 		   }
 		   else
 		   {
