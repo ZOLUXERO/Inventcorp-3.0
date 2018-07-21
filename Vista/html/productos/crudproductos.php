@@ -97,7 +97,7 @@ else
 <div class="container-fluid">
 <div class="row">
 <div class="col-sm-3 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
-<ul class="nav nav-pills nav-stacked"> 
+<ul class="nav nav-pills nav-stacked panel panel-default"> 
 <li class="active"><a href="../../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
 <li><a href="../usuarios/crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
 <li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
@@ -140,7 +140,7 @@ else
                                     
                             <?php else: ?>
                                     <td >Codigo producto</td>
-                                    <td><input type="text" class="form-control" name="cod"/></td>
+                                    <td><input type="text" class="form-control" name="cod" required /></td>
                             <?php endif ?>
                         </tr> 
                 </div>
@@ -151,7 +151,7 @@ else
                 <div class="form-group">
                         <tr>
                             <td >Nombre producto</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>"  /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -160,7 +160,7 @@ else
                 <div class="form-group">
                         <tr>
                             <td >descripcion</td>
-                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>"  /></td>
+                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -170,7 +170,7 @@ else
                 <div class="form-group">
                         <tr>
                             <td >precio entrada</td>
-                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>"  /></td>
+                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -180,7 +180,7 @@ else
                 <div class="form-group">
                         <tr>
                             <td >precio salida</td>
-                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>"  /></td>
+                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -190,7 +190,7 @@ else
                 <div class="form-group">
                         <tr>
                             <td >fecha</td>
-                            <td><input type="date" class="form-control" name="fec" value="<?php echo $fec; ?>"  /></td>
+                            <td><input type="date" class="form-control" name="fec" value="<?php echo $fec; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -296,6 +296,8 @@ else
 
 </div>
 </div>
+
+
 
     </body>
 </html>

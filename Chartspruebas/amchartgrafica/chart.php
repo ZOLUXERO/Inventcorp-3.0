@@ -36,7 +36,7 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-sm-3 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
-<ul class="nav nav-pills nav-stacked"> 
+<ul class="nav nav-pills nav-stacked panel panel-default"> 
 <li class="active"><a href="../../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
 <li><a href="../usuarios/crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
 <li><a href="#">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
