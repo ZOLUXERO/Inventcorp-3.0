@@ -12,14 +12,29 @@
 </head>
 <body>
 
-  <ul class="nav nav-pills nav-stacked"> 
+  <ul class="nav nav-pills nav-stacked panel panel-default"> 
       <li class="active"><a href="../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
-      <li><a href="usuarios/crudusuarios.php">Bd Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
-      <li><a href="#">inventarios<span class="glyphicon glyphicon-globe pull-right"></span> </a></li>
-      <li><a href="#">Bd Productos<span class="glyphicon glyphicon-shopping-cart pull-right"></span> </a></li>
-      <li><a href="#">Bd Mantenimiento<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-      <li><a href="#">Bd Material<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a></li>
-      </ul>
+      <li><a href="crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
+      <li><a href="crudproductos.php">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li><a href="#">Categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li><a href="#">Clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li>
+          <?php if ($_SESSION["idrol"] == 1): ?>
+              <a href="admon.php">Usuarios en la pagina<span class="glyphicon glyphicon-list-alt pull-right"> </span></a>            
+          <?php else: ?>
+                     
+          <?php endif ?>        
+      </li>
+      <li>
+        <?php if ($_SESSION["idrol"] == 1): ?>
+              <a href="#">Objetos eliminados(por hacer)<span class="glyphicon glyphicon-list-alt pull-right"></span> </a>             
+        <?php else: ?>
+                  
+        <?php endif ?>   
+        
+      </li>
+  </ul>
 
 </body>
 </html>  
