@@ -88,7 +88,7 @@
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p class="pull-right"><a href="#">Volver arriba</a></p>
-          <p>Pagina hecha por <a href="vista/html/BORRAR.php">Inventcorp</a>, by <a href="#">Adsi</a>.</p>
+          <p>Pagina hecha por <a href="codigosNN/paginainvent/BORRAR.php">Inventcorp</a>, by <a href="#">Adsi</a>.</p>
         </div>
       </footer>
     </div>
