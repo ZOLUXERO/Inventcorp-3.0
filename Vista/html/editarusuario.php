@@ -52,14 +52,60 @@ $id=$_REQUEST['id'];
 			   $res=$objeto->usuarios1($id);	  		
 			   $row = $res->fetch_array();
 			   ?>    
-               <table align="center" style="border-collapse:separate;border-spacing:5px">
-			   <tr>
-               <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333"></td><td style="color:#666"><input name="iden" type="hidden" value="<?php echo $row['cedula']?>" style="width:320px"></td></tr>
-			   <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Nombre</td><td style="color:#666"><input name="nombre" type="text" value="<?php echo $row['nombre_usuario']?>" style="width:320px"></td></tr>
-               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Email</td><td style="color:#666"><input name="empresa" type="text" value="<?php echo $row['email_usuario']?>" style="width:320px"></td></tr>
-               <tr style="color:#FFF;"><td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Telefono</td><td style="color:#666"><input name="apellido" type="text" value="<?php echo $row['telefono']?>" style="width:320px"></td></tr>
+                <table align="center" style="border-collapse:separate;border-spacing:5px">
+			          <tr>
+                 <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333"></td>
+                 <td style="color:#666"><input name="id" type="hidden" class="form-control" value="<?php echo $row['documento']?>" style="width:320px"></td>
+                </tr>
+			          <tr style="color:#FFF;">
+                 <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Primer Nombre</td>
+                 <td style="color:#666"><input name="nom1" type="text" class="form-control" value="<?php echo $row['primer_nombre']?>" style="width:320px"></td>
+                </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Segundo Nombre</td>
+                  <td style="color:#666"><input name="nom2" type="text" class="form-control" value="<?php echo $row['segundo_nombre']?>" style="width:320px"></td>
+                </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Primer Apellido</td>
+                  <td style="color:#666"><input name="nom3" type="text" class="form-control" value="<?php echo $row['primer_apellido']?>" style="width:320px"></td>
+                </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Segundo Apellido</td>
+                  <td style="color:#666"><input name="nom4" type="text" class="form-control" value="<?php echo $row['segundo_apellido']?>" style="width:320px"></td>
+                </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Email</td
+                    ><td style="color:#666"><input name="ema" type="text" class="form-control" value="<?php echo $row['email_usuario']?>" style="width:320px"></td>
+                  </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Telefono</td>
+                  <td style="color:#666"><input name="tel" type="text" class="form-control" value="<?php echo $row['telefono']?>" style="width:320px"></td>
+                </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Estado</td>
+                  <td style="color:#666">
 
-               <td align="center" style="font-family:Tahoma, Geneva, sans-serif" colspan="2"><input name="editar" type="submit" style="width:320px" value="Actualizar"></td></tr>
+                     <select class="form-control" name="est"  >
+                          <option value="1" <?php echo  $row['estado_usuario'] == 1 ? 'selected' : ''; ?>>inactivo</option>
+                          <option value="2" <?php echo  $row['estado_usuario'] == 2 ? 'selected' : ''; ?>>activo</option>
+                    </select>
+
+                  </td>
+                </tr>
+                 <tr style="color:#FFF;">
+                  <td align="center" style="font-family:Tahoma, Geneva, sans-serif;color:#333">Permisos</td>
+                  <td style="color:#666">
+
+                    <select class="form-control" name="rol"  >
+                          <option value="1" <?php echo  $row['id_rol'] == 1 ? 'selected' : ''; ?>>Administrador</option>
+                          <option value="2" <?php echo  $row['id_rol'] == 2 ? 'selected' : ''; ?>>usuario</option>
+                          <option value="3" <?php echo  $row['id_rol'] == 3 ? 'selected' : ''; ?>>visitante</option>
+                    </select>
+
+                  </td>
+                </tr>
+
+                <td align="center" style="font-family:Tahoma, Geneva, sans-serif" colspan="2"><input name="editar" type="submit" style="width:320px" value="Actualizar"></td></tr>
               
             
                

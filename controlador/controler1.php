@@ -80,14 +80,19 @@ if(isset($_POST["registrar"])) {
 
 if(isset($_POST["editar"])) 
 {		        
-			$id=$_REQUEST['iden'];
-			$nom=$_REQUEST['nombre'];
-			$ape=$_REQUEST['empresa'];
-			$pass=$_REQUEST['apellido'];
+			$id=$_REQUEST['doc'];
+			$nom1=$_REQUEST['nom1'];
+			$nom2=$_REQUEST['nom2'];
+			$nom3=$_REQUEST['nom3'];
+			$nom4=$_REQUEST['nom4'];
+			$ema=$_REQUEST['ema'];
+			$tel=$_REQUEST['tel'];
+			$est=$_REQUEST['est'];
+			$rol=$_REQUEST['rol'];
 			//$pass = password_hash($pass,PASSWORD_DEFAULT); // encripta contraseña
  
 		    $objeto= new clases;
-			$res=$objeto->editar($id,$nom,$ape,$pass);
+			$res=$objeto->editar($id,$nom1,$nom2,$nom3,$nom4,$ema,$tel,$est,$rol);
    
 			header("location:../vista/html/admon.php?dato1=si"); 
 	        
