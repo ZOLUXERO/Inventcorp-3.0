@@ -32,7 +32,7 @@
 	
 	public function usuarios()
 	{
-		$q = "select * from usuarios order by nombre_usuario";
+		$q = "select * from usuarios order by primer_nombre";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);		
 		return $consulta;	
 	}
