@@ -28,7 +28,7 @@
       </li>
       <li>
         <?php if ($_SESSION["idrol"] == 1): ?>
-              <a href="#">Objetos eliminados(por hacer)<span class="glyphicon glyphicon-list-alt pull-right"></span> </a>             
+              <a href="objetoelm.php">Objetos eliminados<span class="glyphicon glyphicon-list-alt pull-right"></span> </a>             
         <?php else: ?>
                   
         <?php endif ?>   
