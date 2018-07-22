@@ -62,6 +62,9 @@ include_once 'index.html';
  </div>
 
 
+
+
+
 <div align="right" class="col-sm-3 col-md-3">
 <div class="panel panel-default">
 
@@ -102,6 +105,7 @@ include_once 'index.html';
                                     <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" /></td>
                               </tr>
                             <?php else: ?>
+                              <tr><td style="padding:2px"></td></tr>
                                     <tr>
                                     <td >Codigo </td>
                                     <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit1']?>" /></td>
@@ -111,14 +115,6 @@ include_once 'index.html';
                         
                 </div>
 
-
-                <tr><td style="padding:2px"></td></tr>
-                <div class="form-group">
-                        <tr>
-                            <td >fecha</td>
-                            <td><input type="date" class="form-control" name="fec" value=""  /></td>
-                        </tr> 
-                </div>
 
 
                 <tr><td style="padding:2px"></td></tr>
@@ -142,11 +138,11 @@ include_once 'index.html';
 
 
 
-<div align="right" class="col-sm-3 col-md-3">
+<div align="right" class="col-sm-1 col-md-1">
 <div class="panel panel-default">
 
 <div class="panel-heading">
-<h3 align="center" class="panel-title">CANTIDAD TOTAL</h3>
+<h3 align="center" class="panel-title">TOTAL</h3>
 </div>
 
 <div class="panel-body">
@@ -178,6 +174,119 @@ include_once 'index.html';
                       </table>
                       
                
+                  <h4 align="center">en stock</h4>
+       
+
+               </form>
+        
+        
+            </div>
+          </div>
+        </div>
+
+
+
+
+</div>
+</div>
+
+
+
+<div align="right" class="col-sm-1 col-md-1">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h3 align="center" class="panel-title">ENTRO</h3>
+</div>
+
+<br /><br />
+
+</div>
+</div>
+
+
+
+<div align="right" class="col-sm-1 col-md-1">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h3 align="center" class="panel-title">SALIO</h3>
+</div>
+
+<br /><br />
+
+</div>
+</div>
+
+
+
+
+
+<div align="right" class="col-sm-3 col-md-3">
+<div class="panel panel-default">
+
+<div class="panel-heading">
+<h3 align="center" class="panel-title">HISTORIA</h3>
+</div>
+
+<div class="panel-body">
+         
+          <!-- contenedor menu de ejercicios-->
+                
+               <!-- Contenedor ejercicio-->
+                   
+                <div class="row">
+                <div class="col-sm-12 col-md-12">
+                <form name="areat" action="" method="post">
+                
+                      
+                     <table class="table table-hover table-striped" align="center">
+                    
+                          
+                     <?php
+                       
+
+                        if (isset($_GET['edit'])) {
+
+                          $objeto= new clases;
+                          $res=$objeto->obtener($_GET['edit']);
+
+                          while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+                               ?>
+                                 <tr style="font-size:16px">
+                                  <td align="center"><?php echo $row['fecha']?></td>
+                                  <td align="center"><?php echo $row['cantidad_ingreso']?></td>
+                                  <td align="center"><?php echo $row['cantidad_salida']?></td>
+                                 
+                             
+                                  </tr>    
+                                        
+                                <?php } $objeto->CloseDB();
+                                  }else{
+
+                                    $objeto= new clases;
+                       $res=$objeto->obtener($_GET['edit1']);
+
+                                    while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+                                    ?>
+                                     <tr style="font-size:16px">
+                                      <td align="center"><?php echo $row['fecha']?></td>
+                                      <td align="center"><?php echo $row['cantidad_ingreso']?></td>
+                                      <td align="center"><?php echo $row['cantidad_salida']?></td>
+                                     
+                                 
+                                      </tr>    
+                                            
+                                    <?php } $objeto->CloseDB();
+                                  }
+                                ?>           
+
+                             
+                       
+                     
+                      </table>
+                      
+               
 
        
 
@@ -195,17 +304,7 @@ include_once 'index.html';
 
 
 
-<div align="right" class="col-sm-3 col-md-3">
-<div class="panel panel-default">
 
-<div class="panel-heading">
-<h3 align="center" class="panel-title">BASE</h3>
-</div>
-
-<br /><br />
-
-</div>
-</div>
 
 
 </div>
