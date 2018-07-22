@@ -78,7 +78,7 @@ include_once 'index.html';
                 <div class="form-group">
                         <tr>
                             <td >Nombre</td>
-                            <td><input type="text" class="form-control" name="nom" value=""  /></td>
+                            <td><input type="text" class="form-control" name="nom" value="" required="" /></td>
                         </tr> 
                 </div>
 
@@ -87,7 +87,7 @@ include_once 'index.html';
                 <div class="form-group">
                         <tr>
                             <td >Apellido</td>
-                            <td><input type="text" class="form-control" name="ape" value=""  /></td>
+                            <td><input type="text" class="form-control" name="ape" value="" required="" /></td>
                         </tr> 
                 </div>
 
@@ -96,7 +96,7 @@ include_once 'index.html';
                 <div class="form-group">
                         <tr>
                             <td >Codigo </td>
-                            <td><input type="text" class="form-control" name="ape" value="<?php echo $_GET['edit']?>"  /></td>
+                            <td><input type="text" readonly="readonly" class="form-control" name="ape" value="<?php echo $_GET['edit']?>" /></td>
                         </tr> 
                 </div>
 
@@ -105,7 +105,7 @@ include_once 'index.html';
                 <div class="form-group">
                         <tr>
                             <td >fecha</td>
-                            <td><input type="date" class="form-control" name="fec" value=""  /></td>
+                            <td><input type="date" class="form-control" name="fec" value=""  required="" /></td>
                         </tr> 
                 </div>
 
@@ -121,17 +121,7 @@ include_once 'index.html';
             </table>
 
             </form>
-            <table align="center">
-            <td colspan="2" align="center">
-
-                              <?php// if ($update == true): ?>
-                                    <a href="chart.php?entrar"  name="actualizar" class="btn btn-default" >Entrar</a>
-                                <?php// else: ?>
-                                    <a href="chart.php?sacar" name="guardar" class="btn btn-default" >Sacar</a>
-                                <?php //endif ?>
-            </td>   
-            <tr><td style="padding:2px"></td></tr>
-            </table>     
+              
 
 
 </div>
@@ -145,7 +135,7 @@ include_once 'index.html';
 <div class="panel panel-default">
 
 <div class="panel-heading">
-<h3 align="center" class="panel-title">BASE</h3>
+<h3 align="center" class="panel-title">CANTIDAD TOTAL</h3>
 </div>
 
 <div class="panel-body">
@@ -157,12 +147,10 @@ include_once 'index.html';
                 <div class="row">
                 <div class="col-sm-12 col-md-12">
                 <form name="areat" action="" method="post">
-                <div class="table-responsive">
+                
                       
                      <table class="table table-hover table-striped" align="center">
-                     <tr style="color:#FFF; background-color:#369">
-                     <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Cantidad Total</td>                     
-                     
+                    
                           
                      <?php
                        $objeto= new clases;
@@ -170,14 +158,14 @@ include_once 'index.html';
                   
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
                       ?>
-                           <tr style="font-size:12px">
+                           <tr style="font-size:40px">
                            <td align="center"><?php echo $row['total']?></td>
                          
                            </tr>    
                                     
                       <?php } $objeto->CloseDB();?>
                       </table>
-                      </div>
+                      
                
 
        
