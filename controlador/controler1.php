@@ -100,23 +100,28 @@ if(isset($_POST["editar"]))
  
 }
 
-/*if(isset($_POST["editar1"])) 
+if(isset($_POST["guardar"])) 
 {		        
-			$id=$_REQUEST['iden'];
-			$nom=$_REQUEST['nom'];
-			$tel=$_REQUEST['tel']
-			$pass=$_REQUEST['pass'];
+			$ent=$_REQUEST['ent'];
+			$sal=$_REQUEST['sal'];
+			$cod=$_REQUEST['cod'];
 			//$pass = password_hash($pass,PASSWORD_DEFAULT); // encripta contraseña
  
 		    $objeto= new clases;
-			$res=$objeto->editar1($id,$usu,$nom,$tel,$pass);
+			$res=$objeto->regisstock($ent,$sal,$cod);
+
+			$objeto= new clases;
+			$res2=$objeto->obtener($cod);
+
+
+			$row = $res2->fetch_array(MYSQLI_ASSOC);
    
-			header("location:../vista/html/admon.php?dato1=si"); 
+			header("location:../vista/html/chart.php?edit1=$cod"); 
 	        
 			$objeto->CloseDB();
  
 }
-*/
+
 
 
 ?>

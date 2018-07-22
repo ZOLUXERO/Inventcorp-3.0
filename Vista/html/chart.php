@@ -70,15 +70,15 @@ include_once 'index.html';
 </div>
 
 
-<form method="post" action="../../controlador/crudusuario/controlador.php" class="navbar-form navbar-default">
+<form method="post" action="../../controlador/controler1.php" class="navbar-form navbar-default">
             <input type="hidden" name="id" value="">
 
             <table align="center">
 
                 <div class="form-group">
                         <tr>
-                            <td >Nombre</td>
-                            <td><input type="text" class="form-control" name="nom" value="" required="" /></td>
+                            <td >Entrada</td>
+                            <td><input type="text" class="form-control" name="ent" value="" required="" /></td>
                         </tr> 
                 </div>
 
@@ -86,18 +86,29 @@ include_once 'index.html';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >Apellido</td>
-                            <td><input type="text" class="form-control" name="ape" value="" required="" /></td>
+                            <td >Salida</td>
+                            <td><input type="text" class="form-control" name="sal" value="" required="" /></td>
                         </tr> 
                 </div>
 
 
-                 <tr><td style="padding:2px"></td></tr>
+                 
                 <div class="form-group">
-                        <tr>
-                            <td >Codigo </td>
-                            <td><input type="text" readonly="readonly" class="form-control" name="ape" value="<?php echo $_GET['edit']?>" /></td>
-                        </tr> 
+                        
+                            <?php if (isset($_GET['edit'])):?>
+                              <tr><td style="padding:2px"></td></tr>
+                              <tr>
+                                    <td >Codigo </td>
+                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" /></td>
+                              </tr>
+                            <?php else: ?>
+                                    <tr>
+                                    <td >Codigo </td>
+                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit1']?>" /></td>
+                              </tr>
+                            <?php endif ?>
+                            
+                        
                 </div>
 
 
@@ -105,7 +116,7 @@ include_once 'index.html';
                 <div class="form-group">
                         <tr>
                             <td >fecha</td>
-                            <td><input type="date" class="form-control" name="fec" value=""  required="" /></td>
+                            <td><input type="date" class="form-control" name="fec" value=""  /></td>
                         </tr> 
                 </div>
 

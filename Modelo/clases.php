@@ -65,10 +65,19 @@
 		return $consulta;
     } 
 	
-	//public function editar1($id,$nom,$tel)
-	//$q = "update usuarios set nombre_usuario='$nom', telefono='$tel'"
-	//$consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
-	//return $consulta;
+	public function regisstock($ent,$sal,$cod)
+	{
+		//$q = "select * from usuario where usuario='$usu' and contrasena='$cont'";
+		$q = "insert into stock(cantidad_ingreso, cantidad_salida, fecha, codigo_producto) values('$ent','$sal', NOW(),'$cod')";
+        $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
+		
+	}
+	 public function obtener($id)
+    {
+        $q = "select * from stock where codigo_producto='$id'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+        return $consulta;   
+    }
 
  }
 ?>
