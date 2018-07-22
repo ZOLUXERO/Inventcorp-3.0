@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>amCharts tutorial: Loading external data</title>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="http://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+</head>
+<body>
+
+  <br /><br />
+
+
+  <br /><br />
+  <div id="chartdiv" style="width: 100%; height: 500px;"></div>
+  <div id="legenddiv" style="border: 1px solid #010101; overflow: hidden; position: relative; text-align: left; width: 100%; height: 38px;">
+
+  </div>
+
+  </div>
+
+</body>
+</html>
+
+
+<script>
+  var chart = AmCharts.makeChart( "chartdiv", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 80,
+    "autoMarginOffset": 20,
+    "marginTop": 7,
+    "dataLoader": {
+      "url": "chart/data.php"
+    },
+    "categoryField": "fecha",
+    "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
+    "startDuration": 1,
+    "categoryAxis": {
+      "parseDates": true,
+      "minPeriod": "ss",
+    "labelRotation": 60 
+    },
+    "mouseWheelZoomEnabled": true,
+    "graphs": [ {
+      "id":"g1",
+      "balloonText": "[[title]],<br><span style='font-size:14px;'><b>[[cantidad_ingreso]]</b> ([[percents]]%)<br>[[fecha]]</br></span>",
+      "valueField": "cantidad_ingreso",
+      "bullet": "round",
+      "bulletBorderColor": "#FFFFFF",
+      "bulletBorderThickness": 2,
+      "lineThickness ": 2,
+      "lineAlpha": 0.5,
+      "title": "cantidad que entro"
+    }, {
+      "id":"g2",
+      "balloonText": "[[title]],<br><span style='font-size:14px;'><b>[[cantidad_salida]]</b> ([[percents]]%)<br>[[fecha]]</br></span>",
+      "valueField": "cantidad_salida",
+      "bullet": "round",
+      "bulletBorderColor": "#FFFFFF",
+      "bulletBorderThickness": 2,
+      "lineThickness ": 2,
+      "lineAlpha": 0.5,
+      "title": "cantidad que salio"
+    } ],
+    "chartScrollbar": {
+        "autoGridCount": true,
+        "graph": "g1",
+        "scrollbarHeight": 50
+    },
+    
+    "chartCursor": {
+       "limitToGraph":"g1"
+    },
+    "export": {
+        "enabled": true
+    }
+
+  } );
+
+  var legend = new AmCharts.AmLegend();
+      chart.addLegend(legend, "legenddiv");
+
+      
+
+  </script>

@@ -58,6 +58,13 @@
 		return $consulta;	
 	}
 	
+	 public function listarstock()
+	{
+        $q = "SELECT sum(cantidad_ingreso-cantidad_salida) as total FROM stock";
+        $consulta = $this->con->query($q) or die ('Error 1!' .  $this->con->error);
+		return $consulta;
+    } 
+	
 	//public function editar1($id,$nom,$tel)
 	//$q = "update usuarios set nombre_usuario='$nom', telefono='$tel'"
 	//$consulta = $this->con->query($q) or die ('failed!' . $this->con->error);

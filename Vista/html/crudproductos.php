@@ -197,8 +197,9 @@ include_once 'menulateral.php';
                             <td style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
-                            <td></td>
-                            <td></td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Seguimiento</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Editar</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Eliminar</td>
                         </tr>
                     </thead>
                     
@@ -216,6 +217,9 @@ include_once 'menulateral.php';
                             <td><?php echo $row['precio_salida']; ?></td>
                             <td><?php echo $row['fecha_ingreso']; ?></td>
                             <td><?php echo $row['id_categoria']; ?></td>
+                            <td>
+                                <a href="chart.php?edit=<?php echo $row['codigo_producto']; ?>">Seguimiento</a>
+                            </td>
                             <td>
                                 <a href="crudproductos.php?edit=<?php echo $row['codigo_producto']; ?>">Editar</a>
                             </td>
