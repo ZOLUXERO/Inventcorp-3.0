@@ -48,21 +48,21 @@ include_once 'menulateral.php';
                 <form name="areat" action="" method="post">
       			    <div class="table-responsive">
                       
-                     <table class="table table-hover table-striped" align="center">
-      			         <tr style="color:#FFF; background-color:#369">
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Producto</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">estado</td>
-                     <td style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
-                     <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Acción</td>
-                          
-                     <?php
-      			           $objeto= new clases;
-      			           $res=$objeto->listarel();
+                       <table class="table table-hover table-striped" align="center">
+        			         <tr style="color:#FFF; background-color:#369">
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Codigo Producto</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">estado</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Acción</td>
+                         
+                        <?php
+      			            $objeto= new clases;
+      			            $res=$objeto->listarel();
       			  		
             			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
             				  ?>
@@ -78,8 +78,12 @@ include_once 'menulateral.php';
                            
 
             			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
-                           <td align="center"><center><a href=""><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> 
-                           <a href="../../controlador/controler2.php?id=<?php echo $row['codigo_producto']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
+                           <td align="center">
+                           <center>
+                           <a href=""><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> 
+                           <a href="../../controlador/controler2.php?id=<?php echo $row['codigo_producto']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a>
+                           </center>
+                           </td>
                        
                            </tr>    
                                     
