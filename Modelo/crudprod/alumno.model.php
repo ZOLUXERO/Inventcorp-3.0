@@ -13,6 +13,13 @@ class clases extends conexion
         return $consulta;   
     }
 
+    public function listarcat()
+    {
+        $q = "select * from categorias order by id_categoria";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
+        return $consulta;   
+    }
+
     public function listarel()
     {
         $q = "select * from productos where estado_producto='0' order by codigo_producto";
