@@ -149,9 +149,38 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
+
+                            <?php if ($update == true): ?>
+
                             <td >categoria</td>
                              <td>
+                               <select  class="form-control" name="cat" >
+                                <option value="<?php echo $cat;?>" ><?php echo $cat; ?></option>
+                                <option disabled="disabled">-------</option>
+                                <?php
+                                 $objeto1= new clases;
+                                 $res1=$objeto1->listarcat();
+
+                                $x = 0;
+
+                                while($row1 = $res1->fetch_array(MYSQLI_ASSOC)){ 
+                                $x ++ ;
+                                
+                                ?>
+                                                                
+                                 <option value="<?php echo $x;?>"> <?php echo $row1['nombre_categoria']." [".$x."] " ?></option>
+                                                               
+                                <?php } ?>
+
+                                </select>
+                            </td>
+
+                            <?php else: ?>
+
+                            <td >caaaa</td>
+                             <td>
                                <select required class="form-control" name="cat">
+                                
                                 <option value="" disabled selected>Seleccione su categoria</option>
                                 <?php
                                  $objeto1= new clases;
@@ -170,6 +199,7 @@ include_once 'menulateral.php';
 
                                 </select>
                             </td>
+                            <?php endif ?>
                         </tr> 
                 </div>
 
