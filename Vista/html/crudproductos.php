@@ -151,9 +151,23 @@ include_once 'menulateral.php';
                         <tr>
                             <td >categoria</td>
                              <td>
-                                <select class="form-control" name="cat"  >
-                                    <option value="1" <?php echo $cat == 1 ? 'selected' : ''; ?>>comida</option>
-                                    <option value="2" <?php echo $cat == 2 ? 'selected' : ''; ?>>medicamento</option>
+                               <select required class="form-control" name="cat">
+                                <option value="" disabled selected>Seleccione su categoria</option>
+                                <?php
+                                 $objeto1= new clases;
+                                 $res1=$objeto1->listarcat();
+
+                                $x = 0;
+
+                                while($row1 = $res1->fetch_array(MYSQLI_ASSOC)){ 
+                                $x ++ ;
+                                
+                                ?>
+                                                                
+                                 <option value="<?php echo $x;?>"> <?php echo $row1['nombre_categoria']." [".$x."] " ?></option>
+                                                               
+                                <?php } ?>
+
                                 </select>
                             </td>
                         </tr> 
@@ -163,8 +177,12 @@ include_once 'menulateral.php';
                 
                 <tr><td style="padding:2px"></td></tr>
                 <tr>
+
                         <td colspan="2" align="center">
                                 <?php if ($update == true): ?>
+                                
+                                <a href="crudproductos.php">Cancelar</a>
+                                
                                     <button  type="submit" name="actualizar" class="btn btn-success" >Actualizar</button>
                                 <?php else: ?>
                                     <button  type="submit" name="guardar" class="btn btn-default" >Guardar</button>
