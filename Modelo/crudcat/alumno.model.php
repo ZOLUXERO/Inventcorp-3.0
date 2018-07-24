@@ -8,7 +8,7 @@ class clases extends conexion
 
     public function listar()
     {
-        $q = "select * from productos where estado_producto='1' order by codigo_producto";
+        $q = "select * from categorias where estado_categoria='1' order by id_categoria";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
         return $consulta;   
     }
@@ -43,14 +43,14 @@ class clases extends conexion
 
     public function eliminar($id)
     {
-        $q = "update productos set estado_producto='0' where codigo_producto='$id'";
+        $q = "update categorias set estado_categoria='0' where id_categoria='$id'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
         return $consulta;   
     }
 
-    public function actualizar($cod, $nom, $des, $pen, $pas, $fec, $cat)
+    public function actualizar($cod, $nom, $des)
     {
-        $q = "update productos set nombre_producto='$nom', desc_producto='$des', precio_entrada='$pen', precio_salida='$pas', fecha_ingreso='$fec', id_categoria='$cat' where codigo_producto='$cod'";
+        $q = "update categorias set nombre_categoria='$nom', desc_categoria='$des' where id_categoria='$cod'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
         return $consulta;   
     }

@@ -34,11 +34,11 @@ include_once 'menulateral.php';
     <div class="panel panel-default">
    <!-- contenedor del titulo-->
       <div class="panel-heading">
-        <h3 class="panel-title">USUARIOS REGISTRADOS</h3>
+        <h3 class="panel-title">OBJETOS ELIMINADOS</h3>
       </div>
     <!-- contenedor de descripcion ejercicios-->
       <div class="panel-body">
-         <p style="color:#DCA430">Control de usuarios. <center><span><?php if(isset($_REQUEST['dato'])){ echo "BORRADO EXITOSO";}if(isset($_REQUEST['dato1'])){ echo "ACTUALIZACION EXITOSA";}?></span></center></p> 
+         <p style="color:#DCA430">Control de objetos eliminados. <center><span><?php if(isset($_REQUEST['dato'])){ echo "BORRADO EXITOSO";}if(isset($_REQUEST['dato1'])){ echo "ACTUALIZACION EXITOSA";}?></span></center></p> 
           <!-- contenedor menu de ejercicios-->
         			  
       			   <!-- Contenedor ejercicio-->

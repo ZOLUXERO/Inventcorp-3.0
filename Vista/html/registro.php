@@ -43,8 +43,8 @@ if (!empty($_SESSION["session"]))
       
 <div class="form-group">
 
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Usuario / Email</td><td>
-  <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Correo electrónico" required>
+         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Correo Electronico</td><td>
+  <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Registre su correo electronico" required>
 </td></tr>
 </div>
 
