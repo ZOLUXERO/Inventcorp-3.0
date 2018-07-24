@@ -68,9 +68,9 @@ include_once 'menulateral.php';
             			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
             				  ?>
             			         <tr style="font-size:12px">
-                			     <td align="center"><?php echo $row['documento']?></td>
-                           <td align="center"><?php echo $row['tipo_documento']?></td>
-                			     <td align="center"><?php echo $row['email_usuario']?></td>
+                			     <td align="center"><?php echo $objeto->escape($row['documento'])?></td>
+                           <td align="center"><?php echo $objeto->escape($row['tipo_documento'])?></td>
+                			     <td align="center"><?php echo $objeto->escape($row['email_usuario'])?></td>
                            <td align="center">
                             <?php 
                               echo $objeto->escape($row['primer_nombre']." ");
@@ -79,18 +79,18 @@ include_once 'menulateral.php';
                               echo $objeto->escape($row['segundo_apellido']);
                             ?>                             
                            </td>
-                           <td align="center"><?php echo $row['telefono']?></td>
-                           <td align="center"><?php echo $row['estado_usuario'] == 1 ? 'activo' : 'inactivo';?></td>
+                           <td align="center"><?php echo $objeto->escape($row['telefono'])?></td>
+                           <td align="center"><?php echo $objeto->escape($row['estado_usuario'] == 1 ? 'activo' : 'inactivo');?></td>
                            <td align="center">
 
                             <?php 
-                            if ($row['id_rol'] == 1) {
+                            if ($objeto->escape($row['id_rol'] == 1)) {
                               echo "Administrador";
                             }
-                            elseif ($row['id_rol'] == 2) {
+                            elseif ($objeto->escape($row['id_rol'] == 2)) {
                               echo "Usuario";
                             }
-                            elseif ($row['id_rol'] == 3) {
+                            elseif ($objeto->escape($row['id_rol'] == 3)) {
                               echo "visitante";
                             }                            
                             ?>
