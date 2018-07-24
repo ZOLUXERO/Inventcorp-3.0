@@ -69,6 +69,10 @@ class clases extends conexion
         $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
         
     }
+        public function escape($string){
+        return htmlentities($string, FILTER_SANITIZE_STRING);
+    }
+
   
 }
 

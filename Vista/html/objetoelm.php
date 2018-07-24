@@ -67,9 +67,9 @@ include_once 'menulateral.php';
             			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
             				  ?>
             			         <tr style="font-size:12px">
-                			     <td align="center"><?php echo $row['codigo_producto']?></td>
-                           <td align="center"><?php echo $row['nombre_producto']?></td>
-                			     <td align="center"><?php echo $row['desc_producto']?></td>
+                			     <td align="center"><?php echo filter_var($row['codigo_producto'], FILTER_SANITIZE_STRING)?></td>
+                           <td align="center"><?php echo filter_var($row['nombre_producto'], FILTER_SANITIZE_STRING)?></td>
+                			     <td align="center"><?php echo $objeto->escape($row['desc_producto']);?></td>
                            <td align="center"><?php echo $row['precio_entrada']?></td>
                            <td align="center"><?php echo $row['precio_salida']?></td>
                            <td align="center"><?php echo $row['fecha_ingreso']?></td>
