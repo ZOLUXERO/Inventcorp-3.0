@@ -73,10 +73,10 @@ include_once 'menulateral.php';
                 			     <td align="center"><?php echo $row['email_usuario']?></td>
                            <td align="center">
                             <?php 
-                              echo $row['primer_nombre']." ";
-                              echo $row['segundo_nombre']." ";
-                              echo $row['primer_apellido']." ";
-                              echo $row['segundo_apellido'];
+                              echo $objeto->escape($row['primer_nombre']." ");
+                              echo $objeto->escape($row['segundo_nombre']." ");
+                              echo $objeto->escape($row['primer_apellido']." ");
+                              echo $objeto->escape($row['segundo_apellido']);
                             ?>                             
                            </td>
                            <td align="center"><?php echo $row['telefono']?></td>
