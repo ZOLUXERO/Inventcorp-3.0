@@ -6,7 +6,7 @@
 <body>
 
 
-<div style="position: relative; left: 15px;">
+<div style="position: relative; left: 0px;">
  
   <img class="mySlides" src="vista/imagenes/1.jpg" style="width:100%">
   <img class="mySlides" src="vista/imagenes/2.jpg" style="width:100%">

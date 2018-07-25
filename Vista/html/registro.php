@@ -28,12 +28,7 @@ if (!empty($_SESSION["session"]))
 <?php include_once 'header.php'; ?>
 </header>
 
-  <div class="container">
-   <div class="row">
-        
-   <?php //include_once 'menulateral.php'; ?>
-				
-  <div class="container">
+
  <div class="jumbotron">
         <h1 align="center">¡Registrese aqui!</h1>
         <p class="lead" align="center">Formulario de registro.</p>
@@ -137,7 +132,6 @@ if (!empty($_SESSION["session"]))
     
    
  </div>
-</div>
- 
+
 </body>
 </html>

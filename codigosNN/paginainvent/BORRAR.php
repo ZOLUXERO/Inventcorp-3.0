@@ -9,7 +9,7 @@
     <title>Cover Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../vista/bootstrap/boots/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vista/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
@@ -17,9 +17,9 @@
 
   <body class="text-center">
 
-    <div class="cover-container2 d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
+   <div class="container">
+<header>
+<div class="container">
           <h3 class="masthead-brand">InventCorp</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
@@ -27,33 +27,27 @@
             <a class="nav-link" href="#">Contact</a>
           </nav>
         </div>
-      </header>
-
-
+</header>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  
+  <div class="container">
+   <div class="row">
+        
+       
+  
+    
+        
       
-      
-      <main role="main" class="inner cover">
         <h1 class="cover-heading">Pagina principal.</h1>
         <p class="lead">Páginas de inventarios, con programacion orientada a objetos, esta página fue hecha en lenguaje de programación PHP, HTML, CSS, SQL lo invitamos a explorar la pagina!</p>
         <p class="lead">
           <a href="Nuestrosproyectos.php" class="btn btn-lg btn-secondary">Nuestros proyectos</a>
         </p>
-      </main>
+      
+    
+   </div>
+ </div>
+</div>
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Pagina hecha por <a href="#">Inventcorp</a>, by <a href="#">Adsi</a>.</p>
-        </div>
-      </footer>
-    </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../bootstrap/boots/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../bootstrap/boots/assets/js/vendor/popper.min.js"></script>
-    <script src="../bootstrap/boots/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
