@@ -62,9 +62,9 @@
 		return $consulta;	
 	}
 	
-	 public function listarstock()
+	 public function listarstock($id)
 	{
-        $q = "SELECT sum(cantidad_ingreso-cantidad_salida) as total FROM stock";
+        $q = "SELECT sum(cantidad_ingreso-cantidad_salida) as total FROM stock WHERE codigo_producto='$id'";
         $consulta = $this->con->query($q) or die ('Error 1!' .  $this->con->error);
 		return $consulta;
     } 
