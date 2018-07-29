@@ -157,33 +157,33 @@ include_once 'index.html';
                 
                       
                      <table class="table table-hover table-striped" align="center">
-                    <?php if (isset($_GET['edit'])):?>
-                              <?php
-                       $objeto= new clases;
-                       $res=$objeto->listarstock($_GET['edit']);
-                  
-                     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
-                      ?>
-                           <tr style="font-size:40px">
-                           <td align="center"><?php echo $row['total']?></td>
-                         
-                           </tr>    
-                                    
-                      <?php } $objeto->CloseDB();?>
-                            <?php else: ?>
-                              <?php
-                       $objeto= new clases;
-                       $res=$objeto->listarstock($_GET['edit1']);
-                  
-                     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
-                      ?>
-                           <tr style="font-size:40px">
-                           <td align="center"><?php echo $row['total']?></td>
-                         
-                           </tr>    
-                                    
-                      <?php } $objeto->CloseDB();?>
-                            <?php endif ?>
+                        <?php if (isset($_GET['edit'])):?>
+                                  <?php
+                           $objeto= new clases;
+                           $res=$objeto->listarstock($_GET['edit']);
+                      
+                         while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+                          ?>
+                               <tr style="font-size:40px">
+                               <td align="center"><?php echo $row['total']?></td>
+                             
+                               </tr>    
+                                        
+                          <?php } $objeto->CloseDB();?>
+                                <?php else: ?>
+                                  <?php
+                           $objeto= new clases;
+                           $res=$objeto->listarstock($_GET['edit1']);
+                      
+                         while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+                          ?>
+                               <tr style="font-size:40px">
+                               <td align="center"><?php echo $row['total']?></td>
+                             
+                               </tr>    
+                                        
+                          <?php } $objeto->CloseDB();?>
+                                <?php endif ?>
                           
                      
                       </table>
