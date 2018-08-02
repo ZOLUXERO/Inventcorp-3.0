@@ -123,5 +123,38 @@ if(isset($_POST["guardar"]))
 }
 
 
+if(isset($_POST["guardarclie"])) {
+		        
+		    $codclie=$_REQUEST['codclie'];   
+			$nom1clie=$_REQUEST['nom1clie'];
+			$nom2clie=$_REQUEST['nom2clie'];
+			$nom3clie=$_REQUEST['nom3clie'];
+			$nom4clie=$_REQUEST['nom4clie'];
+			$emaclie=$_REQUEST['emaclie'];
+			$telclie=$_REQUEST['telclie'];
+
+			$objeto = new clases;
+			$res = $objeto->registroclie($codclie, $nom1clie, $nom2clie, $nom3clie, $nom4clie, $emaclie, $telclie);
+			header('location:../vista/html/crudcliente.php');
+			$objeto->CloseDB();
+ 
+}
+
+if (isset($_POST['actualizarclie'])) {
+
+		    $codclie=$_REQUEST['id'];   
+			$nom1clie=$_REQUEST['nom1clie'];
+			$nom2clie=$_REQUEST['nom2clie'];
+			$nom3clie=$_REQUEST['nom3clie'];
+			$nom4clie=$_REQUEST['nom4clie'];
+			$emaclie=$_REQUEST['emaclie'];
+			$telclie=$_REQUEST['telclie'];
+
+			$objeto2 = new clases;
+			$res2 = $objeto2->actualizarclie($codclie, $nom1clie, $nom2clie, $nom3clie, $nom4clie, $emaclie, $telclie);
+			header('location:../vista/html/crudcliente.php');
+			$objeto->CloseDB();
+}
+
 
 ?>

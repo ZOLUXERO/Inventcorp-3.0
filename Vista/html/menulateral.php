@@ -17,8 +17,8 @@
       <li><a href="crudusuarios.php">Buscar Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
       <li><a href="crudproductos.php">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
       <li><a href="crudcategoria.php">Categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-      <li><a href="#">Clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
-      <li><a href="#">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li><a href="crudcliente.php">Clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li><a href="crudproveedor.php">proveedores<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
       <li>
           <?php if ($_SESSION["idrol"] == 1): ?>
               <a href="admon.php">Usuarios en la pagina<span class="glyphicon glyphicon-list-alt pull-right"> </span></a>            
