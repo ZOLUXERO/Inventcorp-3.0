@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+include_once("condb.php");
 
-class Producto extends conexion
+class Productolis extends conexionprod
 {
 
     public function listar()

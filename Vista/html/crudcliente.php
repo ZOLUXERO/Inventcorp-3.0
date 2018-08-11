@@ -1,12 +1,13 @@
 <?php
-
-require '../../modelo/clases.php';
+include_once '../../modelo/mdlescape.php';
+include_once '../../modelo/crudcliente/mdlclielistar.php';
+include_once '../../modelo/crudcliente/mdlclieobtener.php';
 
 if (isset($_GET['edit'])) {
     $codclie = $_GET['edit'];
     $update = true;
 
-    $objeto3 = new clases;
+    $objeto3 = new Clienteobt;
     $res3 = $objeto3->obtenerclie($codclie);
 
     if (count($res3) == 1 ) {
@@ -65,7 +66,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">BASE DE DATOS USUARIOS</h3>
+<h3 class="panel-title">CLIENTES</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -80,7 +81,7 @@ include_once 'menulateral.php';
 
 
 
-            <form method="post" action="../../controlador/controler1.php" class="navbar-form navbar-default">
+            <form method="post" action="../../controlador/crudclie/controladorclie.php" class="navbar-form navbar-default">
             <input type="hidden" name="id" value="<?php echo $codclie; ?>">
 
             <table align="center">
@@ -90,7 +91,7 @@ include_once 'menulateral.php';
                             <?php if ($update == true): ?>
                                     
                             <?php else: ?>
-                                    <td >Codigo Cliente</td>
+                                    <td >Documento Cliente</td>
                                     <td><input type="text" class="form-control" name="codclie" required /></td>
                             <?php endif ?>
                         </tr> 
@@ -207,8 +208,10 @@ include_once 'menulateral.php';
                     </thead>
                     
                     <?php
-                    $objeto= new clases;
+                    $objeto= new Clientelis;
                     $res=$objeto->listarclie();
+
+                    $objetoe= new Escap;
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){
                       ?>
@@ -216,10 +219,10 @@ include_once 'menulateral.php';
                             <td><?php echo $row['codigo_proveedor_cliente']; ?></td>
                             <td>
                                 <?php 
-                                  echo $objeto->escape($row['primer_nombre_provee_clie']." ");
-                                  echo $objeto->escape($row['segundo_nombre_provee_clie']." ");
-                                  echo $objeto->escape($row['primer_apellido_provee_clie']." ");
-                                  echo $objeto->escape($row['segundo_apellido_provee_clie']);
+                                  echo $objetoe->escape($row['primer_nombre_provee_clie']." ");
+                                  echo $objetoe->escape($row['segundo_nombre_provee_clie']." ");
+                                  echo $objetoe->escape($row['primer_apellido_provee_clie']." ");
+                                  echo $objetoe->escape($row['segundo_apellido_provee_clie']);
                                 ?>   
                                     
                                 </td>
@@ -230,7 +233,7 @@ include_once 'menulateral.php';
                                 <a href="crudcliente.php?edit=<?php echo $row['codigo_proveedor_cliente']; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="../../controlador/controler1.php?del=<?php echo $row['codigo_proveedor_cliente']; ?>">Eliminar</a>
+                                <a href="../../controlador/crudclie/controladorclie.php?delclie=<?php echo $row['codigo_proveedor_cliente']; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php 

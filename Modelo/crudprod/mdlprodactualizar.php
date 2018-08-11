@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+ include_once("condb.php");
 
-class Producto extends conexion
+class Productoact extends conexionprod
 {
 
     public function actualizar($cod, $nom, $des, $pen, $pas, $fec, $cat)

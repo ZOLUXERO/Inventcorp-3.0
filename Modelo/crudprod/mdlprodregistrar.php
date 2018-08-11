@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+ include_once("condb.php");
 
-class Producto extends conexion
+class Productoreg extends conexionprod
 {
 
     public function registro($cod, $nom, $des, $pen, $pas, $fec, $cat)

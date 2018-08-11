@@ -1,6 +1,6 @@
 <?php
 
-class Escape
+class Escap
 {
 	
 	public function escape($string){

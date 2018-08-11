@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+ include_once("condb.php");
 
-class Categoria extends Conexion
+class Categoriaact extends Conexioncat
 {
 	
     public function actualizar($cod, $nom, $des)

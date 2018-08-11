@@ -1,26 +1,25 @@
 <?php
-
-require '../../modelo/crudprod/alumno.model.php';
+include_once '../../modelo/mdlescape.php';
+include_once '../../modelo/crudprovee/mdlprovlistar.php';
+include_once'../../modelo/crudprovee/mdlprovobtener.php';
 
 if (isset($_GET['edit'])) {
-    $cod = $_GET['edit'];
+    $codprov = $_GET['edit'];
     $update = true;
-
-    $objeto3 = new clases;
-    $res3 = $objeto3->obtener($cod);
-
+    $objeto3 = new Proveedorobt;
+    $res3 = $objeto3->obtenerprov($codprov);
     if (count($res3) == 1 ) {
         $n = mysqli_fetch_array($res3);
-        $nom=$n['nombre_producto'];
-        $des=$n['desc_producto'];
-        $pen=$n['precio_entrada'];
-        $pas=$n['precio_salida'];
-        $fec=$n['fecha_ingreso'];
-        $cat=$n['id_categoria'];
+        $nom1prov=$n['primer_nombre_provee_clie'];
+        $nom2prov=$n['segundo_nombre_provee_clie'];
+        $nom3prov=$n['primer_apellido_provee_clie'];
+        $nom4prov=$n['segundo_apellido_provee_clie'];
+        $emaprov=$n['email_proveedor_cliente'];
+        $telprov=$n['telefono_proveedor_cliente'];
+
 
     }
 //$row = $res->fetch_array(MYSQLI_ASSOC)
-
 }
 
 ?>
@@ -44,6 +43,8 @@ if (isset($_GET['edit'])) {
 <?php
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladminusu.php';
+
+
 include_once 'header.php'; 
 ?>
 
@@ -64,7 +65,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">BASE DE DATOS USUARIOS</h3>
+<h3 class="panel-title">PROVEEDORES</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -79,8 +80,8 @@ include_once 'menulateral.php';
 
 
 
-            <form method="post" action="../../controlador/crudprod/controlador.php" class="navbar-form navbar-default">
-            <input type="hidden" name="id" value="<?php echo $cod; ?>">
+            <form method="post" action="../../controlador/crudprovee/controladorprov.php" class="navbar-form navbar-default">
+            <input type="hidden" name="id" value="<?php echo $codprov; ?>">
 
             <table align="center">
 
@@ -89,8 +90,8 @@ include_once 'menulateral.php';
                             <?php if ($update == true): ?>
                                     
                             <?php else: ?>
-                                    <td >Codigo producto</td>
-                                    <td><input type="text" class="form-control" name="cod" required /></td>
+                                    <td >Documento Proveedor</td>
+                                    <td><input type="text" class="form-control" name="codprov" required /></td>
                             <?php endif ?>
                         </tr> 
                 </div>
@@ -100,17 +101,8 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >Nombre producto</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" required /></td>
-                        </tr> 
-                </div>
-
-
-                <tr><td style="padding:2px"></td></tr>
-                <div class="form-group">
-                        <tr>
-                            <td >descripcion</td>
-                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>" required /></td>
+                            <td >Primer Nombre</td>
+                            <td><input type="text" class="form-control" name="nom1prov" value="<?php echo $nom1prov; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -119,8 +111,37 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >precio entrada</td>
-                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" required /></td>
+                            <td >Segundo Nombre</td>
+                            <td><input type="text" class="form-control" name="nom2prov" value="<?php echo $nom2prov; ?>" required /></td>
+                        </tr> 
+                </div>
+
+
+
+                                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >Primer Apellido</td>
+                            <td><input type="text" class="form-control" name="nom3prov" value="<?php echo $nom3prov; ?>" required /></td>
+                        </tr> 
+                </div>
+
+
+
+                                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >Segundo Apellido</td>
+                            <td><input type="text" class="form-control" name="nom4prov" value="<?php echo $nom4prov; ?>" required /></td>
+                        </tr> 
+                </div>
+
+
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >Email</td>
+                            <td><input type="text" class="form-control" name="emaprov" value="<?php echo $emaprov; ?>" required /></td>
                         </tr> 
                 </div>
 
@@ -129,79 +150,16 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >precio salida</td>
-                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" required /></td>
+                            <td >Telefono</td>
+                            <td><input type="text" class="form-control" name="telprov" value="<?php echo $telprov; ?>" required /></td>
                         </tr> 
                 </div>
 
 
 
-                <tr><td style="padding:2px"></td></tr>
-                <div class="form-group">
-                        <tr>
-                            <td >fecha</td>
-                            <td><input type="date" class="form-control" name="fec" value="<?php echo $fec; ?>" required /></td>
-                        </tr> 
-                </div>
 
 
-
-                <tr><td style="padding:2px"></td></tr>
-                <div class="form-group">
-                        <tr>
-
-                            <?php if ($update == true): ?>
-
-                            <td >categoria</td>
-                             <td>
-                               <select  class="form-control" name="cat" >
-                                <option value="<?php echo $cat;?>" ><?php echo $cat; ?></option>
-                                <option disabled="disabled">-------</option>
-                                <?php
-                                 $objeto1= new clases;
-                                 $res1=$objeto1->listarcat();
-
-                                $x = 0;
-
-                                while($row1 = $res1->fetch_array(MYSQLI_ASSOC)){ 
-                                $x ++ ;
-                                
-                                ?>
-                                                                
-                                 <option value="<?php echo $x;?>"> <?php echo $row1['nombre_categoria']." [".$x."] " ?></option>
-                                                               
-                                <?php } ?>
-
-                                </select>
-                            </td>
-
-                            <?php else: ?>
-
-                            <td >caaaa</td>
-                             <td>
-                               <select required class="form-control" name="cat">
-                                
-                                <option value="" disabled selected>Seleccione su categoria</option>
-                                <?php
-                                 $objeto1= new clases;
-                                 $res1=$objeto1->listarcat();
-
-                                $x = 0;
-
-                                while($row1 = $res1->fetch_array(MYSQLI_ASSOC)){ 
-                                $x ++ ;
-                                
-                                ?>
-                                                                
-                                 <option value="<?php echo $x;?>"> <?php echo $row1['nombre_categoria']." [".$x."] " ?></option>
-                                                               
-                                <?php } ?>
-
-                                </select>
-                            </td>
-                            <?php endif ?>
-                        </tr> 
-                </div>
+              
 
 
                 
@@ -211,11 +169,11 @@ include_once 'menulateral.php';
                         <td colspan="2" align="center">
                                 <?php if ($update == true): ?>
                                 
-                                <a href="crudproductos.php">Cancelar</a>
+                                <a href="crudproveedor.php">Cancelar</a>
                                 
-                                    <button  type="submit" name="actualizar" class="btn btn-success" >Actualizar</button>
+                                    <button  type="submit" name="actualizarprov" class="btn btn-success" >Actualizar</button>
                                 <?php else: ?>
-                                    <button  type="submit" name="guardar" class="btn btn-default" >Guardar</button>
+                                    <button  type="submit" name="guardarprov" class="btn btn-default" >Guardar</button>
                                 <?php endif ?>
                         </td>
                 </tr>
@@ -238,41 +196,43 @@ include_once 'menulateral.php';
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Producto</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Seguimiento</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Proveedor</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Nombre</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Email</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Telefono</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Estado</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Editar</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Eliminar</td>
                         </tr>
                     </thead>
                     
                     <?php
-                    $objeto= new clases;
-                    $res=$objeto->listar();
+                    $objeto= new Proveedorlis;
+                    $res=$objeto->listarprov();
+
+                    $objetoe= new Escap;
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){
                       ?>
                         <tr>
-                            <td><?php echo $row['codigo_producto']; ?></td>
-                            <td><?php echo $row['nombre_producto']; ?></td>
-                            <td><?php echo $row['desc_producto']; ?></td>
-                            <td><?php echo $row['precio_entrada']; ?></td>
-                            <td><?php echo $row['precio_salida']; ?></td>
-                            <td><?php echo $row['fecha_ingreso']; ?></td>
-                            <td><?php echo $row['id_categoria']; ?></td>
+                            <td><?php echo $row['codigo_proveedor_cliente']; ?></td>
                             <td>
-                                <a href="chart.php?edit=<?php echo $row['codigo_producto']; ?>">Seguimiento</a>
+                                <?php 
+                                  echo $objetoe->escape($row['primer_nombre_provee_clie']." ");
+                                  echo $objetoe->escape($row['segundo_nombre_provee_clie']." ");
+                                  echo $objetoe->escape($row['primer_apellido_provee_clie']." ");
+                                  echo $objetoe->escape($row['segundo_apellido_provee_clie']);
+                                ?>   
+                                    
+                                </td>
+                            <td><?php echo $row['email_proveedor_cliente']; ?></td>
+                            <td><?php echo $row['telefono_proveedor_cliente']; ?></td>
+                            <td><?php echo $row['estado_proveedor_cliente']; ?></td>
+                            <td>
+                                <a href="crudproveedor.php?edit=<?php echo $row['codigo_proveedor_cliente']; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="crudproductos.php?edit=<?php echo $row['codigo_producto']; ?>">Editar</a>
-                            </td>
-                            <td>
-                                <a href="../../controlador/crudprod/controlador.php?del=<?php echo $row['codigo_producto']; ?>">Eliminar</a>
+                                <a href="../../controlador/crudprovee/controladorprov.php?delprov=<?php echo $row['codigo_proveedor_cliente']; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php 

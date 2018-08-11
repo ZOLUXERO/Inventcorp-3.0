@@ -1,6 +1,6 @@
 <?php
     
-class conexionprod
+class Conexionprov
 {
 
 public function __construct()
@@ -20,13 +20,13 @@ if($this->con->connect_errno) {
  
 }
     
-    $nom = "";
-    $des = "";
-    $pen = "";
-    $pas = "";
-    $fec = "";
-    $cat = "";
-    $cod = 0;
+    $nom1prov = "";
+    $nom2prov = "";
+    $nom3prov = "";
+    $nom4prov = "";       
+    $emaprov = "";
+    $telprov = "";
+    $codprov = 0;
     $update = false;
 
 

@@ -20,16 +20,7 @@ if (isset($_POST['guardar'])) {
 
 }
 
-if (isset($_POST['guardarcat'])) {
-	$cod=$_REQUEST['cod'];
-	$nom=$_REQUEST['nom'];
-	$des=$_REQUEST['des'];
 
-	$objeto = new clases;
-	$res = $objeto->registrocat($cod, $nom, $des);
-	header('location: ../../vista/html/crudcategoria.php');
-
-}
 
 if (isset($_POST['actualizar'])) {
 	$cod=$_REQUEST['id'];

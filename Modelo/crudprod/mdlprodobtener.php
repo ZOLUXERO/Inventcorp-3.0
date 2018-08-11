@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+include_once("condb.php");
 
-class Producto extends conexion
+class Productoobt extends conexionprod
 {
 
     public function obtener($id)
@@ -11,6 +11,7 @@ class Producto extends conexion
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
         return $consulta;   
     }
+    
 }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
     
-class conexion
+class conexioncat
 {
 
 public function __construct()

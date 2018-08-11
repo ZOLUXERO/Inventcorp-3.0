@@ -1,12 +1,12 @@
 <?php
-
-require '../../modelo/crudcat/alumno.model.php';
+include_once '../../modelo/crudcat/mdlcatlistar.php';
+include_once '../../modelo/crudcat/mdlcatobtener.php';
 
 if (isset($_GET['edit'])) {
     $cod = $_GET['edit'];
     $update = true;
 
-    $objeto3 = new clases;
+    $objeto3 = new Categoriaobt;
     $res3 = $objeto3->obtenercat($cod);
 
     if (count($res3) == 1 ) {
@@ -60,7 +60,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">BASE DE DATOS USUARIOS</h3>
+<h3 class="panel-title">CATEGORIAS</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -157,7 +157,7 @@ include_once 'menulateral.php';
                     </thead>
                     
                     <?php
-                    $objeto= new clases;
+                    $objeto= new Categorialis;
                     $res=$objeto->listar();
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){

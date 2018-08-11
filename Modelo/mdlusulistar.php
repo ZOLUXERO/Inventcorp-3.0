@@ -1,5 +1,7 @@
 <?php
 
+ include("conexion.php");
+
 class Usuario extends conexion{
 
 	public function listarusuarios()

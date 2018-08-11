@@ -1,14 +1,14 @@
 <?php
-    
-class conexionprod
+
+class conexionstock
 {
 
 public function __construct()
-{   
+{	
 $this->con = new mysqli("localhost", "root", "", "inventcorp");
  
 if($this->con->connect_errno) {
-    die("Fallo al conectar a la BD: (". $this->con->connect_errno.")");
+	die("Fallo al conectar a la BD: (". $this->con->connect_errno.")");
 }
  
 }
@@ -19,15 +19,7 @@ if($this->con->connect_errno) {
   } 
  
 }
-    
-    $nom = "";
-    $des = "";
-    $pen = "";
-    $pas = "";
-    $fec = "";
-    $cat = "";
-    $cod = 0;
-    $update = false;
 
 
 ?>
+

@@ -1,5 +1,7 @@
 <?php
 
+include_once("conexion.php");
+
 class Usuario extends conexion{
 
 		public function obtenerusuarios($id)
@@ -8,5 +10,7 @@ class Usuario extends conexion{
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
 		return $consulta;	
 	}
+
+}
 
 ?>

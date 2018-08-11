@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+ include_once("condb.php");
 
-class Categoria extends Conexion
+class Categoriareg extends Conexioncat
 {
 	
 	public function registrocat($cod, $nom, $des)

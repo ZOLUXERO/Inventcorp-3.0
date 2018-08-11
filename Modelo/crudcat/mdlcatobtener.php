@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+ include_once("condb.php");
 
-class Categoria extends Conexion
+class Categoriaobt extends Conexioncat
 {
 	
     public function obtenercat($id)

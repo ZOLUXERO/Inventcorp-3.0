@@ -15,7 +15,8 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
-require '../../modelo/clases.php';
+require '../../modelo/mdlusulistar.php';
+require '../../modelo/mdlescape.php';
 
 include_once 'header.php'; 
 ?>
@@ -62,41 +63,44 @@ include_once 'menulateral.php';
                      <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Acción</td>
                           
                      <?php
-      			           $objeto= new clases;
-      			           $res=$objeto->usuarios();
+      			           $objeto= new Usuario;
+      			           $res=$objeto->listarusuarios();
+
+                       $objeto2= new Escap;
+                       
       			  		
             			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
             				  ?>
             			         <tr style="font-size:12px">
-                			     <td align="center"><?php echo $objeto->escape($row['documento'])?></td>
-                           <td align="center"><?php echo $objeto->escape($row['tipo_documento'])?></td>
-                			     <td align="center"><?php echo $objeto->escape($row['email_usuario'])?></td>
+                			     <td align="center"><?php echo $objeto2->escape($row['documento'])?></td>
+                           <td align="center"><?php echo $objeto2->escape($row['tipo_documento'])?></td>
+                			     <td align="center"><?php echo $objeto2->escape($row['email_usuario'])?></td>
                            <td align="center">
                             <?php 
-                              echo $objeto->escape($row['primer_nombre']." ");
-                              echo $objeto->escape($row['segundo_nombre']." ");
-                              echo $objeto->escape($row['primer_apellido']." ");
-                              echo $objeto->escape($row['segundo_apellido']);
+                              echo $objeto2->escape($row['primer_nombre']." ");
+                              echo $objeto2->escape($row['segundo_nombre']." ");
+                              echo $objeto2->escape($row['primer_apellido']." ");
+                              echo $objeto2->escape($row['segundo_apellido']);
                             ?>                             
                            </td>
-                           <td align="center"><?php echo $objeto->escape($row['telefono'])?></td>
-                           <td align="center"><?php echo $objeto->escape($row['estado_usuario'] == 1 ? 'activo' : 'inactivo');?></td>
+                           <td align="center"><?php echo $objeto2->escape($row['telefono'])?></td>
+                           <td align="center"><?php echo $objeto2->escape($row['estado_usuario'] == 1 ? 'activo' : 'inactivo');?></td>
                            <td align="center">
 
                             <?php 
-                            if ($objeto->escape($row['id_rol'] == 1)) {
+                            if ($objeto2->escape($row['id_rol'] == 1)) {
                               echo "Administrador";
                             }
-                            elseif ($objeto->escape($row['id_rol'] == 2)) {
+                            elseif ($objeto2->escape($row['id_rol'] == 2)) {
                               echo "Usuario";
                             }
-                            elseif ($objeto->escape($row['id_rol'] == 3)) {
+                            elseif ($objeto2->escape($row['id_rol'] == 3)) {
                               echo "visitante";
                             }                            
                             ?>
                               
                             </td>
-            			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
+            			         
                            <td align="center"><center><a href="editarusuario.php?id=<?php echo $row['documento']?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> 
                            <a href="../../controlador/controler2.php?id=<?php echo $row['documento']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
                        

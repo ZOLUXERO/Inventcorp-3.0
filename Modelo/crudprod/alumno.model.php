@@ -1,8 +1,8 @@
 <?php
 
- include("condb.php");
+ include_once("condb.php");
 
-class clases extends conexion
+class clases extends conexionprod
 {
     
 

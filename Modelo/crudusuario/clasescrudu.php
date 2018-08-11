@@ -2,7 +2,7 @@
 
  include("condbcrudu.php");
 
-class Ejemplousuario extends conexionejemplousuario
+class Ejemplousuario extends conexion
 {
     
 

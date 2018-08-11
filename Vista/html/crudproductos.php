@@ -1,14 +1,13 @@
 <?php
-
-require '../../modelo/crudprod/alumno.model.php';
+include_once '../../modelo/crudcat/mdlcatlistar.php';
+include_once '../../modelo/crudprod/mdlprodlistar.php';
+include_once'../../modelo/crudprod/mdlprodobtener.php';
 
 if (isset($_GET['edit'])) {
     $cod = $_GET['edit'];
     $update = true;
-
-    $objeto3 = new clases;
+    $objeto3 = new Productoobt;
     $res3 = $objeto3->obtener($cod);
-
     if (count($res3) == 1 ) {
         $n = mysqli_fetch_array($res3);
         $nom=$n['nombre_producto'];
@@ -17,10 +16,8 @@ if (isset($_GET['edit'])) {
         $pas=$n['precio_salida'];
         $fec=$n['fecha_ingreso'];
         $cat=$n['id_categoria'];
-
     }
 //$row = $res->fetch_array(MYSQLI_ASSOC)
-
 }
 
 ?>
@@ -44,6 +41,8 @@ if (isset($_GET['edit'])) {
 <?php
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladminusu.php';
+
+
 include_once 'header.php'; 
 ?>
 
@@ -64,7 +63,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">BASE DE DATOS USUARIOS</h3>
+<h3 class="panel-title">PRODUCTOS</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -158,8 +157,8 @@ include_once 'menulateral.php';
                                 <option value="<?php echo $cat;?>" ><?php echo $cat; ?></option>
                                 <option disabled="disabled">-------</option>
                                 <?php
-                                 $objeto1= new clases;
-                                 $res1=$objeto1->listarcat();
+                                 $objeto1= new Categorialis;
+                                 $res1=$objeto1->listar();
 
                                 $x = 0;
 
@@ -183,8 +182,8 @@ include_once 'menulateral.php';
                                 
                                 <option value="" disabled selected>Seleccione su categoria</option>
                                 <?php
-                                 $objeto1= new clases;
-                                 $res1=$objeto1->listarcat();
+                                  $objeto1= new Categorialis;
+                                 $res1=$objeto1->listar();
 
                                 $x = 0;
 
@@ -252,7 +251,7 @@ include_once 'menulateral.php';
                     </thead>
                     
                     <?php
-                    $objeto= new clases;
+                    $objeto= new Productolis;
                     $res=$objeto->listar();
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){

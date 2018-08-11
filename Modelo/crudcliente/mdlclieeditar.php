@@ -1,6 +1,6 @@
 <?php
-
-class Cliente extends conexion
+ include_once("condb.php");
+class Clienteact extends Conexionclie
 {
 	
 	   public function actualizarclie($codclie, $nom1clie, $nom2clie, $nom3clie, $nom4clie, $emaclie, $telclie)

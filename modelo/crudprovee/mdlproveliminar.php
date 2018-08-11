@@ -1,6 +1,6 @@
 <?php
  include_once("condb.php");
-class Clienteeli extends Conexionclie
+class Proveedoreli extends Conexionprov
 {
 	
 	public function borrar($id)

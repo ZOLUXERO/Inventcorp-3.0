@@ -17,7 +17,7 @@
 <?php 
 //include_once '../../controlador/control.php'; 
 include_once 'header.php'; 
-require '../../modelo/clases.php';
+require '../../modelo/mdlusuobtener.php';
 $id=$_REQUEST['id'];
 
 ?>
@@ -48,8 +48,8 @@ $id=$_REQUEST['id'];
 			   <div class="table-responsive">
                
                <?php
-			   $objeto= new clases;
-			   $res=$objeto->usuarios1($id);	  		
+			   $objeto= new Usuario;
+			   $res=$objeto->obtenerusuarios($id);	  		
 			   $row = $res->fetch_array();
 			   ?>    
                 <table align="center" style="border-collapse:separate;border-spacing:5px">

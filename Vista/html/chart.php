@@ -17,7 +17,8 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
-require '../../modelo/clases.php';
+require '../../modelo/stock/mdlliststock.php';
+require '../../modelo/stock/mdlobtenerstock.php';
 
 include_once 'header.php'; 
 ?>
@@ -42,7 +43,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">BASE DE DATOS USUARIOS</h3>
+<h3 class="panel-title">GRAFICA DE PRODUCTOS</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -159,7 +160,7 @@ include_once 'index.html';
                      <table class="table table-hover table-striped" align="center">
                         <?php if (isset($_GET['edit'])):?>
                                   <?php
-                           $objeto= new clases;
+                           $objeto= new Stocklis;
                            $res=$objeto->listarstock($_GET['edit']);
                       
                          while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
@@ -172,7 +173,7 @@ include_once 'index.html';
                           <?php } $objeto->CloseDB();?>
                                 <?php else: ?>
                                   <?php
-                           $objeto= new clases;
+                           $objeto= new Stocklis;
                            $res=$objeto->listarstock($_GET['edit1']);
                       
                          while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
@@ -263,8 +264,8 @@ include_once 'index.html';
 
                         if (isset($_GET['edit'])) {
 
-                          $objeto= new clases;
-                          $res=$objeto->obtener($_GET['edit']);
+                          $objeto= new Stockobt;
+                          $res=$objeto->obtenerstock($_GET['edit']);
 
                           while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
                                ?>
@@ -279,8 +280,8 @@ include_once 'index.html';
                                 <?php } $objeto->CloseDB();
                                   }else{
 
-                                    $objeto= new clases;
-                       $res=$objeto->obtener($_GET['edit1']);
+                                    $objeto= new Stockobt;
+                                    $res=$objeto->obtenerstock($_GET['edit1']);
 
                                     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
                                     ?>
