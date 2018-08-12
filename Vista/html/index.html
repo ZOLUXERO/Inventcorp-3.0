@@ -36,14 +36,13 @@
     "marginTop": 7,
     "dataLoader": {
       "url": "chart/data.php"
-    },
-    "categoryField": "fecha",
-    "dataDateFormat": "YYYY-MM-DD JJ:NN:SS",
-    "startDuration": 1,
+    },   
+    "categoryField": "codigo_producto",
     "categoryAxis": {
-      "parseDates": true,
-      "minPeriod": "ss",
-    "labelRotation": 60 
+    "gridPosition": "start",
+    "tickPosition": "start",
+    "tickLength": 10,
+    "labelRotation":0
     },
     "mouseWheelZoomEnabled": true,
     "graphs": [ {
@@ -70,7 +69,8 @@
     "chartScrollbar": {
         "autoGridCount": true,
         "graph": "g1",
-        "scrollbarHeight": 50
+        "scrollbarHeight": 50,
+        "color":"#000100"
     },
     
     "chartCursor": {
