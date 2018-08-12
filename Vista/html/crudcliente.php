@@ -142,7 +142,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Email</td>
-                            <td><input type="text" class="form-control" name="emaclie" value="<?php echo $emaclie; ?>" required /></td>
+                            <td><input type="text" class="form-control" name="emaclie" value="<?php echo $emaclie; ?>" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una direccion de email valida" /></td>
                         </tr> 
                 </div>
 
@@ -216,7 +216,7 @@ include_once 'menulateral.php';
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){
                       ?>
                         <tr>
-                            <td><?php echo $row['codigo_proveedor_cliente']; ?></td>
+                            <td><?php echo $objetoe->escape($row['codigo_proveedor_cliente']); ?></td>
                             <td>
                                 <?php 
                                   echo $objetoe->escape($row['primer_nombre_provee_clie']." ");
@@ -226,9 +226,9 @@ include_once 'menulateral.php';
                                 ?>   
                                     
                                 </td>
-                            <td><?php echo $row['email_proveedor_cliente']; ?></td>
-                            <td><?php echo $row['telefono_proveedor_cliente']; ?></td>
-                            <td><?php echo $row['estado_proveedor_cliente']; ?></td>
+                            <td><?php echo $objetoe->escape($row['email_proveedor_cliente']); ?></td>
+                            <td><?php echo $objetoe->escape($row['telefono_proveedor_cliente']); ?></td>
+                            <td><?php echo $objetoe->escape($row['estado_proveedor_cliente']); ?></td>
                             <td>
                                 <a href="crudcliente.php?edit=<?php echo $row['codigo_proveedor_cliente']; ?>">Editar</a>
                             </td>

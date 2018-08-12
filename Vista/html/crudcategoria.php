@@ -86,7 +86,7 @@ include_once 'menulateral.php';
                                     
                             <?php else: ?>
                                     <td >Codigo categoria</td>
-                                    <td><input type="text" class="form-control" name="cod" required /></td>
+                                    <td><input type="text" class="form-control" name="cod" maxlength="12" required pattern="[0-9]+" title="Solo numeros"  /></td>
                             <?php endif ?>
                         </tr> 
                 </div>
@@ -97,7 +97,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Nombre categoria</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" required /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>"  maxlength="12" required pattern="[a-zA-Z]*" title="No caracteres especiales solo letras" /></td>
                         </tr> 
                 </div>
 

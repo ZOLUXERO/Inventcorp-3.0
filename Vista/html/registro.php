@@ -39,7 +39,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
          <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Correo Electronico</td><td>
-  <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Registre su correo electronico" required>
+  <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Registre su correo electronico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una direccion de email valida">
 </td></tr>
 </div>
 
