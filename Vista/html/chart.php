@@ -43,7 +43,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">GRAFICA DE PRODUCTOS</h3>
+<h3 class="panel-title">GRAFICA DEL PRODUCTO</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -247,27 +247,21 @@ include_once 'index.html';
 
 
 
-<div align="right" class="col-sm-3 col-md-3">
+<div align="right" class="col-md-3">
 <div class="panel panel-default">
 
 <div class="panel-heading">
 <h3 align="center" class="panel-title">HISTORIA</h3>
 </div>
 
-<div class="panel-body">
-         
-          <!-- contenedor menu de ejercicios-->
-                
-               <!-- Contenedor ejercicio-->
+
+            
+               
                    
-                <div class="row">
-                <div class="col-sm-12 col-md-12">
-                <form name="areat" action="" method="post">
-                
                       
+                           
                      <table class="table table-hover table-striped" align="center">
                     
-                          
                      <?php
                        
 
@@ -310,17 +304,12 @@ include_once 'index.html';
                        
                      
                       </table>
-                      
-               
+  
+</div>
 
-       
+</div>
 
-               </form>
-        
-        
-            </div>
-          </div>
-        </div>
+</div>
 
 
 
@@ -328,18 +317,50 @@ include_once 'index.html';
 </div>
 
 
-
-
-
-
+<div class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">GRAFICA DE PRODUCTOS</h3>
+</div>
+<div class="container" style="width: 100%;" align="left">
+<?php
+include_once 'chartrelacion.php'; 
+?>
+</div>
+</div>
 </div>
 
 
-
-     
+<div class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">GRAFICA DE PRECIOS DE ENTRADA</h3>
+</div>
+<div class="container" style="width: 100%;" align="left">
+<?php
+include_once 'chartprecio.php'; 
+?>
 
 </div>
 </div>
+</div>
+
+
+<div class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">GRAFICA DE PRECIOS DE ENTRADA EN RELACION A PRECIOS DE SALIDA</h3>
+</div>
+<div class="container" style="width: 100%;" align="left">
+<?php
+include_once 'chartpreciosal.php'; 
+?>
+
+</div>
+</div>
+</div>
+
+
 
     </body>
 </html>
