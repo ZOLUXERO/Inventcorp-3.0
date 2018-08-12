@@ -51,7 +51,7 @@ else
             <?php if ($_SESSION["idrol"] == 3): ?>
                                        
             <?php else: ?>
-                     <a href="<?php echo $ruta;?>crudusuarios.php">Cruds</a></li>
+                     <a href="<?php echo $ruta;?>crudproductos.php">Cruds</a></li>
             <?php endif ?>
             
         <?php else: ?>
