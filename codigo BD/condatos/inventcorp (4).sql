@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2018 a las 00:39:21
+-- Tiempo de generación: 12-08-2018 a las 21:43:34
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -70,7 +70,8 @@ INSERT INTO `listar_clientes_proveedores` (`codigo_proveedor_cliente`, `primer_n
 ('001', 'zzzzzzzzzzz', 'zzzzz', 'zzzzz', 'zzzz', 'asdad@adsadas', 'telclie', 1, 2),
 ('007', 'z', 'qweqwe', 'z', 'qweqwe', 'asdad@adsadas', 'telclie', 1, 1),
 ('009', 'fdgdf', 'dfgdfg', 'dfgdfg', 'fdgdfg', 'dfgd@dsf', 'sdf3121', 1, 1),
-('010', 'jum', 'ujm', 'muj', 'ujm', 'umj@muj', '3213121', 1, 2);
+('010', 'jum', 'ujm', 'muj', '<!--', 'umj@muj', '3213121', 1, 2),
+('011', 'plmlmp', 'plm', '<!--', 'plmplm', 'lppml@pklm', 'telclie', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -107,18 +108,19 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`codigo_producto`, `nombre_producto`, `desc_producto`, `precio_entrada`, `precio_salida`, `fecha_ingreso`, `estado_producto`, `id_categoria`) VALUES
-('as', 'carne', 'carne de cerdo gordoz', 'zzzzzzzzzz', 'zzzzzzz', '2018-07-03', 1, 1),
-('assdsasd', 'asdasdasd', 'asdasdasda', 'asdasd', 'dasdadas', '2018-07-01', 1, 1),
-('CRN01', 'carne ', 'carne de vaca flaca', '5200', '8600', '2018-08-01', 1, 1),
+('as', 'carnes', 'carnes de cerdo gordo', '3250', '8920', '2018-07-03', 1, 1),
+('assdsasd', 'nombre', 'de verdad', '3212', '6000', '2018-07-01', 1, 4),
+('CRN01', 'carne ', 'carne de vaca flaca', '1200', '8600', '2018-08-01', 1, 1),
 ('EMP01', 'empanadas', 'empanditas de maiz', '3200', '4200', '2018-07-31', 1, 4),
 ('EMP015', 'empanadas', 'empandas de cerdo', '2800', '3400', '2018-07-03', 0, 1),
 ('EMP04', 'empanadas', 'empandas de pollo', '1100', '4000', '2018-07-03', 0, 1),
-('prueba01', 'prueba ver actualizacion html', 'prueba actu html', '01', '32000', '2018-07-05', 1, 3),
+('prueba01', 'prueba ver actualizacion html', 'prueba actu html', '3200', '3200', '2018-07-05', 1, 3),
 ('prueba02', 'actualizacion realizada', 'actualizacion realizada', '100', '500', '2018-07-10', 0, 2),
-('prueba03', 'prueba ver danos', 'prueba ver actualizacion', '01010101', '01010101', '2018-07-06', 0, 1),
-('prueba07', 'sasad', 'prueba', '3200', '32000', '2018-07-30', 1, 2),
-('prueba08', 's', 's', 's', 's', '2018-07-03', 0, 1),
-('qerqweqwe', 'wqeqweqwe', 'qweqweqwe', 'qweqweqw', 'qweqweqw', '2018-07-04', 0, 3);
+('prueba03', 'prueba ver danos', 'prueba ver actualizacion', '3950', '4510', '2018-07-06', 0, 1),
+('prueba07', 'sasad', 'prueba', '3600', '3200', '2018-07-30', 1, 2),
+('prueba08', 's', 's', '1989', '1945', '2018-07-03', 0, 1),
+('prueba34', 'madera', 'madera de nogal', '2890', '2400', '2018-08-31', 1, 3),
+('qerqweqwe', 'wqeqweqwe', 'qweqweqwe', '1600', '6000', '2018-07-04', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -183,7 +185,25 @@ INSERT INTO `seguimiento` (`usuario`, `descripcion`, `fecha`) VALUES
 ('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( carne ) por ( carnez ) , cambio ( carne de cerdo gordo ) por ( carne de cerdo gordoz ) ', '2018-08-11'),
 ('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( carnez ) por ( carne ) , cambio ( carne de cerdo gordoz ) por ( carne de cerdo gordo ) ', '2018-08-11'),
 ('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( carne ) por ( carnez ) ', '2018-08-11'),
-('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( carnez ) por ( carne ) , cambio ( carne de cerdo gordo ) por ( carne de cerdo gordoz ) ', '2018-08-11');
+('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( carnez ) por ( carne ) , cambio ( carne de cerdo gordo ) por ( carne de cerdo gordoz ) ', '2018-08-11'),
+('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( carne ) por ( carnes ) , ( carne de cerdo gordoz ) por ( carnes de cerdo gordo ) , ( zzzzzzzzzz ) por ( 3200 ) , ( zzzzzzz ) por ( 8920 ) ', '2018-08-11'),
+('', ' El usuario  con documento  inserto un producto nuevo ( prueba34 ) ', '2018-08-11'),
+('1022423958', ' El usuario Camilo con documento 1022423958 cambio ( asdasdasd ) por ( nombre ) , ( asdasdasda ) por ( de verdad ) , ( asdasd ) por ( 52000 ) , ( dasdadas ) por ( 60000 ) , ( 1 ) por ( 4 ) ', '2018-08-11'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 120000 ) por ( 12000 ) , ( 240000 ) por ( 24000 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 12000 ) por ( 1200 ) , ( 24000 ) por ( 2400 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 3200 ) por ( 3250 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 3200 ) por ( 3600 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 52000 ) por ( 3212 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 01 ) por ( 3200 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 5200 ) por ( 4234 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 1200 ) por ( 2890 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 4234 ) por ( 120000 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 2890 ) por ( 289000 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 120000 ) por ( 1200 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 289000 ) por ( 2890 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 32000 ) por ( 3200 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 60000 ) por ( 6000 ) ', '2018-08-12'),
+('1022423958', ' El usuario Camilo con documento 1022423958 , ( 32000 ) por ( 3200 ) ', '2018-08-12');
 
 -- --------------------------------------------------------
 
@@ -224,7 +244,29 @@ INSERT INTO `stock` (`cantidad_ingreso`, `cantidad_salida`, `fecha`, `codigo_pro
 (7, 6, '2018-08-11 19:05:22', 'CRN01'),
 (7, 6, '2018-08-11 19:07:42', 'as'),
 (34, 45, '2018-08-11 19:08:38', 'CRN01'),
-(7, 2, '2018-08-11 19:09:06', 'CRN01');
+(7, 2, '2018-08-11 19:09:06', 'CRN01'),
+(34, 45, '2018-08-12 09:17:34', 'as'),
+(70, 2, '2018-08-12 16:20:12', 'EMP01'),
+(7, 45, '2018-08-12 16:20:18', 'EMP01'),
+(7, 45, '2018-08-12 16:22:14', 'CRN01'),
+(70, 45, '2018-08-12 16:22:19', 'CRN01'),
+(34, 45, '2018-08-12 16:22:34', 'CRN01'),
+(70, 6, '2018-08-12 16:22:37', 'CRN01'),
+(7, 6, '2018-08-12 16:22:41', 'CRN01'),
+(18, 3, '2018-08-12 16:22:48', 'CRN01'),
+(26, 34, '2018-08-12 16:22:53', 'CRN01'),
+(70, 45, '2018-08-12 16:23:23', 'CRN01'),
+(34, 45, '2018-08-12 16:23:27', 'CRN01'),
+(7, 34, '2018-08-12 16:23:32', 'CRN01'),
+(3, 6, '2018-08-12 16:23:40', 'CRN01'),
+(7, 6, '2018-08-12 16:24:26', 'as'),
+(70, 45, '2018-08-12 16:24:29', 'as'),
+(7, 45, '2018-08-12 16:24:32', 'as'),
+(70, 134, '2018-08-12 16:24:38', 'as'),
+(7, 6, '2018-08-12 16:24:42', 'as'),
+(70, 6, '2018-08-12 16:24:44', 'as'),
+(70, 6, '2018-08-12 16:24:47', 'as'),
+(1, 134, '2018-08-12 16:24:55', 'as');
 
 -- --------------------------------------------------------
 
