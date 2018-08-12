@@ -77,7 +77,13 @@ class clases extends conexionprod
         $q = "insert into seguimiento(usuario, descripcion, fecha) values('$usu','$des',NOW())";
         $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
     }
-  
+    
+        public function listarse()
+    {
+        $q = "select * from seguimiento order by fecha";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
+        return $consulta;   
+    }
 }
 
 ?>
