@@ -16,7 +16,7 @@
 
 <?php 
 include_once '../../controlador/control.php'; 
-include_once '../../controlador/controladmin.php';
+include_once '../../controlador/controladminusu.php';
 require '../../modelo/stock/mdlliststock.php';
 require '../../modelo/stock/mdlobtenerstock.php';
 
