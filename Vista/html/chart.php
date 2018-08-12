@@ -137,7 +137,10 @@ include_once 'index.html';
 
 </div>
 
+<?php
 
+
+?>
 
 <div align="right" class="col-sm-1 col-md-1">
 <div class="panel panel-default">
@@ -162,7 +165,10 @@ include_once 'index.html';
                                   <?php
                            $objeto= new Stocklis;
                            $res=$objeto->listarstock($_GET['edit']);
-                      
+                           
+                           $_SESSION["codp"]= $_GET['edit'];
+
+
                          while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
                           ?>
                                <tr style="font-size:40px">
@@ -175,7 +181,10 @@ include_once 'index.html';
                                   <?php
                            $objeto= new Stocklis;
                            $res=$objeto->listarstock($_GET['edit1']);
-                      
+                          
+                           $_SESSION["codp"]= $_GET['edit1'];
+
+
                          while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
                           ?>
                                <tr style="font-size:40px">

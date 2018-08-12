@@ -73,6 +73,10 @@ class clases extends conexionprod
         return htmlentities($string, FILTER_SANITIZE_STRING);
     }
 
+    public function testingresar($usu,$des){
+        $q = "insert into seguimiento(usuario, descripcion, fecha) values('$usu','$des',NOW())";
+        $consulta = $this->con->query($q) or die ('Error!' . $this->con->error);
+    }
   
 }
 

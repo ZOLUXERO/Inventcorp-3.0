@@ -1,4 +1,10 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) 
+{
+	session_start();
+}
+
+$pru= $_SESSION["codp"];
 // Connect to MySQL
 $link = new mysqli( 'localhost', 'root', '', 'inventcorp' );
 if ( $link->connect_errno ) {
@@ -6,10 +12,7 @@ if ( $link->connect_errno ) {
 }
 
 // Fetch the data
-$query = "
-  SELECT *
-  FROM stock
-  ORDER BY fecha ASC";
+$query = "select * from stock where codigo_producto='$pru' order by fecha ASC";
 $result = $link->query( $query );
 
 // All good?
