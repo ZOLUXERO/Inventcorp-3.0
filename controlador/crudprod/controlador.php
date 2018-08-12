@@ -13,8 +13,15 @@ if (isset($_POST['guardar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
-
 	$objeto = new clases;
+
+	$pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "inserto un producto nuevo (", $cod,")");
+
+	$ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
+
+    $res = $objeto->testingresar($_SESSION["doc"], $ins);
+
+	
 	$res = $objeto->registro($cod, $nom, $des, $pen, $pas, $fec, $cat);
 	header('location: ../../vista/html/crudproductos.php');
 
@@ -54,13 +61,25 @@ if (isset($_POST['actualizar'])) {
     if ($nom !== $nomp) {
     	array_push($pruebaarray, "cambio (", $nomp, ") por (", $nom,")");
     }
-        if ($des !== $desp) {
-    	array_push($pruebaarray, ", cambio (", $desp, ") por (", $des, ")");
+    if ($des !== $desp) {
+    	array_push($pruebaarray, ", (", $desp, ") por (", $des, ")");
+    }
+    if ($pen !== $penp) {
+    	array_push($pruebaarray, ", (", $penp, ") por (", $pen, ")");
+    }
+    if ($pas !== $pasp) {
+    	array_push($pruebaarray, ", (", $pasp, ") por (", $pas, ")");
+    }
+    if ($fec !== $fecp) {
+    	array_push($pruebaarray, ", (", $fecp, ") por (", $fec, ")");
+    }
+    if ($cat !== $catp) {
+    	array_push($pruebaarray, ", (", $catp, ") por (", $cat, ")");
     }
 
     
 
-        $ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
+    $ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
 
     $res2 = $objeto2->testingresar($_SESSION["doc"], $ins);
 
