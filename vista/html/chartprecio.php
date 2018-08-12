@@ -55,7 +55,7 @@ var chart = AmCharts.makeChart( "chart2div", {
     "tickLength": 20
   },
   "export": {
-    "enabled": true
+    "enabled": false
   }
 
 } );

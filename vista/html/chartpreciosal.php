@@ -66,7 +66,7 @@ var chart = AmCharts.makeChart( "chart4div", {
     "tickLength": 20
   },
   "export": {
-    "enabled": true
+    "enabled": false
   }
 
 } );

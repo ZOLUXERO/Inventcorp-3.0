@@ -19,7 +19,7 @@
 <script>
 var chart = AmCharts.makeChart( "chart3div", {
   "type": "serial",
-  "theme": "dark",
+  "theme": "light",
   "dataLoader": {
       "url": "chart/data4.php"
     },
@@ -55,7 +55,7 @@ var chart = AmCharts.makeChart( "chart3div", {
     "tickLength": 20
   },
   "export": {
-    "enabled": true
+    "enabled": false
   }
 
 } );

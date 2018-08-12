@@ -28,39 +28,13 @@ include_once 'header.php';
 <div class="container-fluid">
 <div class="row">
 
-
-<div class="col-sm-3 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
+<div class="col-sm-2 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
 <?php
 include_once 'menulateral.php'; 
 ?>
-
 </div>
 
 
-<div class="col-sm-7 col-md-7">
-<div class="panel panel-default">
-
-<!-- contenedor del titulo-->
-
-<div class="panel-heading">
-<h3 class="panel-title">GRAFICA DEL PRODUCTO</h3>
-</div>
-
-<!-- contenedor de descripcion ejercicios-->
-
-<!-- Contenedor ejercicio-->
-
-
-<div class="container" style="width: 800px;" align="right">
-<?php
-include_once 'index.html'; 
-?>
-<br/ ><br /><br/ >
-</div>
-
-
-              
- </div>
 
 
 
@@ -135,30 +109,13 @@ include_once 'index.html';
 </div>
 
 
-</div>
-
-<?php
-
-
-?>
-
-<div align="right" class="col-sm-1 col-md-1">
 <div class="panel panel-default">
-
 <div class="panel-heading">
 <h3 align="center" class="panel-title">TOTAL</h3>
 </div>
 
 <div class="panel-body">
-         
-          <!-- contenedor menu de ejercicios-->
-                
-               <!-- Contenedor ejercicio-->
-                   
-                <div class="row">
-                <div class="col-sm-12 col-md-12">
-                <form name="areat" action="" method="post">
-                
+
                       
                      <table class="table table-hover table-striped" align="center">
                         <?php if (isset($_GET['edit'])):?>
@@ -171,7 +128,7 @@ include_once 'index.html';
 
                          while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
                           ?>
-                               <tr style="font-size:40px">
+                               <tr style="font-size:30px">
                                <td align="center"><?php echo $row['total']?></td>
                              
                                </tr>    
@@ -199,50 +156,62 @@ include_once 'index.html';
                       </table>
                       
                
-                  <h4 align="center">en stock</h4>
-       
+                  <h4 align="center">En stock</h4>
 
-               </form>
-        
-        
-            </div>
-          </div>
         </div>
 
 
-
-
 </div>
-</div>
-
-
-
-<div align="right" class="col-sm-1 col-md-1">
-<div class="panel panel-default">
-
-<div class="panel-heading">
-<h3 align="center" class="panel-title">ENTRO</h3>
-</div>
-
-<br /><br />
-
-</div>
-</div>
-
-
-
-<div align="right" class="col-sm-1 col-md-1">
 <div class="panel panel-default">
 
 <div class="panel-heading">
 <h3 align="center" class="panel-title">SALIO</h3>
 </div>
 
-<br /><br />
+
+
+
+<br />
+<br />
+<br />
+<h6 align="center">ESPACIO PARA MAS INFORMACION</h6>
+<br />
+<br />
+<br />
+
+
+
+
+
+</div>
+
+
+</div>
+
+<div align="right" class="col-sm-4 col-md-4">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 align="center" class="panel-title">PRODUCTO</h3>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h6 align="center">ESPACIO PARA PRODUCTO</h6>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 
 </div>
 </div>
-
 
 
 
@@ -314,6 +283,22 @@ include_once 'index.html';
 
 
 </div>
+</div>
+
+
+
+<div class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">GRAFICA DEL PRODUCTO</h3>
+</div>
+<div class="container" style="width:100%;" align="left">
+<?php
+include_once 'index.html'; 
+?>
+<br/ >
+</div>
+</div>            
 </div>
 
 
