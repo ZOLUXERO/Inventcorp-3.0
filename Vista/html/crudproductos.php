@@ -89,7 +89,7 @@ include_once 'menulateral.php';
                                     
                             <?php else: ?>
                                     <td >Codigo producto</td>
-                                    <td><input type="text" class="form-control" name="cod" required /></td>
+                                    <td><input type="text" class="form-control" name="cod" maxlength="10" required /></td>
                             <?php endif ?>
                         </tr> 
                 </div>
@@ -100,7 +100,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Nombre producto</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" required /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="11" required /></td>
                         </tr> 
                 </div>
 
