@@ -31,7 +31,7 @@ if(isset($_POST["enviar"])) {
                header("location:../vista/html/admon.php");  //Redirige a página de administrador
              }
              elseif ($actor["id_rol"]==2) {
-             	header("location:../vista/html/cruduproductos.php");
+             	header("location:../vista/html/crudproductos.php");
              }
              elseif ($actor["id_rol"]==3) {
              	header("location:../index.php");

@@ -14,7 +14,13 @@
 
   <ul class="nav nav-pills nav-stacked panel panel-default"> 
       <li class="active"><a href="../../index.php"><span class="glyphicon glyphicon-list"></span> Inicio</a></li>
-      <li><a href="seguimientousu.php">Seguimiento Usuarios<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
+      <li>
+          <?php if ($_SESSION["idrol"] == 1): ?>
+              <a href="seguimientousu.php">Seguimiento usuarios<span class="glyphicon glyphicon-user pull-right"> </span></a>            
+          <?php else: ?>
+                     
+          <?php endif ?>        
+      </li>
       <li><a href="crudproductos.php">Productos<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
       <li><a href="crudcategoria.php">Categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
       <li><a href="crudcliente.php">Clientes<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
