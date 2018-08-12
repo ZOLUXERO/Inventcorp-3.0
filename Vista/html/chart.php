@@ -292,6 +292,7 @@ include_once 'menulateral.php';
 <div class="panel-heading">
 <h3 class="panel-title">GRAFICA DEL PRODUCTO</h3>
 </div>
+<p style="color:#DCA430">-----------Espacio para escribir informacion de la grafica---------</p> 
 <div class="container" style="width:100%;" align="left">
 <?php
 include_once 'index.html'; 
@@ -307,6 +308,7 @@ include_once 'index.html';
 <div class="panel-heading">
 <h3 class="panel-title">GRAFICA DE PRODUCTOS</h3>
 </div>
+<p>-------------------Espacio para escribir informacion de la grafica------------</p> 
 <div class="container" style="width: 100%;" align="left">
 <?php
 include_once 'chartrelacion.php'; 
@@ -321,6 +323,7 @@ include_once 'chartrelacion.php';
 <div class="panel-heading">
 <h3 class="panel-title">GRAFICA DE PRECIOS DE ENTRADA</h3>
 </div>
+<p style="color:#DCA430">----------------Espacio para escribir informacion de la grafica--------------</p> 
 <div class="container" style="width: 100%;" align="left">
 <?php
 include_once 'chartprecio.php'; 
@@ -336,6 +339,7 @@ include_once 'chartprecio.php';
 <div class="panel-heading">
 <h3 class="panel-title">GRAFICA DE PRECIOS DE ENTRADA EN RELACION A PRECIOS DE SALIDA</h3>
 </div>
+<p >----------------Espacio para escribir informacion de la grafica--------------</p> 
 <div class="container" style="width: 100%;" align="left">
 <?php
 include_once 'chartpreciosal.php'; 
