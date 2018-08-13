@@ -109,7 +109,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >descripcion</td>
-                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>" required /></td>
+                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>"  maxlength="50" required pattern="^[A-Za-z -]+$" title="Solo Letras 50 maximo no caracteres especiales"/></td>
                         </tr> 
                 </div>
 
