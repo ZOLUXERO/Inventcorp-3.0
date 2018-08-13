@@ -76,25 +76,6 @@ line breakssadsadsadsadsadsasda
             <input type="hidden" name="id" value="">
 
             <table align="center">
-
-                <div class="form-group">
-                        <tr>
-                            <td >Entrada</td>
-                            <td><input type="text" class="form-control" name="ent" value=""  maxlength="2" required pattern="[0-9]+" title="Solo numeros limitado a 2 por ahora (cambiar)" /></td>
-                        </tr> 
-                </div>
-
-
-                <tr><td style="padding:2px"></td></tr>
-                <div class="form-group">
-                        <tr>
-                            <td >Salida</td>
-                            <td><input type="text" class="form-control" name="sal" value="" maxlength="2" required pattern="[0-9]+" title="Solo numeros limitado a 2 por ahora (cambiar)" /></td>
-                        </tr> 
-                </div>
-
-
-                 
                 <div class="form-group">
                         
                             <?php if (isset($_GET['edit'])):?>
@@ -112,6 +93,22 @@ line breakssadsadsadsadsadsasda
                             <?php endif ?>
                             
                         
+                </div>
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >Entrada</td>
+                            <td><input type="text" class="form-control" name="ent" value=""  maxlength="2" required pattern="[0-9]+" title="Solo numeros limitado a 2 por ahora (cambiar)" /></td>
+                        </tr> 
+                </div>
+
+
+                <tr><td style="padding:2px"></td></tr>
+                <div class="form-group">
+                        <tr>
+                            <td >Salida</td>
+                            <td><input type="text" class="form-control" name="sal" value="" maxlength="2" required pattern="[0-9]+" title="Solo numeros limitado a 2 por ahora (cambiar)" /></td>
+                        </tr> 
                 </div>
 
 
@@ -221,6 +218,13 @@ line breakssadsadsadsadsadsasda
 <br />
 <br />
 <br />
+<table align="center">
+  <tr>
+  <td>hola:</td>
+  <td>mundo</td>
+</tr>
+</table>
+
 <br />
 <br />
 <br />
