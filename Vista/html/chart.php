@@ -32,6 +32,30 @@ include_once 'header.php';
 <?php
 include_once 'menulateral.php'; 
 ?>
+
+
+<pre class="fr-tag" style="height: 232px">
+
+EJEMPLO PARA ELIMINAR
+
+Text in a pre elementasdasdasdasdadasda
+is displayed in a fixed-widthsadadasdasda
+font, and it preservesasdsadasdsadsadsa
+both      spaces andasdasdsadsadsadsad
+line breakssadsadsadsadsadsasda
+Text in a pre elementasdasdasdasdadasda
+is displayed in a fixed-widthsadadasdasda
+font, and it preservesasdsadasdsadsadsa
+both      spaces andasdasdsadsadsadsad
+line breakssadsadsadsadsadsasda
+Text in a pre elementasdasdasdasdadasda
+is displayed in a fixed-widthsadadasdasda
+font, and it preservesasdsadasdsadsadsa
+both      spaces andasdasdsadsadsadsad
+line breakssadsadsadsadsadsasda
+</pre>
+
+
 </div>
 
 
@@ -56,7 +80,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Entrada</td>
-                            <td><input type="text" class="form-control" name="ent" value="" required="" /></td>
+                            <td><input type="text" class="form-control" name="ent" value=""  maxlength="4" required pattern="[0-9]+" title="Solo numeros limitado a 4 por ahora(cambiar)" /></td>
                         </tr> 
                 </div>
 
@@ -65,7 +89,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Salida</td>
-                            <td><input type="text" class="form-control" name="sal" value="" required="" /></td>
+                            <td><input type="text" class="form-control" name="sal" value="" maxlength="4" required pattern="[0-9]+" title="Solo numeros limitado a 4 por ahora(cambiar)" /></td>
                         </tr> 
                 </div>
 
@@ -228,8 +252,8 @@ include_once 'menulateral.php';
                
                    
                       
-                           
-                     <table class="table table-hover table-striped" align="center">
+                      <pre style="height: 580px">   
+                     <table class="table table-hover table-striped"  align="center">
                     
                      <?php
                        
@@ -273,7 +297,7 @@ include_once 'menulateral.php';
                        
                      
                       </table>
-  
+                    </pre>  
 </div>
 
 </div>
