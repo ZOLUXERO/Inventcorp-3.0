@@ -17,6 +17,7 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladminusu.php';
+require '../../modelo/crudprod/mdlprodobtener.php';
 require '../../modelo/stock/mdlliststock.php';
 require '../../modelo/stock/mdlobtenerstock.php';
 
@@ -215,29 +216,96 @@ line breakssadsadsadsadsadsasda
 <h3 align="center" class="panel-title">PRODUCTO</h3>
 </div>
 
+
+<table align="center" style="font-size:20px">
+
+                  <?php if (isset($_GET['edit'])):?>
+                          <?php
+                           $objeto= new Productoobt;
+                           $res=$objeto->obtener($_GET['edit']);
+                           
+                         while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+                          ?>
+                               <tr >
+                                <th>Codigo:</th>
+                               <td align="right"><?php echo $row['codigo_producto']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Nombre producto:</th>
+                               <td align="right"><?php echo $row['nombre_producto']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Precio entrada:</th>
+                               <td align="right"><?php echo $row['precio_entrada']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Precio salida:</th>
+                               <td align="right"><?php echo $row['precio_salida']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Fecha de ingreso:</th>
+                               <td align="right"><?php echo $row['fecha_ingreso']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Categoria:</th>
+                               <td align="right"><?php echo $row['id_categoria']?></td>                             
+                               </tr>                               
+                               <tr >
+                                <th>Descripcion:</th>
+                               <td align="right"><?php echo $row['desc_producto']?></td>                             
+                               </tr>
+
+                                        
+                          <?php } $objeto->CloseDB();?>
+                          <?php else: ?>
+                          <?php
+                           $objeto= new Productoobt;
+                           $res=$objeto->obtener($_GET['edit1']);
+                          
+                         while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+                          ?>
+                               <tr >
+                                <th>Codigo:</th>
+                               <td align="right"><?php echo $row['codigo_producto']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Nombre producto:</th>
+                               <td align="right"><?php echo $row['nombre_producto']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Precio entrada:</th>
+                               <td align="right"><?php echo $row['precio_entrada']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Precio salida:</th>
+                               <td align="right"><?php echo $row['precio_salida']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Fecha de ingreso:</th>
+                               <td align="right"><?php echo $row['fecha_ingreso']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Categoria:</th>
+                               <td align="right"><?php echo $row['id_categoria']?></td>                             
+                               </tr>
+                               <tr >
+                                <th>Descripcion:</th>
+                               <td align="right"><?php echo $row['desc_producto']?></td>                             
+                               </tr>    
+                                        
+                          <?php } $objeto->CloseDB();?>
+                   <?php endif ?>
 <br />
 <br />
 <br />
-<table align="center">
-  <tr>
-  <td>hola:</td>
-  <td>mundo</td>
-</tr>
+ 
+
+
 </table>
 
 <br />
 <br />
 <br />
-<h6 align="center">ESPACIO PARA PRODUCTO</h6>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
 </div>
 </div>
 
