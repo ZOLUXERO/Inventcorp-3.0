@@ -56,10 +56,10 @@ if (isset($_POST['actualizar'])) {
 		session_start();
 	}
 
-    $pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"]);
+    $pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "remplazo");
 
     if ($nom !== $nomp) {
-    	array_push($pruebaarray, "cambio (", $nomp, ") por (", $nom,")");
+    	array_push($pruebaarray, " (", $nomp, ") por (", $nom,")");
     }
     if ($des !== $desp) {
     	array_push($pruebaarray, ", (", $desp, ") por (", $des, ")");
