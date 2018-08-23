@@ -151,7 +151,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >Telefono</td>
+                            <td >Teléfono</td>
                             <td><input type="text" class="form-control" name="telclie" value="<?php echo $telclie; ?>" required /></td>
                         </tr> 
                 </div>
@@ -200,7 +200,7 @@ include_once 'menulateral.php';
                             <td style="font-family:Tahoma, Geneva, sans-serif">Codigo cliente</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Nombre</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Email</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Telefono</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Estado</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Editar</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Eliminar</td>

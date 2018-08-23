@@ -54,7 +54,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Acerca de nosotros. <span class="text-muted">¿Quienes somos?</span></h2>
-          <p class="lead">Somos un grupo de estudiantes del sena que está cursando el cuarto trimestre de análisis y desarrollo de sistemas de información. Trabajamos continuamente en esta página para darle vida a este proyecto que tiene como objetivo brindar un software orientado a la web que sea seguro y eficiente.</p>
+          <p class="lead">Somos un grupo de estudiantes del sena que está cursando análisis y desarrollo de sistemas de información. Trabajamos continuamente en esta página para darle vida a este proyecto que tiene como objetivo brindar un software orientado a la web que sea seguro y eficiente.</p>
         </div>
         <div class="col-md-5">
           <!--  ACA PUEDE IR CUALQUIER IMAGEN <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">!-->
@@ -65,7 +65,7 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Automatizate con Inventcorp <span class="text-muted">Software de inventario.</span></h2>
+          <h2 class="featurette-heading">Automatízate con Inventcorp <span class="text-muted">Software de inventario.</span></h2>
           <p class="lead">Maneje su inventario de una manera mucho mas sencilla, deje de complicarse y registrese gratis.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">

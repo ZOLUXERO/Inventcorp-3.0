@@ -30,7 +30,7 @@ if (!empty($_SESSION["session"]))
 
 
  <div class="jumbotron">
-        <h1 align="center">¡Registrese aqui!</h1>
+        <h1 align="center">¡Regístrese aquí!</h1>
         <p class="lead" align="center">Formulario de registro.</p>
 
    <form name="areat" action="../../controlador/controler1.php" method="post">
@@ -38,8 +38,8 @@ if (!empty($_SESSION["session"]))
       
 <div class="form-group">
 
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Correo Electronico</td><td>
-  <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Registre su correo electronico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una direccion de email valida">
+         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Correo Electrónico</td><td>
+  <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Registre su correo electrónico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una direccion de email válida">
 </td></tr>
 </div>
 
@@ -88,15 +88,15 @@ if (!empty($_SESSION["session"]))
 <tr><td  style="font-family:Tahoma, Geneva, sans-serif">Tipo de documento</td>
   <td>
          <select class="form-control input-sm" name="tdo" required>
-         <option value="CC">C.C. (Cedula de Ciudadania)</option>
-         <option value="CE">C.E. (Cdeula de Extranjeria)</option>
-         <option value="NIT">NIT  (Numero Identificacion Tributaria)</option>
-         <option value="TI">T.I. (Tarjet de Identidad)</option>
+         <option value="CC">C.C. (Cédula de Ciudadanía)</option>
+         <option value="CE">C.E. (Cédula de Extranjería)</option>
+         <option value="NIT">NIT  (Número Identificación Tributaria)</option>
+         <option value="TI">T.I. (Tarjeta de Identidad)</option>
          <option value="PP">PP   (Pasaporte)</option>
-         <option value="IDC">IDC  (Identificador Unico de Cliente)</option>
-         <option value="CEL">CEL  (Numero Movil)</option>
+         <option value="IDC">IDC  (Identificador Único de Cliente)</option>
+         <option value="CEL">CEL  (Número Móvil)</option>
          <option value="RC">R.C. (Registro Civil)</option>
-         <option value="DE">D.E. (Documento de Identificacion Extranjero)</option>
+         <option value="DE">D.E. (Documento de Identificación Extranjero)</option>
          </select>
    </td>
 </tr>

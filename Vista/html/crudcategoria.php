@@ -60,7 +60,7 @@ include_once 'menulateral.php';
 <!-- contenedor del titulo-->
 
 <div class="panel-heading">
-<h3 class="panel-title">CATEGORIAS</h3>
+<h3 class="panel-title">CATEGORÍAS</h3>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -85,8 +85,8 @@ include_once 'menulateral.php';
                             <?php if ($update == true): ?>
                                     
                             <?php else: ?>
-                                    <td >Codigo categoria</td>
-                                    <td><input type="text" class="form-control" name="cod" maxlength="12" required pattern="[0-9]+" title="Solo numeros"  /></td>
+                                    <td >Codigo categorÍa</td>
+                                    <td><input type="text" class="form-control" name="cod" maxlength="12" required pattern="[0-9]+" title="Sólo numeros"  /></td>
                             <?php endif ?>
                         </tr> 
                 </div>
@@ -105,7 +105,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >Descripcion</td>
+                            <td >Descripción</td>
                             <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>" required /></td>
                         </tr> 
                 </div>

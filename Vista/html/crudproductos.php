@@ -88,8 +88,8 @@ include_once 'menulateral.php';
                             <?php if ($update == true): ?>
                                     
                             <?php else: ?>
-                                    <td >Codigo producto</td>
-                                    <td><input type="text" class="form-control" name="cod" maxlength="11" required pattern="^[A-Za-z0-9 -]+$" title="maximo 11 letras o numeros no caracteres especiales"/></td>
+                                    <td >Código producto</td>
+                                    <td><input type="text" class="form-control" name="cod" maxlength="11" required pattern="^[A-Za-z0-9 -]+$" title="máximo 11 letras o numeros no caracteres especiales"/></td>
                             <?php endif ?>
                         </tr> 
                 </div>
@@ -100,7 +100,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Nombre producto</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="11" required pattern="^[A-Za-z -]+$" title="Solo Letras 11 maximo no caracteres especiales" /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="11" required pattern="^[A-Za-z -]+$" title="Solo Letras 11 máximo no caracteres especiales" /></td>
                         </tr> 
                 </div>
 
@@ -109,7 +109,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >descripcion</td>
-                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>"  maxlength="50" required pattern="^[A-Za-z -]+$" title="Solo Letras 50 maximo no caracteres especiales"/></td>
+                            <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>"  maxlength="50" required pattern="^[A-Za-z -]+$" title="Solo Letras 50 máximo no caracteres especiales"/></td>
                         </tr> 
                 </div>
 
@@ -119,7 +119,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >precio entrada</td>
-                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 maximo" /></td>
+                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 máximo" /></td>
                         </tr> 
                 </div>
 
@@ -129,7 +129,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >precio salida</td>
-                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 maximo" /></td>
+                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 máximo" /></td>
                         </tr> 
                 </div>
 
@@ -180,7 +180,7 @@ include_once 'menulateral.php';
                              <td>
                                <select required class="form-control" name="cat">
                                 
-                                <option value="" disabled selected>Seleccione su categoria</option>
+                                <option value="" disabled selected>Seleccione su categoría</option>
                                 <?php
                                   $objeto1= new Categorialis;
                                  $res1=$objeto1->listar();

@@ -29,7 +29,7 @@ if (!empty($_SESSION["session"]))
 
   <div class="container">
   <div class="jumbotron">
-        <h1 align="center">¡Inicie sesion aqui!</h1>
+        <h1 align="center">Inicie sesión</h1>
         <p class="lead" align="center">Formulario de inicio.</p>
 
           <form name="areat" action="../../controlador/controler1.php" method="post">

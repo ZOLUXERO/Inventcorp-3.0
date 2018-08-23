@@ -141,7 +141,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Email</td>
-                            <td><input type="text" class="form-control" name="emaprov" value="<?php echo $emaprov; ?>" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una direccion de email valida" /></td>
+                            <td><input type="text" class="form-control" name="emaprov" value="<?php echo $emaprov; ?>" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una dirección de email valida" /></td>
                         </tr> 
                 </div>
 
@@ -196,10 +196,10 @@ include_once 'menulateral.php';
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Proveedor</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Código Proveedor</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Nombre</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Email</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Telefono</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Estado</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Editar</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Eliminar</td>
