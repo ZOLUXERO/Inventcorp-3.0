@@ -39,21 +39,7 @@ include_once 'menulateral.php';
 
 EJEMPLO PARA ELIMINAR
 
-Text in a pre elementasdasdasdasdadasda
-is displayed in a fixed-widthsadadasdasda
-font, and it preservesasdsadasdsadsadsa
-both      spaces andasdasdsadsadsadsad
-line breakssadsadsadsadsadsasda
-Text in a pre elementasdasdasdasdadasda
-is displayed in a fixed-widthsadadasdasda
-font, and it preservesasdsadasdsadsadsa
-both      spaces andasdasdsadsadsadsad
-line breakssadsadsadsadsadsasda
-Text in a pre elementasdasdasdasdadasda
-is displayed in a fixed-widthsadadasdasda
-font, and it preservesasdsadasdsadsadsa
-both      spaces andasdasdsadsadsadsad
-line breakssadsadsadsadsadsasda
+
 </pre>
 
 
@@ -82,8 +68,7 @@ line breakssadsadsadsadsadsasda
                             <?php if (isset($_GET['edit'])):?>
                               <tr><td style="padding:2px"></td></tr>
                               <tr>
-                                    <td >Codigo </td>
-                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" /></td>
+                                    
                               </tr>
                             <?php else: ?>
                               <tr><td style="padding:2px"></td></tr>

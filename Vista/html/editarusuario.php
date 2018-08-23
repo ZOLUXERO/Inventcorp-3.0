@@ -86,8 +86,8 @@ $id=$_REQUEST['id'];
                   <td style="color:#666">
 
                      <select class="form-control" name="est"  >
-                          <option value="1" <?php echo  $row['estado_usuario'] == 1 ? 'selected' : ''; ?>>inactivo</option>
-                          <option value="2" <?php echo  $row['estado_usuario'] == 2 ? 'selected' : ''; ?>>activo</option>
+                          <option value="1" <?php echo  $row['estado_usuario'] == 2 ? 'selected' : ''; ?>>inactivo</option>
+                          <option value="2" <?php echo  $row['estado_usuario'] == 1 ? 'selected' : ''; ?>>activo</option>
                     </select>
 
                   </td>

@@ -189,8 +189,7 @@ include_once 'menulateral.php';
 
 
         </div>
-         <form method="post" action="exportar1.php">
-     <input type="submit" name="exportar" class="btn btn-success" value="Exportar" />
+
     </form>
         </div>
        
