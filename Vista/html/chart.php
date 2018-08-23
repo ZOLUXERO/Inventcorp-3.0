@@ -83,6 +83,10 @@ EJEMPLO PARA ELIMINAR
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
+                          <td >Codigo </td>
+                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" />
+                                    </td>
+                                  </tr>
                             <td >Entrada</td>
                             <td><input type="text" class="form-control" name="ent" value=""  maxlength="2" required pattern="[0-9]+" title="Solo numeros limitado a 2 por ahora (cambiar)" /></td>
                         </tr> 
