@@ -64,10 +64,10 @@ include_once 'menulateral.php';
 
 <div class="panel-heading">
 
-<div class="col-sm-2 col-md-2"><h3 class="panel-title">PRODUCTOS</h3></div>    
+<div class="col-sm-9 col-md-9"><h3 class="panel-title">PRODUCTOS</h3></div>    
 
 
-<h3 align="right" class="panel-title">Ordenar por:
+<tr align="right" class="panel-title">Ordenar por:
 
 <select>
     <option>Categorias</option>
@@ -75,7 +75,7 @@ include_once 'menulateral.php';
     <option>Precio entrada</option>
     <option>Precio salida</option>
 </select>
-</h3>
+</tr>
 
 </div>
 

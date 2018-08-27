@@ -1,6 +1,6 @@
 <?php
 include_once '../../modelo/crudcat/mdlcatlistar.php';
-include_once '../../modelo/crudprod/mdlprodlistar.php';
+include_once '../../modelo/crudprod/mdlprodlistarc1.php';
 include_once'../../modelo/crudprod/mdlprodobtener.php';
 
 if (isset($_GET['edit'])) {
@@ -91,7 +91,7 @@ include_once 'menulateral.php';
     <button  type="submit" name="guardar" >Buscar</button>
 
     </tr>
-    
+
 <a href="">[volver]</a>
            
 
@@ -283,8 +283,8 @@ include_once 'menulateral.php';
                     </thead>
                     
                     <?php
-                    $objeto= new Productolis;
-                    $res=$objeto->listar();
+                    $objeto= new Productolisobycat;
+                    $res=$objeto->listarc1();
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){
                       ?>
