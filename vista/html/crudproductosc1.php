@@ -17,7 +17,7 @@ if (isset($_GET['edit'])) {
         $fec=$n['fecha_ingreso'];
         $cat=$n['id_categoria'];
     }
-//$row = $res->fetch_array(MYSQLI_ASSOC)
+
 }
 
 ?>
@@ -27,7 +27,7 @@ if (isset($_GET['edit'])) {
 <html lang="en">
 
 <head>
-<?php //include_once '../../../controlador/control.php' ?>
+
 <title>Mi Proyecto</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,20 +64,40 @@ include_once 'menulateral.php';
 
 <div class="panel-heading">
 
-<div class="col-sm-2 col-md-2"><h3 class="panel-title">PRODUCTOS</h3></div>    
+<div class="col-sm-7 col-md-7"><h3 class="panel-title">PRODUCTOS</h3></div> 
 
+    
+    <tr class="panel-title" align="right">Ordenar por categoria especifica:
 
-<h3 align="right" class="panel-title">Ordenar por:
+        <select style="width: 200px;"  name="catcat2">
+                                
+            asdasd<option value="" disabled selected>Seleccione su categoría</option>
+            <?php
+            $objeto1= new Categorialis;
+            $res1=$objeto1->listar();
 
-<select>
-    <option>Categorias</option>
-    <option>Fecha</option>
-    <option>Precio entrada</option>
-    <option>Precio salida</option>
-</select>
-</h3>
+            $x = 0;
+            while($row1 = $res1->fetch_array(MYSQLI_ASSOC)){ 
+            $x ++ ;
+                                
+            ?>
+                                                                
+            <option value="<?php echo $x;?>"> <?php echo $row1['nombre_categoria']." [".$x."] " ?></option>
+                                                               
+           <?php } ?>
+
+        </select>
+
+    <button  type="submit" name="guardar" >Buscar</button>
+
+    </tr>
+    
+<a href="">[volver]</a>
+           
 
 </div>
+
+
 
 <!-- contenedor de descripcion ejercicios-->
 
@@ -86,7 +106,6 @@ include_once 'menulateral.php';
 <div class="row">
  <div class="col-sm-12 col-md-12">
  <table class="" style="" align="center"> 
-  <tr><td style="color:#800000; font-family:Tahoma, Geneva, sans-serif" align="center">BASE DE DATOS</td></tr>
   </table>
 
 
