@@ -37,7 +37,7 @@ include_once 'menulateral.php';
 
 <pre class="fr-tag" style="height: 232px">
 
-EJEMPLO PARA ELIMINAR
+EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
 
 
 </pre>
@@ -68,9 +68,12 @@ EJEMPLO PARA ELIMINAR
                             <?php if (isset($_GET['edit'])):?>
                               <tr><td style="padding:2px"></td></tr>
                               <tr>
-                                    
+                                  <td >Codigo </td>
+                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" />
+                                    </td>
                               </tr>
-                            <?php else: ?>
+                            <?php endif ?> 
+                            <?php if (isset($_GET['edit1'])):?>
                               <tr><td style="padding:2px"></td></tr>
                                     <tr>
                                     <td >Codigo </td>
@@ -83,10 +86,8 @@ EJEMPLO PARA ELIMINAR
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                          <td >Codigo </td>
-                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" />
-                                    </td>
-                                  </tr>
+                          
+                                  
                             <td >Entrada</td>
                             <td><input type="text" class="form-control" name="ent" value=""  maxlength="2" required pattern="[0-9]+" title="Solo numeros limitado a 2 por ahora (cambiar)" /></td>
                         </tr> 
