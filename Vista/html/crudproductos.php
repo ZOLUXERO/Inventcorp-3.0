@@ -70,7 +70,7 @@ include_once 'menulateral.php';
 <tr align="right" class="panel-title">Ordenar por:
 
 <select>
-    <option>Categorias</option>
+    <option>Categorías</option>
     <option>Fecha</option>
     <option>Precio entrada</option>
     <option>Precio salida</option>
@@ -121,7 +121,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >descripcion</td>
+                            <td >Descripción</td>
                             <td><input type="text" class="form-control" name="des" value="<?php echo $des; ?>"  maxlength="50" required pattern="^[A-Za-z -]+$" title="Solo Letras 50 máximo no caracteres especiales"/></td>
                         </tr> 
                 </div>
@@ -131,7 +131,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >precio entrada</td>
+                            <td >Precio entrada</td>
                             <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 máximo" /></td>
                         </tr> 
                 </div>
@@ -141,7 +141,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >precio salida</td>
+                            <td >Precio salida</td>
                             <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 máximo" /></td>
                         </tr> 
                 </div>
@@ -151,7 +151,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >fecha</td>
+                            <td >Fecha</td>
                             <td><input type="date" class="form-control" name="fec" value="<?php echo $fec; ?>" required /></td>
                         </tr> 
                 </div>
@@ -164,7 +164,7 @@ include_once 'menulateral.php';
 
                             <?php if ($update == true): ?>
 
-                            <td >categoria</td>
+                            <td >Categoría</td>
                              <td>
                                <select  class="form-control" name="cat" >
                                 <option value="<?php echo $cat;?>" ><?php echo $cat; ?></option>
@@ -189,7 +189,7 @@ include_once 'menulateral.php';
 
                             <?php else: ?>
 
-                            <td >caaaa</td>
+                            <td >Categoría</td>
                              <td>
                                <select required class="form-control" name="cat">
                                 
@@ -250,13 +250,13 @@ include_once 'menulateral.php';
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Producto</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Código Producto</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripción</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Categoría</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Seguimiento</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Editar</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Eliminar</td>

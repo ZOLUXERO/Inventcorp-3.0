@@ -37,7 +37,7 @@ include_once 'menulateral.php';
 
 <pre class="fr-tag" style="height: 232px">
 
-EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
+EJEMPLO PARA ELIMINAR PRUEBA
 
 
 </pre>
@@ -65,11 +65,12 @@ EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
             <table align="center">
                 <div class="form-group">
                         
-                            <?php if (isset($_GET['edit'])):?>
+                          <?php if (isset($_GET['edit'])):?>
                               <tr><td style="padding:2px"></td></tr>
                               <tr>
                                   <td >Codigo </td>
-                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit']?>" />
+                                    <td><input type="hidden" name="cod" value="<?php echo $_GET['edit']?>" />
+                                      <td align="right"><?php echo $_GET['edit']?></td> 
                                     </td>
                               </tr>
                             <?php endif ?> 
@@ -77,10 +78,12 @@ EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
                               <tr><td style="padding:2px"></td></tr>
                                     <tr>
                                     <td >Codigo </td>
-                                    <td><input type="text" readonly="readonly" class="form-control" name="cod" value="<?php echo $_GET['edit1']?>" /></td>
+                                    <td><input type="hidden" name="cod" value="<?php echo $_GET['edit1']?>" /></td>
+                                    <td align="right"><?php echo $_GET['edit1']?></td> 
                               </tr>
                             <?php endif ?>
                             
+                        
                         
                 </div>
                 <tr><td style="padding:2px"></td></tr>
@@ -177,7 +180,7 @@ EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
 <div class="panel panel-default">
 
 <div class="panel-heading">
-<h3 align="center" class="panel-title">SALIO</h3>
+<h3 align="center" class="panel-title">SALIÓ</h3>
 </div>
 
 
@@ -186,7 +189,7 @@ EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
 <br />
 <br />
 <br />
-<h6 align="center">ESPACIO PARA MAS INFORMACION</h6>
+<h6 align="center">ESPACIO PARA MÁS INFORMACIÓN</h6>
 <br />
 <br />
 <br />
@@ -237,7 +240,7 @@ EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
                                <td align="right"><?php echo $row['fecha_ingreso']?></td>                             
                                </tr>
                                <tr >
-                                <th>Categoria:</th>
+                                <th>Categoría:</th>
                                <td align="right"><?php echo $row['id_categoria']?></td>                             
                                </tr>                               
                                <tr >
@@ -376,9 +379,9 @@ EJEMPLO PARA ELIMINAR PRUEBA3LUISMIGAY
 <div class="col-sm-12 col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading">
-<h3 class="panel-title">GRAFICA DEL PRODUCTO</h3>
+<h3 class="panel-title">GRÁFICA DEL PRODUCTO</h3>
 </div>
-<p style="color:#DCA430">-----------Espacio para escribir informacion de la grafica---------</p> 
+<p style="color:#DCA430">-----------Espacio para escribir información de la gráfica---------</p> 
 <div class="container" style="width:100%;" align="left">
 <?php
 include_once 'index.html'; 
@@ -392,9 +395,9 @@ include_once 'index.html';
 <div class="col-sm-12 col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading">
-<h3 class="panel-title">GRAFICA DE PRODUCTOS</h3>
+<h3 class="panel-title">GRÁFICA DE PRODUCTOS</h3>
 </div>
-<p>-------------------Espacio para escribir informacion de la grafica------------</p> 
+<p>-------------------Espacio para escribir información de la gráfica------------</p> 
 <div class="container" style="width: 100%;" align="left">
 <?php
 include_once 'chartrelacion.php'; 
@@ -407,9 +410,9 @@ include_once 'chartrelacion.php';
 <div class="col-sm-12 col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading">
-<h3 class="panel-title">GRAFICA DE PRECIOS DE ENTRADA</h3>
+<h3 class="panel-title">GRÁFICA DE PRECIOS DE ENTRADA</h3>
 </div>
-<p style="color:#DCA430">----------------Espacio para escribir informacion de la grafica--------------</p> 
+<p style="color:#DCA430">----------------Espacio para escribir información de la gráfica--------------</p> 
 <div class="container" style="width: 100%;" align="left">
 <?php
 include_once 'chartprecio.php'; 
@@ -423,9 +426,9 @@ include_once 'chartprecio.php';
 <div class="col-sm-12 col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading">
-<h3 class="panel-title">GRAFICA DE PRECIOS DE ENTRADA EN RELACION A PRECIOS DE SALIDA</h3>
+<h3 class="panel-title">GRÁFICA DE PRECIOS DE ENTRADA EN RELACIÓN A PRECIOS DE SALIDA</h3>
 </div>
-<p >----------------Espacio para escribir informacion de la grafica--------------</p> 
+<p >----------------Espacio para escribir información de la gráfica--------------</p> 
 <div class="container" style="width: 100%;" align="left">
 <?php
 include_once 'chartpreciosal.php'; 

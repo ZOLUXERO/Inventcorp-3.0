@@ -197,7 +197,7 @@ include_once 'menulateral.php';
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Codigo cliente</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Código cliente</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Nombre</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Email</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td>

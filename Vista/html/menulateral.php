@@ -22,12 +22,12 @@
           <?php endif ?>        
       </li>
       <li><a href="crudproductos.php">Productos<span class="glyphicon glyphicon glyphicon-barcode pull-right"></span> </a></li>
-      <li><a href="crudcategoria.php">Categorias<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
+      <li><a href="crudcategoria.php">Categorías<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
       <li><a href="crudcliente.php">Clientes<span class="glyphicon glyphicon-briefcase pull-right"></span> </a></li>
       <li><a href="crudproveedor.php">Proveedores<span class="glyphicon glyphicon-book pull-right"></span> </a></li>
       <li>
           <?php if ($_SESSION["idrol"] == 1): ?>
-              <a href="admon.php">Usuarios en la pagina<span class="glyphicon glyphicon-menu-hamburger pull-right"> </span></a>            
+              <a href="admon.php">Usuarios en la página<span class="glyphicon glyphicon-menu-hamburger pull-right"> </span></a>            
           <?php else: ?>
                      
           <?php endif ?>        

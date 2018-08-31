@@ -30,7 +30,7 @@ if (!empty($_SESSION["session"]))
 
 
  <div class="jumbotron">
-        <h1 align="center">¡Regístrese aquí!</h1>
+        <h1 align="center">Regístrese aquí</h1>
         <p class="lead" align="center">Formulario de registro.</p>
 
    <form name="areat" action="../../controlador/controler1.php" method="post">
@@ -38,7 +38,7 @@ if (!empty($_SESSION["session"]))
       
 <div class="form-group">
 
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Correo Electrónico</td><td>
+         <tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Correo Electrónico</td><td>
   <input class="form-control input-sm" type="email" name="usu" class="form-control" placeholder="Registre su correo electrónico" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingrese una direccion de email válida">
 </td></tr>
 </div>
@@ -46,7 +46,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 <tr><td style="padding:2px"></td></tr>
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Primer Nombre</td><td>
+         <tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Primer Nombre</td><td>
   <input class="form-control input-sm" type="text" name="nom1" class="form-control" placeholder="Primer Nombre" required>
 </td></tr>
 </div>
@@ -54,7 +54,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 <tr><td style="padding:2px"></td></tr>
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Segundo Nombre</td><td>
+         <tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Segundo Nombre</td><td>
   <input class="form-control input-sm" type="text" name="nom2" class="form-control" placeholder="Segundo Nombre" required>
 </td></tr>
 </div>
@@ -62,7 +62,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 <tr><td style="padding:2px"></td></tr>
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Primer Apellido</td><td>
+         <tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Primer Apellido</td><td>
   <input class="form-control input-sm" type="text" name="nom3" class="form-control" placeholder="Primer Apellido" required>
 </td></tr>
 </div>
@@ -70,7 +70,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 <tr><td style="padding:2px"></td></tr>
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Segundo Apellido</td><td>
+         <tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Segundo Apellido</td><td>
   <input class="form-control input-sm" type="text" name="nom4" class="form-control" placeholder="Segundo Apellido" required>
 </td></tr>
 </div>
@@ -78,14 +78,14 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 <tr><td style="padding:2px"></td></tr>
-<tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Documento</td><td>
+<tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Documento</td><td>
   <input class="form-control input-sm" type="text" name="ape" class="form-control" placeholder="Documento" required>
 </td></tr>
 </div>
 
 <div class="form-group">
 
-<tr><td  style="font-family:Tahoma, Geneva, sans-serif">Tipo de documento</td>
+<tr><td  align="left" style="font-family:Tahoma, Geneva, sans-serif">Tipo de documento</td>
   <td>
          <select class="form-control input-sm" name="tdo" required>
          <option value="CC">C.C. (Cédula de Ciudadanía)</option>
@@ -105,7 +105,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 
-<tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td><td>
+<tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td><td>
   <input class="form-control input-sm" type="text" name="numb" class="form-control" placeholder="Teléfono" required>
 </td></tr>
 </div>
@@ -113,7 +113,7 @@ if (!empty($_SESSION["session"]))
 <div class="form-group">
 
 <tr><td style="padding:2px"></td></tr>
-         <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif">Contraseña</td><td>
+         <tr><td align="left" style="font-family:Tahoma, Geneva, sans-serif">Contraseña</td><td>
   <input class="form-control input-sm" type="password" name="pass" class="form-control" placeholder="Contraseña" required>
 </td></tr>
 </div>

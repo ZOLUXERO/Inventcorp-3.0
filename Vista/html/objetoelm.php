@@ -50,14 +50,14 @@ include_once 'menulateral.php';
                       
                        <table class="table table-hover table-striped" align="center">
         			         <tr style="color:#FFF; background-color:#369">
-                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Codigo Producto</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Código Producto</td>
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Producto</td>
-                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Descripción</td>
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Precio compra</td>
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Precio venta</td>
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">estado</td>
-                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Categoria</td>
+                       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Categoría</td>
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Acción</td>
                          
                         <?php

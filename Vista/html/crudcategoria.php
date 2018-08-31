@@ -85,7 +85,7 @@ include_once 'menulateral.php';
                             <?php if ($update == true): ?>
                                     
                             <?php else: ?>
-                                    <td >Codigo categorÍa</td>
+                                    <td >Codigo categoría</td>
                                     <td><input type="text" class="form-control" name="cod" maxlength="12" required pattern="[0-9]+" title="Sólo numeros"  /></td>
                             <?php endif ?>
                         </tr> 
@@ -96,7 +96,7 @@ include_once 'menulateral.php';
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
-                            <td >Nombre categoria</td>
+                            <td >Nombre categoría</td>
                             <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>"  maxlength="12" required pattern="[a-zA-Z]*" title="No caracteres especiales solo letras" /></td>
                         </tr> 
                 </div>
@@ -150,7 +150,7 @@ include_once 'menulateral.php';
                             <tr style="color:#FFF; background-color:#369">
                             <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Categoría</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Nombre Categoría</td>
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Descripción</td>
                             <td></td>
                             <td></td>
                         </tr>

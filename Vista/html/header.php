@@ -45,7 +45,7 @@ else
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo $ruta;?>../../index.php">Home</a></li>
       <li><a href="#">Acerca de nosotros</a></li>
-      <li><a href="#">Contactenos</a></li>
+      <li><a href="#">Contáctenos</a></li>
       <li >
         <?php if(isset($_SESSION["session"])): ?> 
             <?php if ($_SESSION["idrol"] == 3): ?>
@@ -63,7 +63,7 @@ else
 
         <?php if(isset($_SESSION["session"])): ?> 
             <?php if ($_SESSION["idrol"] == 1): ?>
-                      <a href="<?php echo $ruta;?>admon.php">Usuarios en la pagina</a>                  
+                      <a href="<?php echo $ruta;?>admon.php">Usuarios en la página</a>                  
             <?php elseif($_SESSION["idrol"] == 2): ?>
                       
             <?php elseif($_SESSION["idrol"] == 3): ?>

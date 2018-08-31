@@ -4,19 +4,22 @@ $connect = mysqli_connect("localhost", "root", "", "inventcorp");
 $output = '';
 if(isset($_POST["exportar"]))
 {
- $query = "SELECT email_usuario,nombre_usuario,cedula,telefono FROM usuarios";
+ $query = "SELECT codigo_proveedor_cliente,primer_nombre_provee_clie,segundo_nombre_provee_clie,primer_apellido_provee_clie,segundo_apellido_provee_clie,email_proveedor_cliente,telefono_proveedor_cliente FROM listar_clientes_proveedores WHERE id_rol_listar=2";
  $result = mysqli_query($connect, $query);
  if(mysqli_num_rows($result) > 0)
  {
   $output .= '
    <table class="table" bordered="1">  
-                    <tr>  
-                         <th>email_usuario</th>  
-                         <th>nombre_usuario</th>  
-       <th>cedula</th>
-       <th>telefono</th>
-                    </tr>
-                    </tr>
+             <tr>  
+             <th>Codigo</th>  
+             <th>Primer nombre</th>  
+             <th>Segundo nombre</th>
+             <th>Primer apellido</th>
+             <th>Segundo apellido</th>
+             <th>Email</th>
+             <th>Telefono</th>
+             </tr>
+             </tr>
   ';
   while($row = mysqli_fetch_array($result))
   {
