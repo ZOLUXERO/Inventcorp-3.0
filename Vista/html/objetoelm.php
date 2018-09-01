@@ -40,7 +40,7 @@ include_once 'menulateral.php';
 
 <a href="objetoelmu1.php">[Usuarios]</a>
 <a href="">[Productos]</a>
-<a href="">[Clientes]</a>
+<a href="objetoelmc1">[Clientes]</a>
 <a href="">[Proveedores]</a>
 
 
