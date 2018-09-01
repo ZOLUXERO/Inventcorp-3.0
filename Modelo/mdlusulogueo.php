@@ -1,6 +1,8 @@
 <?php
 
-class Usuario extends conexion{
+ include_once("conexion.php");
+
+class Usuariol extends conexion{
 
     public function logueo($usuario)
 	{

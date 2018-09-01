@@ -2,7 +2,7 @@
 
 include_once("conexion.php");
 
-class Usuario extends conexion{
+class Usuarioo extends conexion{
 
 		public function obtenerusuarios($id)
 	{

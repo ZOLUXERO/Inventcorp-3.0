@@ -1,6 +1,8 @@
 <?php
 
-class Usuario extends conexion{
+ include_once("conexion.php");
+
+class Usuariov extends conexion{
 
 	public function verifica($dato)
 	{

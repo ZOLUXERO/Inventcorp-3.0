@@ -33,7 +33,7 @@ if (!empty($_SESSION["session"]))
         <h1 align="center">Regístrese aquí</h1>
         <p class="lead" align="center">Formulario de registro.</p>
 
-   <form name="areat" action="../../controlador/controler1.php" method="post">
+   <form name="areat" action="../../controlador/controler4.php" method="post">
          <table class="" style="" align="center" width="400">
       
 <div class="form-group">

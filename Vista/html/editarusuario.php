@@ -17,7 +17,7 @@
 <?php 
 //include_once '../../controlador/control.php'; 
 include_once 'header.php'; 
-require '../../modelo/mdlusuobtener.php';
+include_once '../../modelo/mdlusuobtener.php';
 $id=$_REQUEST['id'];
 
 ?>
@@ -27,7 +27,7 @@ $id=$_REQUEST['id'];
   <div class="container">
    <div class="row">
         
-   <?php //include_once 'menulateral.php'; ?>
+
 				
   <div class="col-sm-12 col-md-12">
    <div class="panel panel-default">
@@ -44,11 +44,11 @@ $id=$_REQUEST['id'];
              
 			   <div class="row">
 			   <div class="col-sm-12 col-md-12">
-               <form name="areat" action="../../controlador/controler1.php" method="post">
+               <form name="areat" action="../../controlador/controler3.php" method="post">
 			   <div class="table-responsive">
                
                <?php
-			   $objeto= new Usuario;
+			   $objeto= new Usuarioo;
 			   $res=$objeto->obtenerusuarios($id);	  		
 			   $row = $res->fetch_array();
 			   ?>    
@@ -86,8 +86,8 @@ $id=$_REQUEST['id'];
                   <td style="color:#666">
 
                      <select class="form-control" name="est"  >
-                          <option value="1" <?php echo  $row['estado_usuario'] == 2 ? 'selected' : ''; ?>>inactivo</option>
-                          <option value="2" <?php echo  $row['estado_usuario'] == 1 ? 'selected' : ''; ?>>activo</option>
+                          <option value="0" <?php echo  $row['estado_usuario'] == 0 ? 'selected' : ''; ?>>inactivo</option>
+                          <option value="1" <?php echo  $row['estado_usuario'] == 1 ? 'selected' : ''; ?>>activo</option>
                     </select>
 
                   </td>
