@@ -80,7 +80,7 @@ include_once 'menulateral.php';
             			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
                            <td align="center">
                            <center>
-                           <a href=""><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> 
+                           <a href=""><span class = "btn btn-success btn-xs"><span class = "glyphicon glyphicon-arrow-left"></span></span></a> 
                            <a href="../../controlador/controler2.php?id=<?php echo $row['codigo_producto']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a>
                            </center>
                            </td>
