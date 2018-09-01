@@ -84,6 +84,12 @@ class clases extends conexionprod
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
         return $consulta;   
     }
+        public function verificarcod($dato)
+    {
+        $q = "select codigo_producto from productos where codigo_producto='$dato'";
+        $consulta = $this->con->query($q) or die ('Error 2!' .  $this->con->error);
+        return $consulta;   
+    }
 }
 
 ?>

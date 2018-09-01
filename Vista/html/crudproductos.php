@@ -228,6 +228,21 @@ include_once 'menulateral.php';
                         </td>
                 </tr>
 
+                <tr><td style="padding:2px"></td></tr>
+                <tr>
+                    <?php 
+                    if(isset($_REQUEST['dato'])){
+                     echo "<td colspan='2' align='center'><div class='alert alert-success'>"."REGISTRO CORRECTO"."</div>";
+                    } 
+                    if(isset($_REQUEST['dato1'])){
+                     echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."YA HAY UN PRODUCTO CON EL MISMO CODIGO EN EL SISTEMA"."</div>"; 
+                     }
+                    if(isset($_REQUEST['dato2'])){
+                     echo "<td colspan='2' align='center'><div class='alert alert-success'>"."PRODUCTO ACTUALIZADO"."</div>"; 
+                     }
+                     ?>
+                    
+                </tr>
             </table>
 
             </form>

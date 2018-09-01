@@ -1,6 +1,6 @@
 <?php
 
-include("../../modelo/crudprod/alumno.model.php");
+include_once("../../modelo/crudprod/alumno.model.php");
 
 	
 
@@ -14,21 +14,31 @@ if (isset($_POST['guardar'])) {
 	$cat=$_REQUEST['cat'];
 
 	$objeto = new clases;
+	$res = $objeto->verificarcod($cod);
 
-	if (session_status() !== PHP_SESSION_ACTIVE) 
-	{
-		session_start();
-	}
+	if($res->num_rows== 1)
+	        {	
+			header("location: ../../vista/html/crudproductos.php?dato1=no"); 
+	        }
+			else
+			{			
 
-	$pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "inserto un producto nuevo (", $cod,")");
+				if (session_status() !== PHP_SESSION_ACTIVE) 
+				{
+					session_start();
+				}
 
-	$ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
+				$pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "inserto un producto nuevo (", $cod,")");
 
-    $res = $objeto->testingresar($_SESSION["doc"], $ins);
+				$ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
 
-	
-	$res = $objeto->registro($cod, $nom, $des, $pen, $pas, $fec, $cat);
-	header('location: ../../vista/html/crudproductos.php');
+			    $res = $objeto->testingresar($_SESSION["doc"], $ins);
+
+				
+				$res = $objeto->registro($cod, $nom, $des, $pen, $pas, $fec, $cat);
+				header('location: ../../vista/html/crudproductos.php?dato=si');
+			}
+
 
 }
 
@@ -82,14 +92,19 @@ if (isset($_POST['actualizar'])) {
     	array_push($pruebaarray, ", (", $catp, ") por (", $cat, ")");
     }
 
-    
+    $pruebaarray2 = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "remplazo");
 
+    if($pruebaarray == $pruebaarray2){
+    	header('location: ../../vista/html/crudproductos.php');
+    }
+    if($pruebaarray !== $pruebaarray2){
     $ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
 
     $res2 = $objeto2->testingresar($_SESSION["doc"], $ins);
 
 	$res2 = $objeto2->actualizar($cod, $nom, $des, $pen, $pas, $fec, $cat);
-	header('location: ../../vista/html/crudproductos.php');
+	header('location: ../../vista/html/crudproductos.php?dato2=01');
+	}
 }
 
 
