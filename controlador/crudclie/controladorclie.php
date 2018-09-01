@@ -2,6 +2,7 @@
 include_once("../../modelo/mdlclieregistro.php");
 include_once("../../modelo/mdlclieeditar.php");
 include_once("../../modelo/mdlclieborrar.php");
+include_once("../../modelo/mdlclieverificar.php");
 
 
 if(isset($_POST["guardarclie"])) {
@@ -15,9 +16,25 @@ if(isset($_POST["guardarclie"])) {
 			$telclie=$_REQUEST['telclie'];
 
 			$objeto = new Clientereg;
-			$res = $objeto->registroclie($codclie, $nom1clie, $nom2clie, $nom3clie, $nom4clie, $emaclie, $telclie);
-			header('location:../../vista/html/crudcliente.php');
-			$objeto->CloseDB();
+
+			$objeto3 = new Clientev;
+
+			$res3 = $objeto3->verificarclie($codclie);
+
+			if($res3->num_rows== 1)
+	        {	
+				header('location:../../vista/html/crudcliente.php?dato1=no01'); 
+	        }
+			else
+			{			
+				
+				$res = $objeto->registroclie($codclie, $nom1clie, $nom2clie, $nom3clie, $nom4clie, $emaclie, $telclie);
+
+				header('location:../../vista/html/crudcliente.php');
+				$objeto->CloseDB();
+			}
+
+
  
 }
 
