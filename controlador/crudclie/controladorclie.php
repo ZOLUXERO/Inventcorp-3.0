@@ -30,7 +30,7 @@ if(isset($_POST["guardarclie"])) {
 				
 				$res = $objeto->registroclie($codclie, $nom1clie, $nom2clie, $nom3clie, $nom4clie, $emaclie, $telclie);
 
-				header('location:../../vista/html/crudcliente.php');
+				header('location:../../vista/html/crudcliente.php?dato=856s487i01');
 				$objeto->CloseDB();
 			}
 

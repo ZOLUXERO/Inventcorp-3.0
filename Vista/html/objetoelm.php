@@ -33,9 +33,21 @@ include_once 'menulateral.php';
    <div class="col-sm-10 col-md-10">
     <div class="panel panel-default">
    <!-- contenedor del titulo-->
-      <div class="panel-heading">
-        <h3 class="panel-title">OBJETOS ELIMINADOS</h3>
-      </div>
+<div class="panel-heading">
+
+<div class="col-sm-4 col-md-4"><h class="panel-title">Elementos eliminados</h></div> 
+<div align="right" class="col-sm-8 col-md-8">
+
+<a href="">[Usuarios]</a>
+<a href="">[Productos]</a>
+<a href="">[Clientes]</a>
+<a href="">[Proveedores]</a>
+
+
+</div>   
+
+<br>
+</div>
     <!-- contenedor de descripcion ejercicios-->
       <div class="panel-body">
          <p style="color:#DCA430">Control de objetos eliminados. <center><span><?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL PRODUCTO"."</div>";}if(isset($_REQUEST['dato1'])){ echo "ACTUALIZACION EXITOSA";}?></span></center></p> 

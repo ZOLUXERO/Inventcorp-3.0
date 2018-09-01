@@ -185,10 +185,10 @@ include_once 'menulateral.php';
                      echo "<td colspan='2' align='center'><div class='alert alert-success'>"."REGISTRO CORRECTO"."</div>";
                     } 
                     if(isset($_REQUEST['dato1'])){
-                     echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."YA HAY UN CLIENTE CON EL MISMO CODIGO EN EL SISTEMA"."</div>"; 
+                     echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."YA HAY ALGUIEN CON EL MISMO CODIGO EN EL SISTEMA"."</div>"; 
                      }
                     if(isset($_REQUEST['dato2'])){
-                     echo "<td colspan='2' align='center'><div class='alert alert-success'>"."PRODUCTO ACTUALIZADO"."</div>"; 
+                     echo "<td colspan='2' align='center'><div class='alert alert-success'>"."CLIENTE ACTUALIZADO"."</div>"; 
                      }
                      ?>
                     

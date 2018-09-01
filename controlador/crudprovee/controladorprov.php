@@ -2,6 +2,7 @@
 include_once("../../modelo/mdlprovregistrar.php");
 include_once("../../modelo/mdlproveditar.php");
 include_once("../../modelo/mdlproveliminar.php");
+include_once("../../modelo/mdlprovverificar.php");
 
 
 if(isset($_POST["guardarprov"])) {
@@ -15,9 +16,21 @@ if(isset($_POST["guardarprov"])) {
 			$telprov=$_REQUEST['telprov'];
 
 			$objeto = new Proveedorreg;
+			$objeto3 = new Proveedorv;
+
+			$res3 = $objeto3->verificarprov($codprov);
+
+			if($res3->num_rows== 1)
+	        {	
+				header('location:../../vista/html/crudproveedor.php?dato1=no01'); 
+	        }
+			else
+			{			
 			$res = $objeto->registroprov($codprov, $nom1prov, $nom2prov, $nom3prov, $nom4prov, $emaprov, $telprov);
-			header('location:../../vista/html/crudproveedor.php');
+			header('location:../../vista/html/crudproveedor.php?dato=002s3i1');
 			$objeto->CloseDB();
+			}
+
  
 }
 
