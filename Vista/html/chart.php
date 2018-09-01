@@ -1,5 +1,20 @@
-<?php
+<?php 
+include_once '../../controlador/control.php'; 
+include_once '../../controlador/controladminusu.php';
+include_once '../../modelo/crudprod/mdlprodobtener.php';
+include_once '../../modelo/stock/mdlliststock.php';
+include_once '../../modelo/stock/mdlobtenerstock.php';
+include_once'../../modelo/crudprod/mdlprodobtener.php';
+
 if (isset($_GET['edit']) == "") {
+  header('location: crudproductos.php');
+}
+
+$objeto1= new Productoobt;
+$res1=$objeto1->obtener($_GET['edit']);
+
+if($res1->num_rows == 0)
+{ 
   header('location: crudproductos.php');
 }
 
@@ -20,12 +35,6 @@ if (isset($_GET['edit']) == "") {
 <body>
 
 <?php 
-include_once '../../controlador/control.php'; 
-include_once '../../controlador/controladminusu.php';
-require '../../modelo/crudprod/mdlprodobtener.php';
-require '../../modelo/stock/mdlliststock.php';
-require '../../modelo/stock/mdlobtenerstock.php';
-
 include_once 'header.php'; 
 ?>
 
