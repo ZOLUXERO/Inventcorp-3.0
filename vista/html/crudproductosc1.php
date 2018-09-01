@@ -26,7 +26,9 @@ if (isset($_GET['edit'])) {
 }
 
 ?>
-
+<script type="text/javascript">
+    
+</script>
 
 
 <html lang="en">

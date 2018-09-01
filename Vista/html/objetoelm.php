@@ -80,8 +80,18 @@ include_once 'menulateral.php';
             			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
                            <td align="center">
                            <center>
-                           <a href="../../controlador/crudprod/controlador3.php?cod=<?php echo $row['codigo_producto']?>"><span class = "btn btn-success btn-xs"><span class = "glyphicon glyphicon-arrow-left"></span></span></a> 
-                           <a href="../../controlador/controler2.php?id=<?php echo $row['codigo_producto']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a>
+                           <a href="../../controlador/crudprod/controlador3.php?cod=<?php echo $row['codigo_producto']?>">
+                            <span class = "btn btn-success btn-xs">
+                              <span class = "glyphicon glyphicon-arrow-left">                                
+                              </span>
+                            </span>
+                           </a> 
+                           <a href="../../controlador/crudprod/controlador4.php?cod=<?php echo $row['codigo_producto']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este producto?')">
+                            <span class = "btn btn-danger btn-xs">
+                              <span class = "glyphicon glyphicon-trash">                                
+                              </span>
+                            </span>
+                           </a>
                            </center>
                            </td>
                        
