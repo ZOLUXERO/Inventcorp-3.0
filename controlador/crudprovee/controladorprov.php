@@ -1,7 +1,7 @@
 <?php
-include_once("../../modelo/crudprovee/mdlprovregistrar.php");
-include_once("../../modelo/crudprovee/mdlproveditar.php");
-include_once("../../modelo/crudprovee/mdlproveliminar.php");
+include_once("../../modelo/mdlprovregistrar.php");
+include_once("../../modelo/mdlproveditar.php");
+include_once("../../modelo/mdlproveliminar.php");
 
 
 if(isset($_POST["guardarprov"])) {

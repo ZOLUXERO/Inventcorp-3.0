@@ -1,8 +1,8 @@
 <?php
 
-include_once("condb.php");
+ include_once("conexion.php");
 
-class Productolisobycat extends conexionprod
+class Productolisobycat extends Conexion
 {
 
     public function listarc1()

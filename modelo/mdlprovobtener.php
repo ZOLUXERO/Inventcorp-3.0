@@ -1,6 +1,8 @@
 <?php
- include_once("condb.php");
-class Proveedorobt extends Conexionprov
+
+ include_once("conexion.php");
+
+class Proveedorobt extends Conexion
 {
 	
   	public function obtenerprov($id)
@@ -11,5 +13,15 @@ class Proveedorobt extends Conexionprov
     }
 
 }
+
+    $nom1prov = "";
+    $nom2prov = "";
+    $nom3prov = "";
+    $nom4prov = "";       
+    $emaprov = "";
+    $telprov = "";
+    $codprov = 0;
+    $update = false;
+
 
 ?>

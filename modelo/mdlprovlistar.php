@@ -1,6 +1,8 @@
 <?php
- include_once("condb.php");
-class Proveedorlis extends Conexionprov
+
+ include_once("conexion.php");
+
+class Proveedorlis extends Conexion
 {
 	
     public function listarprov()

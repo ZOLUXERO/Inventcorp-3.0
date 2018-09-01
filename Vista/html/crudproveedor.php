@@ -1,7 +1,7 @@
 <?php
 include_once '../../modelo/mdlescape.php';
-include_once '../../modelo/crudprovee/mdlprovlistar.php';
-include_once'../../modelo/crudprovee/mdlprovobtener.php';
+include_once '../../modelo/mdlprovlistar.php';
+include_once'../../modelo/mdlprovobtener.php';
 
 if (isset($_GET['edit'])) {
     $codprov = $_GET['edit'];

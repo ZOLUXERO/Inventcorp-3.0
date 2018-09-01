@@ -20,14 +20,6 @@ if($this->con->connect_errno) {
  
 }
     
-    $nom1prov = "";
-    $nom2prov = "";
-    $nom3prov = "";
-    $nom4prov = "";       
-    $emaprov = "";
-    $telprov = "";
-    $codprov = 0;
-    $update = false;
 
 
 ?>
