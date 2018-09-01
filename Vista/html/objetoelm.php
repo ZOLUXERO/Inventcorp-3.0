@@ -14,7 +14,7 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
-require '../../modelo/crudprod/alumno.model.php';
+include_once '../../modelo/mdlprodlistarel.php';
 
 include_once 'header.php'; 
 ?>
@@ -38,7 +38,7 @@ include_once 'menulateral.php';
 <div class="col-sm-4 col-md-4"><h class="panel-title">Elementos eliminados</h></div> 
 <div align="right" class="col-sm-8 col-md-8">
 
-<a href="">[Usuarios]</a>
+<a href="objetoelmu1.php">[Usuarios]</a>
 <a href="">[Productos]</a>
 <a href="">[Clientes]</a>
 <a href="">[Proveedores]</a>
@@ -50,7 +50,14 @@ include_once 'menulateral.php';
 </div>
     <!-- contenedor de descripcion ejercicios-->
       <div class="panel-body">
-         <p style="color:#DCA430">Control de objetos eliminados. <center><span><?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL PRODUCTO"."</div>";}if(isset($_REQUEST['dato1'])){ echo "ACTUALIZACION EXITOSA";}?></span></center></p> 
+         <p style="color:#DCA430">Control de Productos eliminados. 
+          <center>
+            <span>
+              <?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL PRODUCTO"."</div>";}if(isset($_REQUEST['elm'])){ echo "<td colspan='2' align='center'><div class='alert alert-danger'>"."SE HA ELIMINADO EL PRODUCTO CORRECTAMENTE"."</div>";}?>
+                
+              </span>
+            </center>
+          </p> 
           <!-- contenedor menu de ejercicios-->
         			  
       			   <!-- Contenedor ejercicio-->
@@ -73,7 +80,7 @@ include_once 'menulateral.php';
                        <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Acción</td>
                          
                         <?php
-      			            $objeto= new clases;
+      			            $objeto= new Productoel;
       			            $res=$objeto->listarel();
       			  		
             			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
@@ -81,7 +88,7 @@ include_once 'menulateral.php';
             			         <tr style="font-size:12px">
                 			     <td align="center"><?php echo filter_var($row['codigo_producto'], FILTER_SANITIZE_STRING)?></td>
                            <td align="center"><?php echo filter_var($row['nombre_producto'], FILTER_SANITIZE_STRING)?></td>
-                			     <td align="center"><?php echo $objeto->escape($row['desc_producto']);?></td>
+                			     <td align="center"><?php echo $row['desc_producto'];?></td>
                            <td align="center"><?php echo $row['precio_entrada']?></td>
                            <td align="center"><?php echo $row['precio_salida']?></td>
                            <td align="center"><?php echo $row['fecha_ingreso']?></td>
