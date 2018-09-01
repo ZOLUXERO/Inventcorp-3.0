@@ -15,7 +15,8 @@
 <header>
 
 <?php 
-//include_once '../../controlador/control.php'; 
+include_once '../../controlador/control.php'; 
+include_once '../../controlador/controladmin.php';
 include_once 'header.php'; 
 include_once '../../modelo/mdlusuobtener.php';
 $id=$_REQUEST['id'];

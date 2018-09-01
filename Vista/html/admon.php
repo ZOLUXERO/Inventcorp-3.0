@@ -91,19 +91,37 @@ include_once 'menulateral.php';
                             if ($objeto2->escape($row['id_rol'] == 1)) {
                               echo "Administrador";
                             }
-                            elseif ($objeto2->escape($row['id_rol'] == 2)) {
+                            if ($objeto2->escape($row['id_rol'] == 2)) {
                               echo "Usuario";
                             }
-                            elseif ($objeto2->escape($row['id_rol'] == 3)) {
+                            if ($objeto2->escape($row['id_rol'] == 3)) {
                               echo "visitante";
                             }                            
                             ?>
-                              
-                            </td>
-            			         
-                           <td align="center"><center><a href="editarusuario.php?id=<?php echo $row['documento']?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a> 
-                           <a href="../../controlador/controler2.php?id=<?php echo $row['documento']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
-                       
+                             
+                                                     
+                           </td>
+                                                       
+                            
+                            <td align="center"><center><a href="editarusuario.php?id=<?php echo $row["documento"]?>"><span class = "btn btn-warning btn-xs"><span class = "glyphicon glyphicon-edit"></span></span></a>
+
+                             <?php
+                            if ($objeto2->escape($row['id_rol'] == 2)) {?>
+
+                              <a href="../../controlador/controler2.php?id=<?php echo $row['documento']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
+                            
+                              <?php
+                            }
+                             ?>
+                             <?php
+                            if ($objeto2->escape($row['id_rol'] == 3)) {?>
+
+                              <a href="../../controlador/controler2.php?id=<?php echo $row['documento']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a></center></td>
+                            
+                              <?php
+                            }
+                             ?>                         
+
                            </tr>    
                                     
             				  <?php } $objeto->CloseDB();?>
