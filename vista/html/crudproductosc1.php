@@ -274,7 +274,7 @@ include_once 'menulateral.php';
 
                         if($res->num_rows == 0)
                              { 
-                              echo "<h4 align='center' >NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</h4>";
+                              echo "<div align='center' class='alert alert-warning'>NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</div>";
                              }
 
 

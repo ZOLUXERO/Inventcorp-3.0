@@ -38,7 +38,7 @@ include_once 'menulateral.php';
       </div>
     <!-- contenedor de descripcion ejercicios-->
       <div class="panel-body">
-         <p style="color:#DCA430">Control de objetos eliminados. <center><span><?php if(isset($_REQUEST['dato'])){ echo "BORRADO EXITOSO";}if(isset($_REQUEST['dato1'])){ echo "ACTUALIZACION EXITOSA";}?></span></center></p> 
+         <p style="color:#DCA430">Control de objetos eliminados. <center><span><?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL PRODUCTO"."</div>";}if(isset($_REQUEST['dato1'])){ echo "ACTUALIZACION EXITOSA";}?></span></center></p> 
           <!-- contenedor menu de ejercicios-->
         			  
       			   <!-- Contenedor ejercicio-->
@@ -80,7 +80,7 @@ include_once 'menulateral.php';
             			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
                            <td align="center">
                            <center>
-                           <a href=""><span class = "btn btn-success btn-xs"><span class = "glyphicon glyphicon-arrow-left"></span></span></a> 
+                           <a href="../../controlador/crudprod/controlador3.php?cod=<?php echo $row['codigo_producto']?>"><span class = "btn btn-success btn-xs"><span class = "glyphicon glyphicon-arrow-left"></span></span></a> 
                            <a href="../../controlador/controler2.php?id=<?php echo $row['codigo_producto']?>"><span class = "btn btn-danger btn-xs"><span class = "glyphicon glyphicon-trash"></span></span></a>
                            </center>
                            </td>
