@@ -1,7 +1,7 @@
 <?php
-include_once '../../modelo/crudcat/mdlcatlistar.php';
-include_once '../../modelo/crudprod/mdlprodlistarc1.php';
-include_once'../../modelo/crudprod/mdlprodobtener.php';
+include_once '../../modelo/mdlcatlistar.php';
+include_once '../../modelo/mdlprodlistarc1.php';
+include_once'../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlescape.php';
 
 if (isset($_POST['insertp1'])=="") {
@@ -295,7 +295,7 @@ include_once 'menulateral.php';
                                 <a href="crudproductos.php?edit=<?php echo $row['codigo_producto']; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="../../controlador/crudprod/controlador.php?del=<?php echo $row['codigo_producto']; ?>">Eliminar</a>
+                                <a href="../../controlador/crudprod/controlador2.php?del=<?php echo $row['codigo_producto']; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php 
