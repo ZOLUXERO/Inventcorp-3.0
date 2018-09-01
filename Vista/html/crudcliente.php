@@ -1,7 +1,7 @@
 <?php
 include_once '../../modelo/mdlescape.php';
-include_once '../../modelo/crudcliente/mdlclielistar.php';
-include_once '../../modelo/crudcliente/mdlclieobtener.php';
+include_once '../../modelo/mdlclielistar.php';
+include_once '../../modelo/mdlclieobtener.php';
 
 if (isset($_GET['edit'])) {
     $codclie = $_GET['edit'];

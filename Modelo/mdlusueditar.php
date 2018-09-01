@@ -2,7 +2,7 @@
 
 include_once("conexion.php");
 
-class Usuarioe extends conexion{
+class Usuarioe extends Conexion{
 
 		public function editar($id,$nom1,$nom2,$nom3,$nom4,$ema,$tel,$est,$rol)
 	{

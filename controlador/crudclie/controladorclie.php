@@ -1,7 +1,7 @@
 <?php
-include_once("../../modelo/crudcliente/mdlclieregistro.php");
-include_once("../../modelo/crudcliente/mdlclieeditar.php");
-include_once("../../modelo/crudcliente/mdlclieborrar.php");
+include_once("../../modelo/mdlclieregistro.php");
+include_once("../../modelo/mdlclieeditar.php");
+include_once("../../modelo/mdlclieborrar.php");
 
 
 if(isset($_POST["guardarclie"])) {

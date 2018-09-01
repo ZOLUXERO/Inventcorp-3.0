@@ -1,18 +1,17 @@
 <?php
-include_once("../conexion.php");
 
-class Categoriaeli extends Conexion
+ include_once("condb.php");
+
+class Productoeli extends conexionprod
 {
-	
+
     public function eliminar($id)
     {
-        $q = "update categorias set estado_categoria='0' where id_categoria='$id'";
+        $q = "update productos set estado_producto='0' where codigo_producto='$id'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
         return $consulta;   
     }
-    
+
 }
-
-
 
 ?>

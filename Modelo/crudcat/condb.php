@@ -20,10 +20,6 @@ if($this->con->connect_errno) {
  
 }
     
-    $nom = "";
-    $des = "";
-    $cod = 0;
-    $update = false;
 
 
 ?>

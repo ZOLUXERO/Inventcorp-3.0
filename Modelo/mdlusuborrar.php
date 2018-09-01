@@ -1,6 +1,8 @@
 <?php
 
-class Usuario extends conexion{
+include_once("conexion.php");
+
+class Usuario extends Conexion{
 
 		public function borrar($id)
 	{

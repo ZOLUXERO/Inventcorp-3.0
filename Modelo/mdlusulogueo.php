@@ -2,7 +2,7 @@
 
  include_once("conexion.php");
 
-class Usuariol extends conexion{
+class Usuariol extends Conexion{
 
     public function logueo($usuario)
 	{

@@ -2,7 +2,7 @@
 
  include_once("conexion.php");
 
-class Usuarior extends conexion{
+class Usuarior extends Conexion{
 
 	public function registro($usu,$nom1,$nom2,$nom3,$nom4,$ape,$tdo,$numb,$pass)
 	{

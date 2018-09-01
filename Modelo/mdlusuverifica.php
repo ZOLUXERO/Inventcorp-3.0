@@ -2,7 +2,7 @@
 
  include_once("conexion.php");
 
-class Usuariov extends conexion{
+class Usuariov extends Conexion{
 
 	public function verifica($dato)
 	{

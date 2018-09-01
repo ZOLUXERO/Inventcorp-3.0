@@ -1,15 +1,15 @@
 <?php
 
-include("../../modelo/crudcat/alumno.model.php");
+include_once("../../modelo/mdlcatregistro.php");
+include_once("../../modelo/mdlcatactualizar.php");
 
 	
-
 
 if (isset($_POST['guardarcat'])) {
 	$nom=$_REQUEST['nom'];
 	$des=$_REQUEST['des'];
 
-	$objeto = new clases;
+	$objeto = new Categoriareg;
 	$res = $objeto->registrocat($nom, $des);
 	header('location: ../../vista/html/crudcategoria.php');
 
@@ -20,23 +20,9 @@ if (isset($_POST['actualizar'])) {
 	$nom=$_REQUEST['nom'];
 	$des=$_REQUEST['des'];
 
-	$objeto2 = new clases;
+	$objeto2 = new Categoriaact;
 	$res2 = $objeto2->actualizar($cod, $nom, $des);
 	header('location: ../../vista/html/crudcategoria.php');
-}
-
-
-
-
-	
-
-if (isset($_GET['del'])) {
-	$cod = $_GET['del'];
-
-	$objeto3 = new clases;
-	$res3 = $objeto3->eliminar($cod);
-	header('location: ../../vista/html/crudcategoria.php');
-
 }
 
 ?>

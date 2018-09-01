@@ -1,8 +1,9 @@
 <?php
 
- include("conexion.php");
+ include_once("conexion.php");
 
-class Usuario extends conexion{
+class Usuario extends Conexion
+{
 
 	public function listarusuarios()
 	{

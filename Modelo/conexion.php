@@ -1,6 +1,6 @@
 <?php
 
-class conexion
+class Conexion
 {
 
 public function __construct()
@@ -19,14 +19,7 @@ if($this->con->connect_errno) {
   } 
  
 }
-  	$nom1clie = "";
-  	$nom2clie = "";
-  	$nom3clie = "";
-   	$nom4clie = ""; 	  	
-    $emaclie = "";
-    $telclie = "";
-    $codclie = 0;
-    $update = false;
+
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php
-include_once '../../modelo/crudcat/mdlcatlistar.php';
-include_once '../../modelo/crudcat/mdlcatobtener.php';
+include_once '../../modelo/mdlcatlistar.php';
+include_once '../../modelo/mdlcatobtener.php';
 
 if (isset($_GET['edit'])) {
     $cod = $_GET['edit'];
