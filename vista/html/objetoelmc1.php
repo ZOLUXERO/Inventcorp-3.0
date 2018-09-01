@@ -39,7 +39,7 @@ include_once 'menulateral.php';
 <div align="right" class="col-sm-8 col-md-8">
 
 <a href="objetoelmu1.php">[Usuarios]</a>
-<a href="">[Productos]</a>
+<a href="objetoelm.php">[Productos]</a>
 <a href="">[Clientes]</a>
 <a href="">[Proveedores]</a>
 
@@ -50,7 +50,7 @@ include_once 'menulateral.php';
 </div>
     <!-- contenedor de descripcion ejercicios-->
       <div class="panel-body">
-         <p style="color:#DCA430">Control de Productos eliminados. 
+         <p style="color:#DCA430">Control de Clientes eliminados. 
           <center>
             <span>
               <?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL CLIENTE"."</div>";}if(isset($_REQUEST['elm'])){ echo "<td colspan='2' align='center'><div class='alert alert-danger'>"."SE HA ELIMINADO EL CLIENTE CORRECTAMENTE"."</div>";}?>
@@ -107,13 +107,13 @@ include_once 'menulateral.php';
             			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
                            <td align="center">
                            <center>
-                           <a href="../../controlador/crudprod/controlador3.php?cod=<?php echo $row['codigo_proveedor_cliente']?>">
+                           <a href="../../controlador/crudclie/controladorclie2.php?cod=<?php echo $row['codigo_proveedor_cliente']?>">
                             <span class = "btn btn-success btn-xs">
                               <span class = "glyphicon glyphicon-arrow-left">                                
                               </span>
                             </span>
                            </a> 
-                           <a href="../../controlador/crudprod/controlador4.php?cod=<?php echo $row['codigo_proveedor_cliente']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este producto?')">
+                           <a href="../../controlador/crudclie/controladorclie3.php?cod=<?php echo $row['codigo_proveedor_cliente']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este producto?')">
                             <span class = "btn btn-danger btn-xs">
                               <span class = "glyphicon glyphicon-trash">                                
                               </span>
