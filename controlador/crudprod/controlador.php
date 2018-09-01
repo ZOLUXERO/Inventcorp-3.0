@@ -15,6 +15,11 @@ if (isset($_POST['guardar'])) {
 
 	$objeto = new clases;
 
+	if (session_status() !== PHP_SESSION_ACTIVE) 
+	{
+		session_start();
+	}
+
 	$pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "inserto un producto nuevo (", $cod,")");
 
 	$ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);

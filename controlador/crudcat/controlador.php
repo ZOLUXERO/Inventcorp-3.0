@@ -6,12 +6,11 @@ include("../../modelo/crudcat/alumno.model.php");
 
 
 if (isset($_POST['guardarcat'])) {
-	$cod=$_REQUEST['cod'];
 	$nom=$_REQUEST['nom'];
 	$des=$_REQUEST['des'];
 
 	$objeto = new clases;
-	$res = $objeto->registrocat($cod, $nom, $des);
+	$res = $objeto->registrocat($nom, $des);
 	header('location: ../../vista/html/crudcategoria.php');
 
 }

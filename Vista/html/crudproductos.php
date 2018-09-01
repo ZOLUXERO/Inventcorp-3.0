@@ -2,6 +2,7 @@
 include_once '../../modelo/crudcat/mdlcatlistar.php';
 include_once '../../modelo/crudprod/mdlprodlistar.php';
 include_once'../../modelo/crudprod/mdlprodobtener.php';
+include_once '../../modelo/mdlescape.php';
 
 if (isset($_GET['edit'])) {
     $cod = $_GET['edit'];
@@ -64,19 +65,18 @@ include_once 'menulateral.php';
 
 <div class="panel-heading">
 
-<div class="col-sm-9 col-md-9"><h3 class="panel-title">PRODUCTOS</h3></div>    
+<div class="col-sm-4 col-md-4"><h class="panel-title">PRODUCTOS</h></div> 
+<div class="col-sm-8 col-md-8"><form align="right" action="crudproductosc1.php" method="post">
 
-
-<tr align="right" class="panel-title">Ordenar por:
-
-<select>
-    <option>Categorías</option>
-    <option>Fecha</option>
-    <option>Precio entrada</option>
-    <option>Precio salida</option>
-</select>
+<tr align="right">Busqueda:
+     <input type="text" name="insertp1">
+     <button  type="submit" name="buscarp1" >Buscar</button>    
 </tr>
 
+</form>
+</div>   
+
+<br>
 </div>
 
 <!-- contenedor de descripcion ejercicios-->
@@ -85,10 +85,6 @@ include_once 'menulateral.php';
 
 <div class="row">
  <div class="col-sm-12 col-md-12">
- <table class="" style="" align="center"> 
-  <tr><td style="color:#800000; font-family:Tahoma, Geneva, sans-serif" align="center">BASE DE DATOS</td></tr>
-  </table>
-
 
 
             <form method="post" action="../../controlador/crudprod/controlador.php" class="navbar-form navbar-default">
@@ -266,17 +262,18 @@ include_once 'menulateral.php';
                     <?php
                     $objeto= new Productolis;
                     $res=$objeto->listar();
+                    $objeto2= new Escap;
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){
                       ?>
                         <tr>
-                            <td><?php echo $row['codigo_producto']; ?></td>
-                            <td><?php echo $row['nombre_producto']; ?></td>
-                            <td><?php echo $row['desc_producto']; ?></td>
-                            <td><?php echo $row['precio_entrada']; ?></td>
-                            <td><?php echo $row['precio_salida']; ?></td>
-                            <td><?php echo $row['fecha_ingreso']; ?></td>
-                            <td><?php echo $row['id_categoria']; ?></td>
+                            <td><?php echo $objeto2->escape($row['codigo_producto']); ?></td>
+                            <td><?php echo $objeto2->escape($row['nombre_producto']); ?></td>
+                            <td><?php echo $objeto2->escape($row['desc_producto']); ?></td>
+                            <td><?php echo $objeto2->escape($row['precio_entrada']); ?></td>
+                            <td><?php echo $objeto2->escape($row['precio_salida']); ?></td>
+                            <td><?php echo $objeto2->escape($row['fecha_ingreso']); ?></td>
+                            <td><?php echo $objeto2->escape($row['id_categoria']); ?></td>
                             <td>
                                 <a href="chart.php?edit=<?php echo $row['codigo_producto']; ?>">Seguimiento</a>
                             </td>

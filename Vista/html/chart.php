@@ -1,9 +1,14 @@
+<?php
+if (isset($_GET['edit']) == "") {
+  header('location: crudproductos.php');
+}
 
+?>
 
 <html lang="en">
 
 <head>
-<?php //include_once '../../../controlador/control.php' ?>
+
 <title>Mi Proyecto</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

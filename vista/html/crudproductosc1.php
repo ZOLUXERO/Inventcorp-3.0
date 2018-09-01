@@ -2,6 +2,11 @@
 include_once '../../modelo/crudcat/mdlcatlistar.php';
 include_once '../../modelo/crudprod/mdlprodlistarc1.php';
 include_once'../../modelo/crudprod/mdlprodobtener.php';
+include_once '../../modelo/mdlescape.php';
+
+if (isset($_POST['insertp1'])=="") {
+   header('location: crudproductos.php');
+}
 
 if (isset($_GET['edit'])) {
     $cod = $_GET['edit'];
@@ -64,37 +69,21 @@ include_once 'menulateral.php';
 
 <div class="panel-heading">
 
-<div class="col-sm-7 col-md-7"><h3 class="panel-title">PRODUCTOS</h3></div> 
+<div class="col-sm-4 col-md-4"><h class="panel-title">PRODUCTOS</h></div> 
+<div class="col-sm-8 col-md-8">
+    <form align="right" action="crudproductosc1.php" method="post">
 
-    
-    <tr class="panel-title" align="right">Ordenar por categoria especifica:
+        <tr align="right">Busqueda:
+             <input type="text" name="insertp1">
+             <button  type="submit" name="buscarp1" >Buscar</button>    
+        </tr>
 
-        <select style="width: 200px;"  name="catcat2">
-                                
-            asdasd<option value="" disabled selected>Seleccione su categoría</option>
-            <?php
-            $objeto1= new Categorialis;
-            $res1=$objeto1->listar();
+        <a href="crudproductos.php">[volver]</a>
+    </form>
 
-            $x = 0;
-            while($row1 = $res1->fetch_array(MYSQLI_ASSOC)){ 
-            $x ++ ;
-                                
-            ?>
-                                                                
-            <option value="<?php echo $x;?>"> <?php echo $row1['nombre_categoria']." [".$x."] " ?></option>
-                                                               
-           <?php } ?>
+</div>   
 
-        </select>
-
-    <button  type="submit" name="guardar" >Buscar</button>
-
-    </tr>
-
-<a href="">[volver]</a>
-           
-
+<br>
 </div>
 
 
@@ -283,19 +272,26 @@ include_once 'menulateral.php';
                     </thead>
                     
                     <?php
-                    $objeto= new Productolisobycat;
-                    $res=$objeto->listarc1();
+                    $objeto= new Productolisp1;
+                    $objeto2= new Escap;
+                    $res=$objeto->listarc1($objeto2->escape($_REQUEST["insertp1"]));
+
+                        if($res->num_rows == 0)
+                             { 
+                              echo "<h4 align='center' >NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</h4>";
+                             }
+
 
                      while($row = $res->fetch_array(MYSQLI_ASSOC)){
                       ?>
                         <tr>
-                            <td><?php echo $row['codigo_producto']; ?></td>
-                            <td><?php echo $row['nombre_producto']; ?></td>
-                            <td><?php echo $row['desc_producto']; ?></td>
-                            <td><?php echo $row['precio_entrada']; ?></td>
-                            <td><?php echo $row['precio_salida']; ?></td>
-                            <td><?php echo $row['fecha_ingreso']; ?></td>
-                            <td><?php echo $row['id_categoria']; ?></td>
+                            <td><?php echo $objeto2->escape($row['codigo_producto']); ?></td>
+                            <td><?php echo $objeto2->escape($row['nombre_producto']); ?></td>
+                            <td><?php echo $objeto2->escape($row['desc_producto']); ?></td>
+                            <td><?php echo $objeto2->escape($row['precio_entrada']); ?></td>
+                            <td><?php echo $objeto2->escape($row['precio_salida']); ?></td>
+                            <td><?php echo $objeto2->escape($row['fecha_ingreso']); ?></td>
+                            <td><?php echo $objeto2->escape($row['id_categoria']); ?></td>
                             <td>
                                 <a href="chart.php?edit=<?php echo $row['codigo_producto']; ?>">Seguimiento</a>
                             </td>

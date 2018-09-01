@@ -80,16 +80,7 @@ include_once 'menulateral.php';
 
             <table align="center">
 
-                <div class="form-group">
-                        <tr>
-                            <?php if ($update == true): ?>
-                                    
-                            <?php else: ?>
-                                    <td >Codigo categoría</td>
-                                    <td><input type="text" class="form-control" name="cod" maxlength="12" required pattern="[0-9]+" title="Sólo numeros"  /></td>
-                            <?php endif ?>
-                        </tr> 
-                </div>
+
 
 
 
@@ -152,7 +143,6 @@ include_once 'menulateral.php';
                             <td style="font-family:Tahoma, Geneva, sans-serif">Nombre Categoría</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Descripción</td>
                             <td></td>
-                            <td></td>
                         </tr>
                     </thead>
                     
@@ -171,9 +161,7 @@ include_once 'menulateral.php';
                             <td>
                                 <a href="crudcategoria.php?edit=<?php echo $row['id_categoria']; ?>">Editar</a>
                             </td>
-                            <td>
-                                <a href="../../controlador/crudcat/controlador.php?del=<?php echo $row['id_categoria']; ?>">Eliminar</a>
-                            </td>
+
                         </tr>
                     <?php 
                    } $objeto->CloseDB();?>

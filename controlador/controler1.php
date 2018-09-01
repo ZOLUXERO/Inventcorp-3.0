@@ -116,7 +116,7 @@ if(isset($_POST["guardar"]))
 
 			$row = $res2->fetch_array(MYSQLI_ASSOC);
    
-			header("location:../vista/html/chart.php?edit1=$cod"); 
+			header("location:../vista/html/chart.php?edit=$cod"); 
 	        
 			$objeto->CloseDB();
  
