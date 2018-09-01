@@ -1,8 +1,8 @@
 <?php
 
- include_once("condb.php");
+ include_once("conexion.php");
 
-class Productoeli extends conexionprod
+class Productoeli extends Conexion
 {
 
     public function eliminar($id)

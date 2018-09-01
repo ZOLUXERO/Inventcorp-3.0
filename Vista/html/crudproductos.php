@@ -1,7 +1,7 @@
 <?php
-include_once '../../modelo/crudcat/mdlcatlistar.php';
-include_once '../../modelo/crudprod/mdlprodlistar.php';
-include_once'../../modelo/crudprod/mdlprodobtener.php';
+include_once '../../modelo/mdlcatlistar.php';
+include_once '../../modelo/mdlprodlistar.php';
+include_once'../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlescape.php';
 
 if (isset($_GET['edit'])) {

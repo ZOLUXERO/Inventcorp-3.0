@@ -1,6 +1,10 @@
 <?php
 
-include_once("../../modelo/crudprod/alumno.model.php");
+include_once("../../modelo/mdlprodverificar.php");
+include_once("../../modelo/mdlprodregistrar.php");
+include_once("../../modelo/mdlprodobtener.php");
+include_once("../../modelo/mdlprodactualizar.php");
+include_once("../../modelo/mdlseguimientor.php");
 
 	
 
@@ -13,7 +17,10 @@ if (isset($_POST['guardar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
-	$objeto = new clases;
+	$objeto = new Productov;
+	$objeto2 = new Productoreg;
+	$objeto3 = new Seguimientor;
+
 	$res = $objeto->verificarcod($cod);
 
 	if($res->num_rows== 1)
@@ -32,10 +39,10 @@ if (isset($_POST['guardar'])) {
 
 				$ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
 
-			    $res = $objeto->testingresar($_SESSION["doc"], $ins);
+			    $res2 = $objeto3->registrar($_SESSION["doc"], $ins);
 
 				
-				$res = $objeto->registro($cod, $nom, $des, $pen, $pas, $fec, $cat);
+				$res3 = $objeto2->registro($cod, $nom, $des, $pen, $pas, $fec, $cat);
 				header('location: ../../vista/html/crudproductos.php?dato=si');
 			}
 
@@ -53,11 +60,14 @@ if (isset($_POST['actualizar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
-	$objeto2 = new clases;
-	$resl= $objeto2->obtener($cod);
+	$objeto4 = new Productoobt;
+	$objeto5 = new Productoact;
+	$objeto6 = new Seguimientor;
 
-	if (count($resl) == 1 ) {
-        $n = mysqli_fetch_array($resl);
+	$res4= $objeto4->obtener($cod);
+
+	if (count($res4) == 1 ) {
+        $n = mysqli_fetch_array($res4);
         $nomp=$n['nombre_producto'];
         $desp=$n['desc_producto'];
         $penp=$n['precio_entrada'];
@@ -100,25 +110,13 @@ if (isset($_POST['actualizar'])) {
     if($pruebaarray !== $pruebaarray2){
     $ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
 
-    $res2 = $objeto2->testingresar($_SESSION["doc"], $ins);
+    $res5 = $objeto6->registrar($_SESSION["doc"], $ins);
 
-	$res2 = $objeto2->actualizar($cod, $nom, $des, $pen, $pas, $fec, $cat);
+	$res6 = $objeto5->actualizar($cod, $nom, $des, $pen, $pas, $fec, $cat);
 	header('location: ../../vista/html/crudproductos.php?dato2=01');
 	}
 }
 
 
-
-
-	
-
-if (isset($_GET['del'])) {
-	$id = $_GET['del'];
-
-	$objeto3 = new clases;
-	$res3 = $objeto3->eliminar($id);
-	header('location: ../../vista/html/crudproductos.php');
-
-}
 
 ?>

@@ -1,8 +1,8 @@
 <?php
 
-include_once("condb.php");
+ include_once("conexion.php");
 
-class Productoobt extends conexionprod
+class Productoobt extends Conexion
 {
 
     public function obtener($id)
@@ -13,5 +13,17 @@ class Productoobt extends conexionprod
     }
     
 }
+
+    
+    $nom = "";
+    $des = "";
+    $pen = "";
+    $pas = "";
+    $fec = "";
+    $cat = "";
+    $cod = 0;
+    $update = false;
+
+
 
 ?>
