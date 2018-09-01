@@ -88,10 +88,6 @@ include_once 'menulateral.php';
 
 
 
-<!-- contenedor de descripcion ejercicios-->
-
-<!-- Contenedor ejercicio-->
-
 <div class="row">
  <div class="col-sm-12 col-md-12">
  <table class="" style="" align="center"> 
