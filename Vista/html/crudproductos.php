@@ -296,7 +296,7 @@ include_once 'menulateral.php';
                                 <a href="crudproductos.php?edit=<?php echo $row['codigo_producto']; ?>">Editar</a>
                             </td>
                             <td>
-                                <a href="../../controlador/crudprod/controlador.php?del=<?php echo $row['codigo_producto']; ?>">Eliminar</a>
+                                <a href="../../controlador/crudprod/controlador2.php?del=<?php echo $row['codigo_producto']; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php 
