@@ -26,7 +26,7 @@ if (!empty($_SESSION["session"]))
 <header>
 <?php include_once 'header.php'; ?>
 </header>
-
+</div>
   <div class="container">
   <div class="jumbotron">
         <h1 align="center">Inicie sesión</h1>
