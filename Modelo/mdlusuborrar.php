@@ -2,11 +2,11 @@
 
 include_once("conexion.php");
 
-class Usuario extends Conexion{
+class Usuariob extends Conexion{
 
 		public function borrar($id)
 	{
-		$q = "delete from usuarios where documento='$id'";
+		$q = "update usuarios set estado_usuario='0' where documento='$id'";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
 		return $consulta;	
 	}

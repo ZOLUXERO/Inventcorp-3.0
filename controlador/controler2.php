@@ -1,10 +1,10 @@
 <?php
 
-include("../modelo/clases.php");
+include("../modelo/mdlusuborrar.php");
 	        
 			$usu=$_REQUEST['id'];
  
-		    $objeto= new clases;
+		    $objeto= new Usuariob;
 			$res=$objeto->borrar($usu);
 			if(isset($res))
 	        {	
