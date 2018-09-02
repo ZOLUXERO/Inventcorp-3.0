@@ -123,7 +123,10 @@ if (!empty($_SESSION["session"]))
 <tr><td colspan="2"><hr></td></tr>
 <tr><td align="center" colspan="2"><input type="submit" class="btn btn-lg btn-success" name="registrar" style="width:400px" value="REGISTRAR"></td></tr>
 <tr><td style="padding:4px"></td></tr>
-<tr><?PHP if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."REGISTRO CORRECTO"."</div>";} if(isset($_REQUEST['dato1'])){ echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."USUARIO YA SE ENCUENTRA EN EL SISTEMA"."</div>"; }?></td></tr>
+<tr>
+  <?PHP if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."REGISTRO CORRECTO"."</div>";} if(isset($_REQUEST['dato1'])){ echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."USUARIO YA SE ENCUENTRA EN EL SISTEMA"."</div>";}  if(isset($_REQUEST['daton10o'])){ echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."YA HAY UN USUARIO REGISTRADO CON ESE DOCUMENTO EN EL SISTEMA"."</div>"; }?>
+</td>
+</tr>
         
 
 

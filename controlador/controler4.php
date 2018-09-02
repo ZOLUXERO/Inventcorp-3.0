@@ -1,6 +1,7 @@
 <?php
 
 include_once("../modelo/mdlusuverifica.php");
+include_once("../modelo/mdlusuverifica2.php");
 include_once("../modelo/mdlusuregistro.php");
 
 
@@ -27,11 +28,18 @@ if(isset($_POST["registrar"])) {
 	        }
 			else
 			{		
-			$objeto2= new Usuarior;
-		    $res2=$objeto2->registro($usu,$nom1,$nom2,$nom3,$nom4,$ape,$tdo,$numb,$pass);
-			header("location:../vista/html/registro.php?dato=no");  //Redirige a página registro sin errores
+			$objeto3= new Usuariov2;
+			$res3=$objeto3->verifica2($ape);
+
+				if ($res3->num_rows== 1) {
+					header("location:../vista/html/registro.php?daton10o=no"); 
+				}else{
+				$objeto2= new Usuarior;
+			    $res2=$objeto2->registro($usu,$nom1,$nom2,$nom3,$nom4,$ape,$tdo,$numb,$pass);
+				header("location:../vista/html/registro.php?dato=no");  //Redirige a página registro sin errores
 		    
 			}
+		}
 			$objeto->CloseDB();
  
 }
