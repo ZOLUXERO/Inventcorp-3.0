@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2018 a las 00:18:40
+-- Tiempo de generación: 02-09-2018 a las 03:23:28
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -66,7 +66,7 @@ CREATE TABLE `listar_clientes_proveedores` (
 --
 
 INSERT INTO `listar_clientes_proveedores` (`codigo_proveedor_cliente`, `primer_nombre_provee_clie`, `segundo_nombre_provee_clie`, `primer_apellido_provee_clie`, `segundo_apellido_provee_clie`, `email_proveedor_cliente`, `telefono_proveedor_cliente`, `estado_proveedor_cliente`, `id_rol_listar`) VALUES
-('001', 'zzzzzzzzzz', 'zzzzz', 'zzzzz', 'zzzz', 'asdad@adsadas.ocm', 'telclie', 1, 2),
+('001', 'zzzzzzzzzz', 'zzzzz<!--', 'zzzzz', 'zzzz', 'asdad@adsadas.ocm', 'telclie', 1, 2),
 ('0014', 'asd', 'asdd', 'adsadas', 'asdad', 'asdad@adsadas.edu.co', '311', 0, 1),
 ('0034', 'qqq', 'qqqqqqq', 'qq', 'q', 'uyiyui@657.com', 'qq323', 1, 2),
 ('009', 'fdgdf', 'dfgdfg', 'dfgdfg', 'fdgdfg', 'dfgd@dsf', 'sdf3121', 1, 1),
@@ -107,7 +107,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`codigo_producto`, `nombre_producto`, `desc_producto`, `precio_entrada`, `precio_salida`, `fecha_ingreso`, `estado_producto`, `id_categoria`) VALUES
-('prueba01', 'holaz', 'carne de cerdo gordoz', '2800', '3700', '2018-09-12', 0, 2),
+('prueba01', 'holaz', 'carne de cerdo gordoz', '2800', '3700', '2018-09-12', 1, 2),
 ('prueba02', 'sasad', 'carne de cerdo gordoz', '3200', '3200', '2018-09-04', 1, 1);
 
 -- --------------------------------------------------------
@@ -238,6 +238,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`documento`, `email_usuario`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `contrasena`, `telefono`, `estado_usuario`, `tipo_documento`, `id_rol`) VALUES
+(102242395, 'admin@admin.com', 'Camilo', 'Alejandro', 'Moreno', 'Pineros', '$2y$10$MU3WV9bJHPcyUiXxmJnNLOZZKUw0Vv630XdGd0QHGT4m0PI/ZBgye', '3133265449', 1, 'NIT', 3),
 (1022423958, 'admin@admin', 'Camilo', 'Alejandro<!--', 'Moreno', 'Pineros', '$2y$10$5tao.GzsHFeuOrQ0NKFGIe7MTEBU8Tf/.MDb2mD0.7myKUn5GItDe', '01', 1, 'CC', 1);
 
 --
