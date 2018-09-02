@@ -2,7 +2,7 @@
 
  include_once("conexion.php");
 
-class Stocklis extends conexionstock{
+class Stocklis extends Conexion{
 
 	 public function listarstock($id)
 	{

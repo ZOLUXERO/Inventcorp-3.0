@@ -2,7 +2,7 @@
 
  include_once("conexion.php");
 
-class Stockobt extends conexionstock{
+class Stockobt extends Conexion{
 
  public function obtenerstock($id)
     {

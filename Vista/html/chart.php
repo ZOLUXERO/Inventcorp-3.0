@@ -1,10 +1,9 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladminusu.php';
-include_once '../../modelo/crudprod/mdlprodobtener.php';
-include_once '../../modelo/stock/mdlliststock.php';
-include_once '../../modelo/stock/mdlobtenerstock.php';
-include_once'../../modelo/crudprod/mdlprodobtener.php';
+include_once '../../modelo/mdlprodobtener.php';
+include_once '../../modelo/mdlliststock.php';
+include_once '../../modelo/mdlobtenerstock.php';
 
 if (isset($_GET['edit']) == "") {
   header('location: crudproductos.php');
@@ -73,7 +72,7 @@ EJEMPLO PARA ELIMINAR PRUEBA
 </div>
 
 
-<form method="post" action="../../controlador/controler1.php" class="navbar-form navbar-default">
+<form method="post" action="../../controlador/crudstock/controler1.php" class="navbar-form navbar-default">
             <input type="hidden" name="id" value="">
 
             <table align="center">
@@ -82,18 +81,20 @@ EJEMPLO PARA ELIMINAR PRUEBA
                           <?php if (isset($_GET['edit'])):?>
                               <tr><td style="padding:2px"></td></tr>
                               <tr>
-                                  <td >Codigo </td>
-                                    <td><input type="hidden" name="cod" value="<?php echo $_GET['edit']?>" />
-                                      <td align="right"><?php echo $_GET['edit']?></td> 
+                                  <td >Codigo 
+                                    <input type="hidden" name="cod" value="<?php echo $_GET['edit']?>" />
+                                      <td align="right"><?php echo $_GET['edit']?>
                                     </td>
+                                  </td>
                               </tr>
                             <?php endif ?> 
                             <?php if (isset($_GET['edit1'])):?>
                               <tr><td style="padding:2px"></td></tr>
                                     <tr>
-                                    <td >Codigo </td>
-                                    <td><input type="hidden" name="cod" value="<?php echo $_GET['edit1']?>" /></td>
+                                    <td >Codigo 
+                                    <td><input type="hidden" name="cod" value="<?php echo $_GET['edit1']?>" />
                                     <td align="right"><?php echo $_GET['edit1']?></td> 
+                                    </td>
                               </tr>
                             <?php endif ?>
                             
