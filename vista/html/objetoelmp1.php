@@ -113,7 +113,7 @@ include_once 'menulateral.php';
                               </span>
                             </span>
                            </a> 
-                           <a href="../../controlador/crudprovee/controladorprov3.php?cod=<?php echo $row['codigo_proveedor_cliente']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este producto?')">
+                           <a href="../../controlador/crudprovee/controladorprov3.php?cod=<?php echo $row['codigo_proveedor_cliente']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este proveedor?')">
                             <span class = "btn btn-danger btn-xs">
                               <span class = "glyphicon glyphicon-trash">                                
                               </span>
