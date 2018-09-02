@@ -114,9 +114,9 @@ include_once 'menulateral.php';
                                 
                                 <a href="crudcategoria.php">Cancelar</a>
                                 
-                                    <button  type="submit" name="actualizar" class="btn btn-success" >Actualizar</button>
+                                    <button  type="submit" name="actualizar" class="btn btn-success" >Actualizar <span class="glyphicon glyphicon-ok"></button>
                                 <?php else: ?>
-                                    <button  type="submit" name="guardarcat" class="btn btn-default" >Guardar</button>
+                                    <button  type="submit" name="guardarcat" class="btn btn-default">Guardar</button>
                                 <?php endif ?>
                         </td>
                 </tr>
