@@ -33,10 +33,10 @@
               <p>Páginas de inventarios, con programación orientada a objetos, esta página fue hecha en lenguaje de programación PHP, HTML, CSS, SQL lo invitamos a explorar la página!</p><br>
               <div class="alert alert-success">
          <div class="row">
-          <div class="col-md-3" align="center"> <span><img src="Vista/imagenes/css.png" width="100" width="100"></span></div>
-          <div class="col-md-3" align="center"> <span><img src="Vista/imagenes/sql.png" width="100" width="100"></span></div>
-          <div class="col-md-3" align="center"> <span><img src="Vista/imagenes/html.png" width="130" width="130"></span></div>
-        <div class="col-md-3" align="center"> <span><img src="Vista/imagenes/php.png" width="110" width="110"></span></div>
+          <div class="col-md-3" align="center"> <span><img src="vista/imagenes/css.png" width="100" width="100"></span></div>
+          <div class="col-md-3" align="center"> <span><img src="vista/imagenes/sql.png" width="100" width="100"></span></div>
+          <div class="col-md-3" align="center"> <span><img src="vista/imagenes/html.png" width="130" width="130"></span></div>
+        <div class="col-md-3" align="center"> <span><img src="vista/imagenes/php.png" width="110" width="110"></span></div>
       </div>
         
             </div>
