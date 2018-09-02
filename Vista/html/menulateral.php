@@ -40,7 +40,7 @@
         <?php endif ?>   
         
       </li>
-      <li><a href="">(---Perfil usuario---)<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
+      <li><a href="perfilusuario.php">Perfil usuario<span class="glyphicon glyphicon-user pull-right"></span> </a></li>
   </ul>
 
 </body>
