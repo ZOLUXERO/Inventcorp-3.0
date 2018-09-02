@@ -41,7 +41,7 @@ include_once 'menulateral.php';
 <a href="">[Usuarios]</a>
 <a href="objetoelm.php">[Productos]</a>
 <a href="objetoelmc1.php">[Clientes]</a>
-<a href="">[Proveedores]</a>
+<a href="objetoelmp1.php">[Proveedores]</a>
 
 
 </div>   

@@ -14,7 +14,7 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
-include_once '../../modelo/mdlclielistarel.php';
+include_once '../../modelo/mdlprovlistarel.php';
 include_once '../../modelo/mdlescape.php';
 include_once 'header.php'; 
 ?>
@@ -40,8 +40,8 @@ include_once 'menulateral.php';
 
 <a href="objetoelmu1.php">[Usuarios]</a>
 <a href="objetoelm.php">[Productos]</a>
-<a href="">[Clientes]</a>
-<a href="objetoelmp1.php">[Proveedores]</a>
+<a href="objetoelmc1.php">[Clientes]</a>
+<a href="">[Proveedores]</a>
 
 
 </div>   
@@ -50,10 +50,10 @@ include_once 'menulateral.php';
 </div>
     <!-- contenedor de descripcion ejercicios-->
       <div class="panel-body">
-         <p style="color:#DCA430">Control de Clientes eliminados. 
+         <p style="color:#DCA430">Control de Proveedores eliminados. 
           <center>
             <span>
-              <?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL CLIENTE"."</div>";}if(isset($_REQUEST['elm'])){ echo "<td colspan='2' align='center'><div class='alert alert-danger'>"."SE HA ELIMINADO EL CLIENTE CORRECTAMENTE"."</div>";}?>
+              <?php if(isset($_REQUEST['dato'])){ echo "<td colspan='2' align='center'><div class='alert alert-success'>"."SE RESTAURO CORRECTAMENTE EL PROVEEDOR"."</div>";}if(isset($_REQUEST['elm'])){ echo "<td colspan='2' align='center'><div class='alert alert-danger'>"."SE HA ELIMINADO EL PROVEEDOR CORRECTAMENTE"."</div>";}?>
                 
               </span>
             </center>
@@ -82,8 +82,8 @@ include_once 'menulateral.php';
                     
                     
                     <?php
-                    $objeto= new Clientelise;
-                    $res=$objeto->listarclieel();
+                    $objeto= new Proveedorese;
+                    $res=$objeto->listarel();
 
                     $objetoe= new Escap;
 
@@ -107,13 +107,13 @@ include_once 'menulateral.php';
             			         <!--<td align="center"><?php// echo $row['contrasena']?></td>  !-->
                            <td align="center">
                            <center>
-                           <a href="../../controlador/crudclie/controladorclie2.php?cod=<?php echo $row['codigo_proveedor_cliente']?>">
+                           <a href="../../controlador/crudprovee/controladorprov2.php?cod=<?php echo $row['codigo_proveedor_cliente']?>">
                             <span class = "btn btn-success btn-xs">
                               <span class = "glyphicon glyphicon-arrow-left">                                
                               </span>
                             </span>
                            </a> 
-                           <a href="../../controlador/crudclie/controladorclie3.php?cod=<?php echo $row['codigo_proveedor_cliente']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este producto?')">
+                           <a href="../../controlador/crudprovee/controladorprov3.php?cod=<?php echo $row['codigo_proveedor_cliente']?>" onclick="return confirm('Esta seguro que desea eliminar por completo este producto?')">
                             <span class = "btn btn-danger btn-xs">
                               <span class = "glyphicon glyphicon-trash">                                
                               </span>
