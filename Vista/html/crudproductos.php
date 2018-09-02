@@ -128,7 +128,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Precio entrada</td>
-                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 máximo" /></td>
+                            <td><input type="text" class="form-control" name="pen" value="<?php echo $pen; ?>" maxlength="4" required pattern="[0-9]+" title="Solo numeros, 4 máximo" /></td>
                         </tr> 
                 </div>
 
@@ -138,7 +138,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Precio salida</td>
-                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" maxlength="6" required pattern="[0-9]+" title="Solo numeros 6 máximo" /></td>
+                            <td><input type="text" class="form-control" name="pas" value="<?php echo $pas; ?>" maxlength="4" required pattern="[0-9]+" title="Solo numeros, 4 máximo" /></td>
                         </tr> 
                 </div>
 
