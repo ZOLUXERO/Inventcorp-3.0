@@ -240,7 +240,11 @@ include_once 'menulateral.php';
                     if(isset($_REQUEST['dato2'])){
                      echo "<td colspan='2' align='center'><div class='alert alert-success'>"."PRODUCTO ACTUALIZADO"."</div>"; 
                      }
+                    if(isset($_REQUEST['elim'])){
+                     echo "<td colspan='2' align='center'><div class='alert alert-danger'>"."PRODUCTO ELIMINADO"."</div>"; 
+                     }
                      ?>
+
                     
                 </tr>
             </table>
