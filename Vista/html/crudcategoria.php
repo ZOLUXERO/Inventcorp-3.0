@@ -139,7 +139,7 @@ include_once 'menulateral.php';
                     <thead>
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td style="font-family:Tahoma, Geneva, sans-serif">Codigo Categoría</td>
+                            <td style="font-family:Tahoma, Geneva, sans-serif">Numero de categoria</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Nombre Categoría</td>
                             <td style="font-family:Tahoma, Geneva, sans-serif">Descripción</td>
                             <td></td>
