@@ -129,12 +129,24 @@ while($row = $res->fetch_array(MYSQLI_ASSOC)){
     <td style="color: #C1C1C1 " align="right">
       No se puede editar
     </td>
- </tr>  
+ </tr> 
+
+<tr>
+<?php 
+  if(isset($_REQUEST['dato1'])){
+  echo "<td colspan='4' align='center'><div class='alert alert-success'>"."ACTUALIZACION CORRECTA"."</div>";
+} 
+
+?>
+</td>                   
+</tr> 
 
 <?php } $objeto->CloseDB();?>
 
 </table>
+
 </div>
+
 
 
 <hr style="border-top: 1px double #797979;"> 
