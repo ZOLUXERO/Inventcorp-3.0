@@ -47,13 +47,16 @@ if (!empty($_SESSION["session"]))
             </div></td></tr>
             <tr><td style="padding:4px"></td></tr>
             <tr><td align="center"><input class="btn btn-lg btn-success" type="submit" name="enviar" class="" width="300px" value="Iniciar"></td></td>
+
             <tr><td style="padding:4px"></td></tr>
-            <tr><td style="color:#F00"><?php if(isset($_REQUEST['error'])) { echo "Usuario o contraseña incorrecta";}?></td></tr>
-          
+            <tr><td style="color:#F00"><?php if(isset($_REQUEST['error'])) { echo "Usuario o contraseña incorrecta!";}?><?php if(isset($_REQUEST['errorsi2'])) { echo "Usuario inhabilitado de la pagina";}?></td></tr>              
+                      
            </table>
            </form>
     
-   
+
+
+
  </div>
 </div>
  
