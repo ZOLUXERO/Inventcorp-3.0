@@ -1,6 +1,6 @@
 <?php
 
-include_once("../modelo/mdlusueditar.php");
+include_once("../modelo/mdlusueditar2.php");
 
 if(isset($_POST["editar"])) 
 {		        
@@ -11,13 +11,13 @@ if(isset($_POST["editar"]))
 			$nom4=$_REQUEST['nom4'];
 			$ema=$_REQUEST['ema'];
 			$tel=$_REQUEST['tel'];
-			$est=$_REQUEST['est'];
-			$rol=$_REQUEST['rol'];
+			$tdo=$_REQUEST['tdo'];
+
  
-		    $objeto= new Usuarioe;
-			$res=$objeto->editar($id,$nom1,$nom2,$nom3,$nom4,$ema,$tel,$est,$rol);
+		    $objeto= new Usuarioe2;
+			$res=$objeto->editar2($id,$nom1,$nom2,$nom3,$nom4,$ema,$tel,$tdo);
    
-			header("location:../vista/html/admon.php?dato1=si"); 
+			header("location:../vista/html/perfilusuario.php?dato1=si"); 
 	        
 			$objeto->CloseDB();
  

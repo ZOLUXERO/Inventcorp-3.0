@@ -66,7 +66,7 @@ while($row = $res->fetch_array(MYSQLI_ASSOC)){
     <td>Nombre:</td>
     <td><?php echo $objeto2->escape($row['primer_nombre']." ".$row['segundo_nombre'])?></td>
     <td align="right">
-      <a href="">Editar</a>
+      <a href="editarusuariop.php?id=<?php echo $row["documento"]?>">Editar</a>
     </td>
   </tr>  
 
@@ -74,7 +74,7 @@ while($row = $res->fetch_array(MYSQLI_ASSOC)){
     <td>Apellidos:</td>
     <td><?php echo $objeto2->escape($row['primer_apellido']." ".$row['segundo_apellido'])?></td>
     <td align="right">
-      <a href="">Editar</a>
+      <a href="editarusuariop.php?id=<?php echo $row["documento"]?>">Editar</a>
     </td>
   </tr>  
 
@@ -82,7 +82,7 @@ while($row = $res->fetch_array(MYSQLI_ASSOC)){
     <td>Email:</td>
     <td><?php echo $objeto2->escape($row['email_usuario'])?></td>
     <td align="right">
-      <a href="">Editar</a>
+      <a href="editarusuariop.php?id=<?php echo $row["documento"]?>">Editar</a>
     </td>
   </tr>                               
                               
@@ -90,7 +90,7 @@ while($row = $res->fetch_array(MYSQLI_ASSOC)){
     <td>Telefono:</td>
     <td><?php echo $objeto2->escape($row['telefono'])?></td>
     <td align="right">
-      <a href="">Editar</a>
+      <a href="editarusuariop.php?id=<?php echo $row["documento"]?>">Editar</a>
     </td>
  </tr>         
 
@@ -98,7 +98,7 @@ while($row = $res->fetch_array(MYSQLI_ASSOC)){
     <td>Tipo documento:</td>
     <td><?php echo $objeto2->escape($row['tipo_documento'])?></td>
     <td align="right">
-      <a href="">Editar</a>
+      <a href="editarusuariop.php?id=<?php echo $row["documento"]?>">Editar</a>
     </td>
  </tr>            
 
