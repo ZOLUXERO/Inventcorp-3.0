@@ -24,7 +24,7 @@ $id=$_REQUEST['id'];
 ?>
 
 </header>
-
+</div>
   <div class="container">
    <div class="row">
         
@@ -125,7 +125,7 @@ $id=$_REQUEST['id'];
       </div>
     </div>
   </div>
-</div>
+
  
 </body>
 </html>
