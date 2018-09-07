@@ -17,6 +17,14 @@ if (isset($_POST['guardar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
+$pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
+if (preg_match('/[\'^"£$%&*(<)}{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
+{
+   
+header('location: ../../vista/html/crudproductos.php?dato3434=NOP02');
+
+}
+
 	$objeto = new Productov;
 	$objeto2 = new Productoreg;
 	$objeto3 = new Seguimientor;
@@ -60,11 +68,21 @@ if (isset($_POST['actualizar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
+$pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
+if (preg_match('/[\'^"£$%&*(<)}{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
+{
+   
+header('location: ../../vista/html/crudproductos.php?dato34=NOP');
+
+}
+
 	$objeto4 = new Productoobt;
 	$objeto5 = new Productoact;
 	$objeto6 = new Seguimientor;
 
 	$res4= $objeto4->obtener($cod);
+
+
 
 	if (count($res4) == 1 ) {
         $n = mysqli_fetch_array($res4);
