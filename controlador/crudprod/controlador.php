@@ -18,7 +18,7 @@ if (isset($_POST['guardar'])) {
 	$cat=$_REQUEST['cat'];
 
 $pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
-if (preg_match('/[\'^"£$%&*(<)}{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
+if (preg_match('/[\'^"£$%&*(<)};{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
 {
    
 header('location: ../../nop.php');
@@ -69,7 +69,7 @@ if (isset($_POST['actualizar'])) {
 	$cat=$_REQUEST['cat'];
 
 $pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
-if (preg_match('/[\'^"£$%&*(<)}{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
+if (preg_match('/[\'^"£$%&*(<)};{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
 {
    
 header('location: ../../nop.php');
