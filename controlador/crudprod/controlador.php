@@ -21,7 +21,7 @@ $pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
 if (preg_match('/[\'^"£$%&*(<)}{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
 {
    
-header('location: ../../vista/html/nop.php');
+header('location: ../../nop.php');
 
 }
 
@@ -72,7 +72,7 @@ $pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
 if (preg_match('/[\'^"£$%&*(<)}{@#~?>!,|=_+¬]/', filter_var(implode($pruebaarray34))))
 {
    
-header('location: ../../vista/html/nop.php');
+header('location: ../../nop.php');
 
 }
 
