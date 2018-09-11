@@ -17,7 +17,8 @@ if (isset($_POST['guardar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
-$pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
+$pruebaarray34 = array(str_replace("<", "_", $cod,$nom,$des,$pen,$pas,$fec,$cat);
+
 
 
 if (preg_match('/[\'^"£$%&*(<)};{@#~?>!,|=_+¬]/', implode($pruebaarray34)))
