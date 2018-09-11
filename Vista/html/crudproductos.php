@@ -109,7 +109,7 @@ include_once 'menulateral.php';
                 <div class="form-group">
                         <tr>
                             <td >Nombre producto</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="11" required pattern="^[A-Za-z -]+$" title="Solo Letras 11 máximo no caracteres especiales" /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="50" required title="Solo Letras 11 máximo no caracteres especiales" /></td>
                         </tr> 
                 </div>
 
