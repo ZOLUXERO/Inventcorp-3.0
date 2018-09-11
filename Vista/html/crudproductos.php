@@ -98,7 +98,7 @@ include_once 'menulateral.php';
                                     
                             <?php else: ?>
                                     <td >Código producto</td>
-                                    <td><input type="text" class="form-control" name="cod" maxlength="11" required pattern="^[A-Za-z0-9 -]+$" title="máximo 11 letras o numeros no caracteres especiales"/></td>
+                                    <td><input type="text" class="form-control" name="cod" maxlength="50" required  title="máximo 11 letras o numeros no caracteres especiales"/></td>
                             <?php endif ?>
                         </tr> 
                 </div>
