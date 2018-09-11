@@ -17,9 +17,9 @@ if (isset($_POST['guardar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
-$cod = str_replace("<", "_", $cod);
+$cod2 = str_replace("<", "_", $cod);
 
-$pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
+$pruebaarray34 = array($cod2,$nom,$des,$pen,$pas,$fec,$cat);
 
 
 
@@ -55,7 +55,7 @@ header('location: ../../nop.php');
 			    $res2 = $objeto3->registrar($_SESSION["doc"], $ins);
 
 				
-				$res3 = $objeto2->registro($cod, $nom, $des, $pen, $pas, $fec, $cat);
+				$res3 = $objeto2->registro($cod2, $nom, $des, $pen, $pas, $fec, $cat);
 				header('location: ../../vista/html/crudproductos.php?dato=si');
 			}
 
