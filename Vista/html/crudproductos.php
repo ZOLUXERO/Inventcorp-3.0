@@ -102,14 +102,14 @@ include_once 'menulateral.php';
                             <?php endif ?>
                         </tr> 
                 </div>
-
+<!--  (codigo_producto)pattern="^[A-Za-z0-9 -]+$"  (nombre_producto)pattern="^[A-Za-z -]+$" -->
 
 
                 <tr><td style="padding:2px"></td></tr>
                 <div class="form-group">
                         <tr>
                             <td >Nombre producto</td>
-                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="50" required title="Solo Letras 11 máximo no caracteres especiales" /></td>
+                            <td><input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" maxlength="50" required  title="Solo Letras 11 máximo no caracteres especiales" /></td>
                         </tr> 
                 </div>
 
