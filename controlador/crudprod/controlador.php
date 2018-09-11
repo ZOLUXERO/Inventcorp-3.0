@@ -62,7 +62,7 @@ header('location: ../../nop.php');
 					session_start();
 				}
 
-				$pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "inserto un producto nuevo (", $cod,")");
+				$pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "inserto un producto nuevo [", $cod,"]");
 
 				$ins = filter_var(" " . implode(" ", $pruebaarray) . " ", FILTER_SANITIZE_STRING);
 
@@ -135,7 +135,7 @@ header('location: ../../nop.php');
 		session_start();
 	}
 
-    $pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "remplazo");
+    $pruebaarray = array("El usuario", $_SESSION["session"], "con documento", $_SESSION["doc"], "remplazo en el producto [",$cod,"] ,");
 
     if ($nom !== $nomp) {
     	array_push($pruebaarray, " (", $nomp, ") por (", $nom,")");

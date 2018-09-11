@@ -44,7 +44,7 @@ else
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo $ruta;?>../../index.php">Home</a></li>
-      <li><a href="#">Acerca de nosotros</a></li>
+      <li><a href="#">Acerca de la pagina</a></li>
       <li><a href="#">Contáctenos</a></li>
       <li >
         <?php if(isset($_SESSION["session"])): ?> 
