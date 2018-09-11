@@ -17,7 +17,9 @@ if (isset($_POST['guardar'])) {
 	$fec=$_REQUEST['fec'];
 	$cat=$_REQUEST['cat'];
 
-$pruebaarray34 = array(str_replace("<", "_", $cod,$nom,$des,$pen,$pas,$fec,$cat);
+$cod = str_replace("<", "_", $cod);
+
+$pruebaarray34 = array($cod,$nom,$des,$pen,$pas,$fec,$cat);
 
 
 
