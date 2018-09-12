@@ -22,7 +22,7 @@ $repl4 = str_replace("from", "'", $repl3);
 $repl5 = str_replace("where", "'", $repl4);
 $repl6 = str_replace("truncate", "'", $repl5);
 
-if (preg_match('/[\'^£$%&*(<)};{@#~?>!,|=_+¬]/', $repl6))
+if (preg_match('/[\'^£$%&*(<)};{#~?>!,|=_+¬]/', $repl6))
 {
    
 header('location: ../nop.php');
