@@ -10,6 +10,13 @@ class Seguimiento extends Conexion
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
         return $consulta;   
     }
+            public function listarse2()
+    {
+        $q = "select * from seguimiento";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
+        return $consulta;   
+    }
+    
     
 }
 

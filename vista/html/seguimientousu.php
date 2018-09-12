@@ -34,11 +34,7 @@ include_once 'menulateral.php';
 <?php
 
 $objeto= new Seguimiento;
-$res=$objeto->listarse();
-
-$objeto2= new Seguimiento;
-$res2=$objeto2->listarse();
-$row2 = $res2->fetch_array(MYSQLI_ASSOC);
+$res=$objeto->listarse2();
 
 $objeto3= new Escap;
 ?>
@@ -47,7 +43,7 @@ $objeto3= new Escap;
       			 
 <div class="col-sm-10 col-md-10">
 
-  <h3>Acciones realizadas el dia: <?php echo $objeto3->escape($row2['fecha'])?></h3>
+  <h3>Acciones realizadas</h3>
 
   <hr>  
 
