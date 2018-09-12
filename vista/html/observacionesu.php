@@ -78,6 +78,12 @@ include_once 'menulateral.php';
     $objeto2= new Escap;
     $res=$objeto->listar($objeto2->escape($_SESSION['doc']));
 
+    if($res->num_rows == 0)
+    { 
+    echo "<div align='center' class='alert alert-warning'>USTED NO HA HECHO NINGUNA OBSERVACION</div>";
+    }
+
+
     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
           ?>
             <tr style="font-size:16px">

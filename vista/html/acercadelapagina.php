@@ -61,8 +61,8 @@ if(isset($_REQUEST['visitante'])){
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Automatízate con Inventcorp <span class="text-muted">Software de inventario.</span></h2>
-          <p class="lead">Maneje su inventario de una manera mucho mas sencilla, deje de complicarse y regístrese gratis.</p>
+          <h2 class="featurette-heading">Mas espacio para escribir <span class="text-muted">Mas para escribir.</span></h2>
+          <p class="lead">/Espacio para escribir /Espacio para escribir /Espacio para escribir /Espacio para escribir /Espacio para escribir /Espacio para escribir /Espacio para escribir.</p>
         </div>
         <div class="col-md-5">
           <!-- ACA PUEDE IR CUALQUIER IMAGEN  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">!-->
