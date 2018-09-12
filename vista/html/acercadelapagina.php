@@ -12,18 +12,23 @@
 <body>
 
 <div class="container">
-	
+
 <?php
 
 include_once 'header.php'; 
-include_once '../../controlador/controlvisitante.php'; 
 
 ?>
 
 </div>
+<div class="container">
+<?php
 
+if(isset($_REQUEST['visitante'])){
+ echo "<td colspan='2' align='center'><div class='alert alert-warning'>"."USTED ESTA INHABILITADO DE LAS FUNCIONALIDADES DEL SISTEMA PARA CAMBIAR ESTO PONGASE EN CONTACTO CON UNADMINISTRADOR DE LA PAGINA."."</div>"; 
+ }
 
-
+?>
+</div>
 <div class="container marketing">
 
 
@@ -78,7 +83,7 @@ include_once '../../controlador/controlvisitante.php';
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p class="pull-right"><a href="#">Volver arriba</a></p>
-          <p>Página hecha por <a href="codigosNN/paginainvent/BORRAR.php">Inventcorp</a>, by <a href="#">Adsi</a>.</p>
+          <p>Página hecha por <a href="../../codigosNN/paginainvent/BORRAR.php">Inventcorp</a>, by <a href="#">Adsi</a>.</p>
         </div>
       </footer>
     </div>

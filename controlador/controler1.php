@@ -45,7 +45,7 @@ if(isset($_POST["enviar"])) {
 			             	header("location:../vista/html/crudproductos.php");
 			             }
 			             elseif ($actor["id_rol"]==3) {
-			             	header("location:../index.php");
+			             	header("location:../vista/html/acercadelapagina.php?visitante=01");
 			             }
 			              
 					   }
