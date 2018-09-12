@@ -52,10 +52,6 @@ include_once 'menulateral.php';
 
 
 
-
-
-
-
 <div align="right" class="col-sm-3 col-md-3">
 <div class="panel panel-default">
 
