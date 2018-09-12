@@ -41,69 +41,56 @@ $res2=$objeto2->listarse();
 $row2 = $res2->fetch_array(MYSQLI_ASSOC);
 
 ?>
-     
-          <!-- contenedor menu de ejercicios-->
-        			  
-      			   <!-- Contenedor ejercicio-->
+
                    
       			 
-      			    <div class="col-sm-10 col-md-10">
+<div class="col-sm-10 col-md-10">
 
-                <h3>Acciones realizadas el dia: <?php echo $objeto->escape($row2['fecha'])?></h3>
+  <h3>Acciones realizadas el dia: <?php echo $objeto->escape($row2['fecha'])?></h3>
 
-                  <hr>  
+  <hr>  
 
-                  <form method="post" action="">
+  <form method="post" action="">
 
-                    <tr>
-                      <td> Mostrar por fecha: </td>
-                      <td><input align="center" type="date" name=""></td>
-                    </tr>
-                    <tr>
-                      <td><button type="submit" name="fecha">Mostrar</button></td>
-                    </tr> 
+    <tr>
+      <td> Mostrar por fecha: </td>
+      <td><input align="center" type="date" name=""></td>
+    </tr>
 
-                  </form>
+    <tr>
+      <td><button type="submit" name="fecha">Mostrar</button></td>
+    </tr> 
 
-                  <hr style="border-top: 1px double #797979;"> 
+  </form>
 
-      			    <div class="table-responsive">
+  <hr style="border-top: 1px double #797979;"> 
+
+  <div class="table-responsive">
                       
-                     <table class="table table-hover table-striped" align="center">
+      <table class="table table-hover table-striped" align="center">
       			         
-                     <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Usuario</td>                     
-                     <td class="col-sm-10 col-md-10" align="center" style="font-family:Tahoma, Geneva, sans-serif">Acciones</td>
-      			         <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
-
+      <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Usuario</td>                     
+      <td class="col-sm-10 col-md-10" align="center" style="font-family:Tahoma, Geneva, sans-serif">Acciones</td>
+      <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
                           
-                     <?php
+      <?php                    
+    	while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+      ?>
 
-                       
-      			  		
-            			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
-            				  ?>
-            			         <tr style="font-size:12px">
-                			     <td align="center"><?php echo $objeto->escape($row['usuario'])?></td>
-                           <td align="center"><?php echo $objeto->escape($row['descripcion'])?></td>
-                			     <td style="color: #369" align="center"><?php echo $objeto->escape($row['fecha'])?></td>
-                                                
-                               
-                                    
-            				  <?php } $objeto->CloseDB();?>
-      				        </table>
+      <tr style="font-size:12px">
+      <td align="center"><?php echo $objeto->escape($row['usuario'])?></td>
+      <td align="center"><?php echo $objeto->escape($row['descripcion'])?></td>
+      <td style="color: #369" align="center"><?php echo $objeto->escape($row['fecha'])?></td>                                               
+                                                               
+      <?php } $objeto->CloseDB();?>
+      </table>
 
-                      </div>
+  </div>
                
-
-       
-
-
-			  
-			  
-            </div>
+</div>
          
-        </div>
-      </div>
+</div>
+</div>
 
  
 </body>
