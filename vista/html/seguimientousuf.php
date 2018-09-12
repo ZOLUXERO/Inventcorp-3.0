@@ -75,7 +75,7 @@ $res=$objeto->listarse2($objeto3->escape($_REQUEST["fecha"]));
 
       if($res->num_rows == 0)
       { 
-      echo "<div align='center' class='alert alert-warning'>NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</div>";
+      echo "<div align='center' class='alert alert-warning'>NO SE REALIZARON ACCIONES ESE DIA</div>";
       }  
 
     	while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
