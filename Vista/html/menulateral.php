@@ -24,7 +24,7 @@
       <li><a href="observacionesu.php">Observaciones<span class="glyphicon glyphicon-pushpin pull-right"></span> </a></li>
       <li>
           <?php if ($_SESSION["idrol"] == 1): ?>
-              <a href="observaciones.php">Observaciones 2<span class="glyphicon glyphicon-menu-hamburger pull-right"> </span></a>            
+              <a href="observaciones.php?hola">Observaciones 2<span class="glyphicon glyphicon-menu-hamburger pull-right"> </span></a>            
           <?php else: ?>
                      
           <?php endif ?>        
