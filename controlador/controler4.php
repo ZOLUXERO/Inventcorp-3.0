@@ -38,7 +38,7 @@ if(isset($_POST["registrar"])) {
 			if (preg_match('/[\'^£$%&*(<)};{#~?>!,|=+¬]/', $repl6))
 			{
 			   
-			header('location: ../../nop.php');
+			header('location: ../nop.php');
 
 			}else{
 

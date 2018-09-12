@@ -35,7 +35,7 @@ if(isset($_POST["editar"]))
 			if (preg_match('/[\'^£$%&*(<)};{#~?>!,|=+¬]/', $repl6))
 			{
 			   
-			header('location: ../../nop.php');
+			header('location: ../nop.php');
 
 			}else{
 		    $objeto= new Usuarioe;

@@ -29,7 +29,7 @@ if(isset($_POST["enviar"])) {
 	  if (preg_match('/[\'^£$%&*(<)};{#~?>!,|=+¬]/', $repl6))
 	  {
 			   
-	  header('location: ../../nop.php');
+	  header('location: ../nop.php');
 
 	  }else{
  
