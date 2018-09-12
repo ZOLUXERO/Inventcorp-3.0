@@ -59,6 +59,11 @@ include_once 'menulateral.php';
     $objeto2= new Escap;
     $res=$objeto->listarr($objeto2->escape($_REQUEST["fec"]));
 
+    if($res->num_rows == 0)
+    { 
+    echo "<div align='center' class='alert alert-warning'>NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</div>";
+    }
+
     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
           ?>
             <tr style="font-size:16px">
@@ -97,6 +102,11 @@ include_once 'menulateral.php';
     $objeto= new Observl;
     $objeto2= new Escap;
     $res=$objeto->listar($objeto2->escape($_REQUEST["docu"]));
+
+    if($res->num_rows == 0)
+    { 
+    echo "<div align='center' class='alert alert-warning'>NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</div>";
+    }
 
     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
           ?>
