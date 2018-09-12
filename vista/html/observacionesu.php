@@ -52,16 +52,23 @@ include_once 'menulateral.php';
       
 </div>    
 
-<div class="col-sm-3 col-md-3">
 
 
-<div class="panel panel-default">
 
-<div class="panel-heading">
-<h3 align="center" class="panel-title">HISTORIA OBSERVACIONES</h3>
-</div>
+
+<div class="col-sm-4 col-md-4">
+
+
+
+
+<h3>OBSERVACIONES HECHAS</h3>
+<hr style="border-top: 1px double #797979;">  
 
 <table class="table table-hover table-striped"  align="center">
+
+  <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Id observacion</td> 
+  <td class="col-sm-5 col-md-5" align="center" style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>                    
+  <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
                     
 <?php                      
 
@@ -73,7 +80,8 @@ include_once 'menulateral.php';
           ?>
             <tr style="font-size:16px">
             <td align="center"><?php echo $objeto2->escape($row['id_observacion']);?></td>
-            <td align="center"><?php echo $objeto2->escape($row['fecha_observacion']);?></td>
+            <td align="left"><?php echo $objeto2->escape($row['desc_obeservacion']);?></td>
+            <td style="color: #369" align="center"><?php echo $objeto2->escape($row['fecha_observacion']);?></td>
                                  
                              
             </tr>  
@@ -84,10 +92,9 @@ include_once 'menulateral.php';
                      
 </table>
 
-</div>
-
 
 </div>
+
          
 </div>
 </div>
