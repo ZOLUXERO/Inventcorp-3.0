@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>NOMBREDEPAGINA</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-  <script src="vista/bootstrap/js/bootstrap.min.js"></script>
-
-  <!--  <link href="vista/bootstrap/cover.css" rel="stylesheet">  !-->
+<title>Mi Proyecto</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="vista/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
+
 <div class="container">
-<header>
-<?php include_once 'vista/html/header.php'; ?>
-</header>
 
+<?php
 
-<?php include_once 'vista/html/slideshow.php'; ?><br>
+include_once 'vista/html/header.php'; 
 
+?>
 
+</div>
 
+<div class="container">
+<?php// include_once 'vista/html/slideshow.php'; ?>
+ESPACIO PARA SLIDE
 
-             
+</div>
+
+<div class="container">           
         
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -94,7 +98,7 @@
     </div>
 
 
-    </div><!-- /.container -->
+
 
 
 
