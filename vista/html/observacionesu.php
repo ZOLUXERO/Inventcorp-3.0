@@ -14,7 +14,7 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
-include_once '../../modelo/mdlseguimientol2.php';
+include_once '../../modelo/mdlobservacionl.php';
 include_once '../../modelo/mdlescape.php';
 include_once 'header.php'; 
 ?>
@@ -58,8 +58,31 @@ include_once 'menulateral.php';
 <div class="panel panel-default">
 
 <div class="panel-heading">
-<h3 align="center" class="panel-title">HISTORIA OSERVACIONES</h3>
+<h3 align="center" class="panel-title">HISTORIA OBSERVACIONES</h3>
 </div>
+
+<table class="table table-hover table-striped"  align="center">
+                    
+<?php                      
+
+    $objeto= new Observl;
+    $objeto2= new Escap;
+    $res=$objeto->listar($objeto2->escape($_SESSION['doc']));
+
+    while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
+          ?>
+            <tr style="font-size:16px">
+            <td align="center"><?php echo $objeto2->escape($row['id_observacion']);?></td>
+            <td align="center"><?php echo $objeto2->escape($row['fecha_observacion']);?></td>
+                                 
+                             
+            </tr>  
+
+    <?php } $objeto->CloseDB();
+?>         
+                 
+                     
+</table>
 
 </div>
 
