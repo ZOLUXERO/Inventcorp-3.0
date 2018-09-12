@@ -11,6 +11,12 @@ class Observl2 extends Conexion
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
         return $consulta;   
     }
+        public function listar3()
+    {
+        $q = "select * from observaciones";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
+        return $consulta;   
+    }
 
 }
 

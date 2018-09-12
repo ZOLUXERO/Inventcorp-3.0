@@ -3,6 +3,7 @@
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
 include_once '../../modelo/mdlobservacionl2.php';
+include_once '../../modelo/mdlobservacionl.php';
 include_once '../../modelo/mdlescape.php';
 include_once 'header.php'; 
 
@@ -54,9 +55,9 @@ include_once 'menulateral.php';
                     
     <?php                      
 
-    $objeto= new Observl2;
+    $objeto= new Observl;
     $objeto2= new Escap;
-    $res=$objeto->listar2();
+    $res=$objeto->listarr($objeto2->escape($_REQUEST["fec"]));
 
     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
           ?>
@@ -93,9 +94,9 @@ include_once 'menulateral.php';
                     
     <?php                      
 
-    $objeto= new Observl2;
+    $objeto= new Observl;
     $objeto2= new Escap;
-    $res=$objeto->listar2();
+    $res=$objeto->listar($objeto2->escape($_REQUEST["docu"]));
 
     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
           ?>
@@ -170,7 +171,7 @@ include_once 'menulateral.php';
 
     $objeto= new Observl2;
     $objeto2= new Escap;
-    $res=$objeto->listar2();
+    $res=$objeto->listar3();
 
     while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
           ?>
@@ -206,7 +207,7 @@ include_once 'menulateral.php';
 <tr>
   <td>
     <form method="post" action="observaciones.php?usuario=01">
-      <input type="text" name="" placeholder="Documento">
+      <input type="text" name="docu" placeholder="Documento">
       <button>Buscar</button>
     </form>
   </td>
@@ -226,7 +227,7 @@ include_once 'menulateral.php';
 <tr>
   <td>
     <form method="post" action="observaciones.php?fecha=02">
-      <input type="date" name="" placeholder="Documento">
+      <input type="date" name="fec" placeholder="Documento">
       <button>Buscar</button>
     </form>
   </td>
