@@ -88,7 +88,7 @@ include_once 'menulateral.php';
 
 <?php if (isset($_GET['usuario'])):?>
 
-   <h3>Por usuario:</h3>    
+   <h3>Por usuario: <?php echo $_REQUEST["docu"];?></h3>    
 
   <div class="navbar-form navbar-default">
   <hr style="border-top: 1px double #797979;">   
