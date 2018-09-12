@@ -31,7 +31,16 @@ include_once 'menulateral.php';
 
 </div>
 
+<?php
 
+$objeto= new clases;
+$res=$objeto->listarse();
+
+$objeto2= new clases;
+$res2=$objeto2->listarse();
+$row2 = $res2->fetch_array(MYSQLI_ASSOC);
+
+?>
      
           <!-- contenedor menu de ejercicios-->
         			  
@@ -39,8 +48,25 @@ include_once 'menulateral.php';
                    
       			 
       			    <div class="col-sm-10 col-md-10">
-                <h3>Acciones realizadas en el dia</h3>
+
+                <h3>Acciones realizadas el dia: <?php echo $objeto->escape($row2['fecha'])?></h3>
+
+                  <hr>  
+
+                  <form method="post" action="">
+
+                    <tr>
+                      <td> Mostrar por fecha: </td>
+                      <td><input align="center" type="date" name=""></td>
+                    </tr>
+                    <tr>
+                      <td><button type="submit" name="fecha">Mostrar</button></td>
+                    </tr> 
+
+                  </form>
+
                   <hr style="border-top: 1px double #797979;"> 
+
       			    <div class="table-responsive">
                       
                      <table class="table table-hover table-striped" align="center">
@@ -51,8 +77,7 @@ include_once 'menulateral.php';
 
                           
                      <?php
-      			           $objeto= new clases;
-      			           $res=$objeto->listarse();
+
                        
       			  		
             			   while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
