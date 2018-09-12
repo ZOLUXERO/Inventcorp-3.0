@@ -75,7 +75,7 @@ include_once 'menulateral.php';
 <div class="row">
  <div class="col-sm-12 col-md-12">
  <table class="" style="" align="center"> 
-  <tr><td style="color:#800000; font-family:Tahoma, Geneva, sans-serif" align="center">BASE DE DATOS</td></tr>
+
   </table>
 
 

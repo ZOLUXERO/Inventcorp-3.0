@@ -72,7 +72,7 @@ include_once 'menulateral.php';
                     
                         <tr>
                             <tr style="color:#FFF; background-color:#369">
-                            <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Código cliente</td>
+                            <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Código proveedor</td>
                             <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Nombre</td>
                             <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Email</td>
                             <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Teléfono</td>
