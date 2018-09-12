@@ -4,7 +4,7 @@ include_once '../../modelo/mdlprodlistarc1.php';
 include_once'../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlescape.php';
 
-if (isset($_POST['insertp1'])=="") {
+if (isset($_REQUEST['insertp1'])=="") {
    header('location: crudproductos.php');
 }
 
@@ -26,9 +26,7 @@ if (isset($_GET['edit'])) {
 }
 
 ?>
-<script type="text/javascript">
-    
-</script>
+
 
 
 <html lang="en">

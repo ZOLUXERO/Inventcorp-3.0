@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladmin.php';
-include_once '../../modelo/mdlseguimientol.php';
+include_once '../../modelo/mdlseguimientol2.php';
 include_once '../../modelo/mdlescape.php';
 include_once 'header.php'; 
 ?>
@@ -32,35 +31,36 @@ include_once 'menulateral.php';
 </div>
 
 <?php
-
-$objeto= new Seguimiento;
-$res=$objeto->listarse();
-
-$objeto2= new Seguimiento;
-$res2=$objeto2->listarse();
-$row2 = $res2->fetch_array(MYSQLI_ASSOC);
-
 $objeto3= new Escap;
+
+$objeto= new Seguimientol2;
+$res=$objeto->listarse2($objeto3->escape($_REQUEST["fecha"]));
+
+
 ?>
 
                    
       			 
 <div class="col-sm-10 col-md-10">
 
-  <h3>Acciones realizadas el dia: <?php echo $objeto3->escape($row2['fecha'])?></h3>
+  <h3>Acciones realizadas el dia: <?php echo $objeto3->escape($_REQUEST["fecha"])?></h3>
 
   <hr>  
 
-  <form action="seguimientousuf.php" method="post" >
+  <form method="post" action="seguimientousuf.php">
 
     <tr>
-      <td> Mostrar por fecha: </td>
-      <input align="center" type="date" name="fecha">  
-      <button type="submit" name="boton">Mostrar</button>
+    <td> Mostrar por fecha: </td>
+    <td><input align="center" type="date" name="fecha"></td>
+    </tr>
+
+    <tr>
+    <td><button type="submit" name="boton">Mostrar</button></td>
     </tr> 
 
-  </form>
+    <a href="seguimientousu.php">[volver]</a>
 
+  </form>
   <hr style="border-top: 1px double #797979;"> 
 
   <div class="table-responsive">
@@ -71,7 +71,13 @@ $objeto3= new Escap;
       <td class="col-sm-10 col-md-10" align="center" style="font-family:Tahoma, Geneva, sans-serif">Acciones</td>
       <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
                           
-      <?php                    
+      <?php  
+
+      if($res->num_rows == 0)
+      { 
+      echo "<div align='center' class='alert alert-warning'>NO HAY RESULTADOS CON ESE CRITERIO DE BUSQUEDA</div>";
+      }  
+
     	while($row = $res->fetch_array(MYSQLI_ASSOC)){ 
       ?>
 
@@ -93,5 +99,3 @@ $objeto3= new Escap;
  
 </body>
 </html>
-
-  

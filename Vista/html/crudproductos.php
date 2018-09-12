@@ -66,7 +66,9 @@ include_once 'menulateral.php';
 <div class="panel-heading">
 
 <div class="col-sm-4 col-md-4"><h class="panel-title">PRODUCTOS</h></div> 
-<div class="col-sm-8 col-md-8"><form align="right" action="crudproductosc1.php" method="post">
+
+<div class="col-sm-8 col-md-8">    
+<form align="right" action="crudproductosc1.php" method="post">
 
 <tr align="right">Busqueda:
      <input type="text" name="insertp1">
