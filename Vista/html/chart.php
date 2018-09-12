@@ -65,8 +65,7 @@ include_once 'menulateral.php';
 
 
 <form method="post" action="../../controlador/crudstock/controler1.php" class="navbar-form navbar-default">
-            <input type="hidden" name="id" value="">
-
+          
             <table align="center">
                 <div class="form-group">
                         
