@@ -80,7 +80,7 @@ class clases extends conexionprod
     
         public function listarse()
     {
-        $q = "select * from seguimiento order by fecha";
+        $q = "select * from seguimiento where fecha=CURDATE()";
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);       
         return $consulta;   
     }

@@ -22,31 +22,25 @@ include_once 'header.php';
 
 
 <div class="container-fluid">
-  <div class="row">
+<div class="row">
  
-<div class="col-sm-3 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
+<div class="col-sm-2 col-md-2 sidebar"> <!--Columna de 2 espacios de 12 -->
 <?php
 include_once 'menulateral.php'; 
 ?>
 
 </div>
 
-   <div class="col-sm-10 col-md-10">
-    <div class="panel panel-default">
-   <!-- contenedor del titulo-->
-      <div class="panel-heading">
-        <h3 class="panel-title">SEGUIMIENTO USUARIOS</h3>
-      </div>
-    <!-- contenedor de descripcion ejercicios-->
-      <div class="panel-body">
+
      
           <!-- contenedor menu de ejercicios-->
         			  
       			   <!-- Contenedor ejercicio-->
                    
-      			    <div class="row">
-      			    <div class="col-sm-12 col-md-12">
-                <form name="areat" action="" method="post">
+      			 
+      			    <div class="col-sm-10 col-md-10">
+                <h3>Acciones realizadas en el dia</h3>
+                  <hr style="border-top: 1px double #797979;"> 
       			    <div class="table-responsive">
                       
                      <table class="table table-hover table-striped" align="center">
@@ -66,27 +60,25 @@ include_once 'menulateral.php';
             			         <tr style="font-size:12px">
                 			     <td align="center"><?php echo $objeto->escape($row['usuario'])?></td>
                            <td align="center"><?php echo $objeto->escape($row['descripcion'])?></td>
-                			     <td align="center"><?php echo $objeto->escape($row['fecha'])?></td>
+                			     <td style="color: #369" align="center"><?php echo $objeto->escape($row['fecha'])?></td>
                                                 
                                
                                     
             				  <?php } $objeto->CloseDB();?>
       				        </table>
+
                       </div>
                
 
        
 
-      			   </form>
+
 			  
 			  
             </div>
-          </div>
+         
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
  
 </body>
