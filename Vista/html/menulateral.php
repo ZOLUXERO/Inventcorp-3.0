@@ -21,7 +21,14 @@
                      
           <?php endif ?>        
       </li>      
-      <li><a href="observaciones.php">Observaciones<span class="glyphicon glyphicon-pushpin pull-right"></span> </a></li>
+      <li><a href="observacionesu.php">Observaciones<span class="glyphicon glyphicon-pushpin pull-right"></span> </a></li>
+      <li>
+          <?php if ($_SESSION["idrol"] == 1): ?>
+              <a href="observaciones.php">Observaciones 2<span class="glyphicon glyphicon-menu-hamburger pull-right"> </span></a>            
+          <?php else: ?>
+                     
+          <?php endif ?>        
+      </li>      
       <li><a href="crudproductos.php">Productos<span class="glyphicon glyphicon glyphicon-barcode pull-right"></span> </a></li>
       <li><a href="crudcategoria.php">Categorías<span class="glyphicon glyphicon-list-alt pull-right"></span> </a></li>
       <li><a href="crudcliente.php">Clientes<span class="glyphicon glyphicon-briefcase pull-right"></span> </a></li>

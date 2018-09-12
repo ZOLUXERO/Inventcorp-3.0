@@ -48,14 +48,6 @@ include_once 'menulateral.php';
 ?>
 
 
-<pre class="fr-tag" style="height: 232px">
-
-EJEMPLO PARA ELIMINAR PRUEBA
-
-
-</pre>
-
-
 </div>
 
 

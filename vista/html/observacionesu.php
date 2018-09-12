@@ -31,14 +31,22 @@ include_once 'menulateral.php';
 
 
 
-<div class="col-sm-6 col-md-6">
+<div class="col-sm-4 col-md-4">
 
-  <h3>El dia de hoy:</h3>    
+  <h3>Ingreso de observaciones:</h3>    
 
   <div class="navbar-form navbar-default">
-    <hr style="border-top: 1px double #797979;">   
 
-    <hr style="border-top: 1px double #797979;">   
+    <hr style="border-top: 1px double #797979;">
+    <form method="post" action="../../controlador/controlobservacion.php"> 
+      <textarea name="des" rows="5" cols="50" maxlength="200" wrap="hard">
+        
+      </textarea>
+      <br>
+      <button type="submit" name="guardar">Enviar</button>
+    </form>  
+    <hr style="border-top: 1px double #797979;">  
+
   </div>
 
       
@@ -47,30 +55,16 @@ include_once 'menulateral.php';
 <div class="col-sm-3 col-md-3">
 
 
-<h3 class="panel-title">Buscar por usuario:</h3>
+<div class="panel panel-default">
 
-<table >
-
-
-
-<tr>
-  <td>
-    <form method="post" action="../../controlador/controlobservacion.php">
-      <input type="text" name="" placeholder="Documento o nombre">
-      <button>Buscar</button>
-    </form>
-  </td>
-</tr>
-
-
-</table>
+<div class="panel-heading">
+<h3 align="center" class="panel-title">HISTORIA OSERVACIONES</h3>
+</div>
 
 </div>
 
 
-
- 
-
+</div>
          
 </div>
 </div>
