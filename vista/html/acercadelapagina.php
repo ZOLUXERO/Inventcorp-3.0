@@ -36,7 +36,7 @@ if(isset($_REQUEST['visitante'])){
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Acerca de la pagina. <span class="text-muted">¿funcionalidades?</span></h2>
-          <p class="lead">Somos un grupo de estudiantes del Sena que está cursando análisis y desarrollo de sistemas de información. Trabajamos continuamente en esta página para darle vida a este proyecto que tiene como objetivo brindar un software orientado a la web que sea seguro y eficiente.</p>
+          <p class="lead">/Espacio para escribir funcionalidades/ /Espacio para escribir funcionalidades/ /Espacio para escribir funcionalidades/ /Espacio para escribir funcionalidades/ /Espacio para escribir funcionalidades/ /Espacio para escribir funcionalidades/.</p>
         </div>
         <div class="col-md-5">
           <!--  ACA PUEDE IR CUALQUIER IMAGEN <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">!-->
