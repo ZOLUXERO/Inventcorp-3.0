@@ -44,7 +44,7 @@ include_once 'menulateral.php';
 
 <?php if (isset($_GET['fecha'])):?>
 
-   <h3>El dia:</h3>    
+   <h3>El dia: <?php echo $_REQUEST["fec"];?></h3>    
 
   <div class="navbar-form navbar-default">
   <hr style="border-top: 1px double #797979;">   
