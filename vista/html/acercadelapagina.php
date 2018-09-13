@@ -21,6 +21,7 @@ include_once 'header.php';
 
 </div>
 <div class="container">
+  
 <?php
 
 if(isset($_REQUEST['visitante'])){
@@ -28,6 +29,7 @@ if(isset($_REQUEST['visitante'])){
  }
 
 ?>
+
 </div>
 <div class="container marketing">
 
