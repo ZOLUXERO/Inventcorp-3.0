@@ -1,3 +1,10 @@
+<?php 
+include_once '../../controlador/control.php'; 
+include_once '../../controlador/controladmin.php';
+include_once '../../modelo/mdlseguimientol.php';
+include_once '../../modelo/mdlescape.php';
+include_once 'header.php'; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,15 +18,6 @@
  
 </head>
 <body>
-
-<?php 
-include_once '../../controlador/control.php'; 
-include_once '../../controlador/controladmin.php';
-include_once '../../modelo/mdlseguimientol.php';
-include_once '../../modelo/mdlescape.php';
-include_once 'header.php'; 
-?>
-
 
 <div class="container-fluid">
 <div class="row">
