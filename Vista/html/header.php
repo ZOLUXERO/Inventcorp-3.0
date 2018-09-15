@@ -26,7 +26,7 @@ else
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
+  <link rel="stylesheet" href="../bootstrap/c1.css">
   <script src="../bootstrap/js/bootstrap.min.js"></script>
 
  
@@ -43,7 +43,7 @@ else
       <a class="navbar-brand" href="<?php echo $ruta;?>../../index.php">NOMBREDEPAGINA</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo $ruta;?>../../index.php">Home</a></li>
+      <li ><a href="<?php echo $ruta;?>../../index.php">Home</a></li>
       <li><a href="<?php echo $ruta;?>acercadelapagina.php">Acerca de la pagina</a></li>
       <li><a href="#">Contáctenos</a></li>
       <li >
