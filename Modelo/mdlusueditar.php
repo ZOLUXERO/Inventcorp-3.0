@@ -10,6 +10,12 @@ class Usuarioe extends Conexion{
         $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
 		return $consulta;	
 	}
+			public function editarcontrasena($ema,$pass34)
+	{
+		$q = "update usuarios set contrasena='$pass34' where email_usuario='$ema'";
+        $consulta = $this->con->query($q) or die ('failed!' . $this->con->error);
+		return $consulta;	
+	}
 	
 }
 

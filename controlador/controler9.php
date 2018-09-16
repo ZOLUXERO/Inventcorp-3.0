@@ -3,7 +3,7 @@
 include_once("../modelo/mdlusueditar.php");
 include_once("../modelo/mdlusutoken.php");
 
-if(isset($_POST["editar"])) 
+if(isset($_POST["verificar"])) 
 {		    
 
 			$ema=$_REQUEST['ema'];
@@ -45,15 +45,17 @@ if(isset($_POST["editar"]))
 					header("location: ../nop.php");
 
 				}else{
-
+					//nota de seguridad : como solucionar si un usuario(malo) manda un correo que no le pertenece  y cambia la contrasena de otro usuario posible solucion:-->
+					//crear un campo en la base de datos en la tabla usuarios de estado_de_contrasena ((activa=1/inactiva=0) esta cambiaria a inactiva si el usuario pide -->
+					//un cambio de contrasena cambiaria nuevamente a activa si el usuario recuerda su contrasena y se conecta a la pagina) [buscar mas soluciones].
 					if ($pass1 == $pass2) {
 
-						$pass34 = $pass1;
+						$pass34 = password_hash($pass1,PASSWORD_DEFAULT);
 
 					    $objeto= new Usuarioe;
 						$res=$objeto->editarcontrasena($ema,$pass34);
 			   
-						header("location:../vista/html/recuperar1.php?dato1=si"); 
+						header("location:../vista/html/recuperar1.php?cambio=si"); 
 				        
 						$objeto->CloseDB();
 
@@ -61,7 +63,7 @@ if(isset($_POST["editar"]))
 
 					if ($pass1 !== $pass2) {
 		   
-						header("location:../vista/html/recuperar3.php?passnocoincide=si"); 
+						header("location:../vista/html/recuperar3.php?token=" . urlencode($token) . "&email=$ema&estado=nocoinciden");
 				        
 						$objeto->CloseDB();
 
