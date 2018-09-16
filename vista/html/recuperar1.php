@@ -25,7 +25,8 @@
 	              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 	              <input type="email" name="ema" class="form-control" placeholder="Correo electrónico" >
 	            </div></td></tr>
-
+	            <tr><td style="padding:5px"></td></tr>
+	            <tr><td align="center"><a href="seguridaddb.php">[Volver]</a></td></tr>
 	            <tr><td style="padding:5px"></td></tr>
 	            <tr><td align="center"><button class="btn btn-lg btn-success" type="submit" name="enviar" width="300px">enviar</button></td></td>
 
