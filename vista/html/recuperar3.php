@@ -1,3 +1,9 @@
+<?php
+
+include_once("../../controlador/controler8.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,9 +22,12 @@
         <p class="lead" align="center">Formulario de cambio de contrasena.</p>
 
 	
-		<form action="../../controlador/controler34.php" method="post">
+		<form action="../../controlador/controler9.php" method="post">
 
 			<table class="" style="" align="center">
+
+				<input type="hidden" name="ema" value="<?php echo $_GET['email'] ?>">
+				<input type="hidden" name="tok" value="<?php echo $_GET['token'] ?>">
 
 				<tr><td style="padding:5px"></td></tr>
 	            <tr><td><div class="input-group input-group-sm">

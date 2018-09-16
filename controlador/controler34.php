@@ -20,8 +20,8 @@ if(isset($_POST["enviar"])) {
 
 		$res2=$objeto2->guardartoken($emar,$token);
 
-		$objeto34= new Enviaremaila;
-		$email=$objeto34->enviaremail($emar,$token);
+		//$objeto34= new Enviaremaila;
+		//$email=$objeto34->enviaremail($emar,$token);
 
 		header("location:../vista/html/recuperar2.php?token=" . urlencode($token) . "&email=$emar");
 
@@ -39,12 +39,19 @@ if(isset($_POST["verificar"])) {
 
 	if ($res3->num_rows == 0) {
 
-	 	header("location:../vista/html/recuperar2.php?token2=token_expiro");
+	 	header("location:../vista/html/recuperar1.php?token2=token_expiro");
 
 	}else{
 		$row = $res3->fetch_array(MYSQLI_ASSOC);
 		$ema = $row['email'];
-		header("location:../vista/html/recuperar3.php?token3=$tok?email=$ema");
+
+		$token2=$objeto3->delete($tok);
+
+		$token34=$objeto3->token();
+
+		$res34=$objeto3->guardartoken($ema,$token34);
+
+		header("location:../vista/html/recuperar3.php?token=" . urlencode($token34) . "&email=$ema");
 
 	}
 }
