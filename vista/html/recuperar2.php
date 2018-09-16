@@ -1,3 +1,9 @@
+<?php
+
+include_once("../../controlador/controler8.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

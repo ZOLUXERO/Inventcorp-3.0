@@ -2,6 +2,7 @@
 
 include_once("../modelo/mdlusutoken.php");
 include_once("../modelo/mdlusuverifica.php");
+include_once("controlemail/index34.php");
 
 if(isset($_POST["enviar"])) {
  
@@ -19,7 +20,10 @@ if(isset($_POST["enviar"])) {
 
 		$res2=$objeto2->guardartoken($emar,$token);
 
-		header("location:../vista/html/recuperar2.php?token=$token");
+		//$objeto34= new Enviaremaila;
+		//$email=$objeto34->enviaremail($emar,$token);
+
+		header("location:../vista/html/recuperar2.php?token=" . urlencode($token) . "&email=$emar");
 
 	}	 
 
