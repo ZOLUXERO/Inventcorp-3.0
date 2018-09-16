@@ -38,10 +38,10 @@ class Enviaremaila
 
             $body = '<p><strong>Hola</strong> hemos notado que quiere cambiar su contrasena
             <br> para cambiarla por favor haga click en el siguiente link: www.inventcorpp1.epizy.com
-            <br> e ingrese el siguiento codigo:</p>'.'<h1>'.$token.'</h1>';
+            <br> e ingrese el siguiento codigo.</p>'.'<h1>'.$token.'</h1>';
 
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Cambio de contrasena. Inventcorp';
+            $mail->Subject = 'Cambio de contrasena Inventcorp';
             $mail->Body    = $body;
             $mail->AltBody = strip_tags($body);
 

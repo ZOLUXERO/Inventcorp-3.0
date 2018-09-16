@@ -15,7 +15,7 @@ if (isset($_GET['token']) == "" or isset($_GET['email']) == "") {
 
 	if($verificar['email'] == $_GET['email'] and $verificar['token'] == $_GET['token'])
 	{ 
-	  	echo $verificar['email']." |".$_GET['email']." |".$verificar['token']." |".$_GET['token']." |";
+	  	
 	}else{
 		header('location: recuperar1.php?nocoinciden=sip');
 	}

@@ -20,8 +20,8 @@ if(isset($_POST["enviar"])) {
 
 		$res2=$objeto2->guardartoken($emar,$token);
 
-		//$objeto34= new Enviaremaila;
-		//$email=$objeto34->enviaremail($emar,$token);
+		$objeto34= new Enviaremaila;
+		$email=$objeto34->enviaremail($emar,$token);
 
 		header("location:../vista/html/recuperar2.php?token=" . urlencode($token) . "&email=$emar");
 
