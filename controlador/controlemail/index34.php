@@ -27,7 +27,7 @@ class Enviaremaila
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.sendgrid.net';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'inventcorp34';                 // SMTP username
+            $mail->Username = 'inventcorp34';                 // [CAMBIAR CUENTA POR QUE ME BANEARON!!]
             $mail->Password = '93915491H';
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
