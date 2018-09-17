@@ -27,7 +27,7 @@ class Enviaremaila
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.sendgrid.net';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'inventcorp34';                 // [CAMBIAR CUENTA POR QUE ME BANEARON!!]
+            $mail->Username = 'sanelite34';                 // [CAMBIAR CUENTA POR QUE ME BANEARON!!]
             $mail->Password = '93915491H';
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
@@ -41,7 +41,7 @@ class Enviaremaila
             <br> e ingrese el siguiento codigo.</p>'.'<h1>'.$token.'</h1>';
 
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Cambio de contrasena Inventcorp';
+            $mail->Subject = 'Cambio de contrasena!! INVENTCORP';
             $mail->Body    = $body;
             $mail->AltBody = strip_tags($body);
 
