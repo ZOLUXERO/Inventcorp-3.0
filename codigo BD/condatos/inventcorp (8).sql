@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2018 a las 23:47:41
+-- Tiempo de generación: 17-09-2018 a las 16:11:10
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -134,60 +134,10 @@ INSERT INTO `productos` (`codigo_producto`, `nombre_producto`, `desc_producto`, 
 --
 
 CREATE TABLE `recuperar` (
-  `email` varchar(50) DEFAULT NULL,
-  `token` varchar(255) DEFAULT NULL,
-  `tiempo` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `recuperar`
---
-
-INSERT INTO `recuperar` (`email`, `token`, `tiempo`) VALUES
-('admin@admin', 'XSQoT92BXx', '2018-09-15 13:36:40'),
-('admin@admin', '$1$zK..AG3.$h2eWTRGBGMyhiSf7CGS1u0', '2018-09-16 10:05:06'),
-('admin@admin', 'a442f845559cad390f24391430d6e989c2b6d301e1d6056c627b7df4f7ae6134a7aebc440386ab958dee477ca7867e408d156f9db650637f4e179cc8369c77a9', '2018-09-16 10:42:09'),
-('admin@admin', 'gNoe7M5AOG', '2018-09-16 10:42:53'),
-('admin@admin', 'bsMRzztJOZ', '2018-09-16 10:45:15'),
-('camoreno859@misena.edu.co', 'jpSDTAmyvE', '2018-09-16 16:33:15'),
-('camoreno859@misena.edu.co', 'yBosrngmtY', '2018-09-16 16:36:14'),
-('camoreno859@misena.edu.co', 'laDYkgoust', '2018-09-16 16:40:40'),
-('camoreno859@misena.edu.co', 'H6r82Uv6nv', '2018-09-16 16:47:38'),
-('camoreno859@misena.edu.co', 'nIbYfPqVQL', '2018-09-16 16:58:53'),
-('camoreno859@misena.edu.co', 'zrpnA7D1X3', '2018-09-16 17:00:13'),
-('camoreno859@misena.edu.co', 'KwCPse4y00', '2018-09-16 17:02:53'),
-('camoreno859@misena.edu.co', 'hP6aHIXyiQ', '2018-09-16 17:03:21'),
-('camoreno859@misena.edu.co', 'iyyhlXqCN9', '2018-09-16 17:03:58'),
-('admin@admin', 'oZTWqWmHZA', '2018-09-16 17:04:42'),
-('admin@admin', 'ng3wIY4QyF', '2018-09-16 17:05:43'),
-('admin@admin', '28CHou9U8v', '2018-09-16 17:05:50'),
-('admin@admin', 'QEIiVK6q7y', '2018-09-16 17:07:37'),
-('admin@admin', 'MZDUHBcakk', '2018-09-16 17:08:21'),
-('admin@admin', '1aENPf75Qf', '2018-09-16 17:08:38'),
-('admin@admin', 'IMLwUYPVFg', '2018-09-16 17:09:29'),
-('admin@admin', 'LMrLLVd2yJ', '2018-09-16 17:09:37'),
-('admin@admin', 'scm18QU9J2', '2018-09-16 17:10:33'),
-('admin@admin', 'oXbpyMY2Ct', '2018-09-16 17:10:44'),
-('admin@admin', '5vgnYULkCR', '2018-09-16 17:11:55'),
-('admin@admin', 'MFtsAgvgRr', '2018-09-16 17:12:41'),
-('admin@admin', 'cnP2wqepVs', '2018-09-16 17:13:57'),
-('admin@admin', 'goo6FlorD5', '2018-09-16 17:14:19'),
-('admin@admin', 'T4TZl4FSK3', '2018-09-16 17:14:45'),
-('camoreno859@misena.edu.co', 'G5y69uJOMp', '2018-09-16 17:17:18'),
-('admin@admin', 'ne2DSG64DR', '2018-09-16 17:29:00'),
-('admin@admin', 'cMrscnDr4p', '2018-09-16 17:29:31'),
-('admin@admin', 'udRLXxSEow', '2018-09-16 17:30:08'),
-('admin@admin', '5vSgvEXUtb', '2018-09-16 17:31:09'),
-('admin@admin', 'k6BdFFsWDQ', '2018-09-16 17:32:00'),
-('admin@admin', '50DiN4sYKt', '2018-09-16 17:32:14'),
-('admin@admin', 'FE2KJPAH7y', '2018-09-16 18:11:19'),
-('admin@admin', 'MzqcM86ee2', '2018-09-16 18:15:36'),
-('admin@admin', 'Fli5PJb3o2', '2018-09-16 18:16:19'),
-('admin@admin', '09m3ak2Fcv', '2018-09-16 18:16:58'),
-('admin@admin', '1PAHwg9bRi', '2018-09-16 18:19:57'),
-('admin@admin', 'rJr57nua7J', '2018-09-16 18:23:46'),
-('admin@admin', 'XR2vdDXU4t', '2018-09-16 18:27:12'),
-('camoreno859@misena.edu.co', 'tGTRG1wJbF', '2018-09-16 18:28:52');
+  `email` varchar(50) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `tiempo` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -401,6 +351,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`documento`, `email_usuario`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `contrasena`, `telefono`, `estado_usuario`, `tipo_documento`, `id_rol`) VALUES
 (10224239, 'admin@admin.com.co', 'Camilo', 'Alejandro', 'Moreno', 'Pineros', '$2y$10$VqKyAVNPBXs6A2SQOm7PAO2PJTsHL3yABzmIR1o5WBn3tFASGXARG', '3133265449', 1, 'NIT', 3),
+(21541044, 'santagoalvarezgaviria@gmail.com', 'luis', 'miguel', 'pedro', 'infante', '$2y$10$aU2LLGbiKwvN3W18HiWyJuMsErg1v1gPHb8ZTt38CTI/xbwKCF1py', '31332645', 1, 'CC', 3),
 (102242395, 'admin@admin.com', 'Camilo', 'Alejandro', 'Moreno', 'Pineros', '$2y$10$MU3WV9bJHPcyUiXxmJnNLOZZKUw0Vv630XdGd0QHGT4m0PI/ZBgye', '3133265449', 1, 'NIT', 2),
 (313365934, 'camoreno859@misena.edu.co', 'Camilo', 'Alejandro', 'Moreno', 'Pineros', '$2y$10$.o3tH8MIbrdpMO/5oyJIje90o1.WAeD47Dk5y9zzc30EFuCz/l5fS', '3133265449', 1, 'CEL', 1),
 (1022423958, 'admin@admin', 'Camilo', 'Alejandro', 'Moreno', 'Pineros', '$2y$10$/.s2YUp0zxR6pB7oxCt3WOfvKdflo6NoUBKgXZLVMs3WwTKopr3.y', '311', 1, 'CC', 1);
