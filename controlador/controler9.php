@@ -45,29 +45,41 @@ if(isset($_POST["verificar"]))
 					header("location: ../nop.php");
 
 				}else{
-					//nota de seguridad : como solucionar si un usuario(malo) manda un correo que no le pertenece  y cambia la contrasena de otro usuario posible solucion:-->
-					//crear un campo en la base de datos en la tabla usuarios de estado_de_contrasena ((activa=1/inactiva=0) esta cambiaria a inactiva si el usuario pide -->
-					//un cambio de contrasena cambiaria nuevamente a activa si el usuario recuerda su contrasena y se conecta a la pagina) [buscar mas soluciones].
-					if ($pass1 == $pass2) {
 
-						$pass34 = password_hash($pass1,PASSWORD_DEFAULT);
+					$row = $res1->fetch_array(MYSQLI_ASSOC);
 
-					    $objeto= new Usuarioe;
-						$res=$objeto->editarcontrasena($ema,$pass34);
+					if ($row['token'] == $token and $row['email'] == $ema) {
+
+						if ($pass1 == $pass2) {
+
+							$pass34 = password_hash($pass1,PASSWORD_DEFAULT);
+
+						    $objeto= new Usuarioe;
+							$res=$objeto->editarcontrasena($ema,$pass34);
+				   	
+							$token2=$objeto1->delete($token);
+
+							header("location:../vista/html/recuperar1.php?cambio=si"); 
+					        
+							$objeto->CloseDB();
+
+						}
+
+						if ($pass1 !== $pass2) {
 			   
-						header("location:../vista/html/recuperar1.php?cambio=si"); 
-				        
-						$objeto->CloseDB();
+							header("location:../vista/html/recuperar3.php?token=" . urlencode($token) . "&email=$ema&estado=nocoinciden");
+					        
+							$objeto->CloseDB();
 
+						}
+					}else{
+
+						$token3=$objeto1->delete($token);
+						header("location: ../nop.php?nocoinciden");
+						$objeto->CloseDB();
 					}
 
-					if ($pass1 !== $pass2) {
-		   
-						header("location:../vista/html/recuperar3.php?token=" . urlencode($token) . "&email=$ema&estado=nocoinciden");
-				        
-						$objeto->CloseDB();
 
-					}
 				}	
 
 
