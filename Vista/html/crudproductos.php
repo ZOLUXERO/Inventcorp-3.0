@@ -7,22 +7,7 @@ include_once '../../controlador/controlprodeditar.php';
 include_once'../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlescape.php';
 
-if (isset($_GET['edit'])) {
-    $cod = $_GET['edit'];
-    $update = true;
-    $objeto3 = new Productoobt;
-    $res3 = $objeto3->obtener($cod);
-    if (count($res3) == 1 ) {
-        $n = mysqli_fetch_array($res3);
-        $nom=$n['nombre_producto'];
-        $des=$n['desc_producto'];
-        $pen=$n['precio_entrada'];
-        $pas=$n['precio_salida'];
-        $fec=$n['fecha_ingreso'];
-        $cat=$n['id_categoria'];
-    }
-//$row = $res->fetch_array(MYSQLI_ASSOC)
-}
+
 
 ?>
 
