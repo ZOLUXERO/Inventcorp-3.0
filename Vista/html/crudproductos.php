@@ -6,9 +6,6 @@ include_once '../../modelo/mdlprodlistar.php';
 include_once '../../controlador/controlprodeditar.php'; 
 include_once'../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlescape.php';
-
-
-
 ?>
 
 
