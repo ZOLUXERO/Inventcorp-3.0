@@ -1,4 +1,7 @@
 <?php
+include_once '../../controlador/control.php'; 
+include_once '../../controlador/controladminusu.php';
+include_once '../../controlador/controlproveeedit.php'; 
 include_once '../../modelo/mdlescape.php';
 include_once '../../modelo/mdlprovlistar.php';
 include_once'../../modelo/mdlprovobtener.php';
@@ -41,10 +44,6 @@ if (isset($_GET['edit'])) {
 <body>
 
 <?php
-include_once '../../controlador/control.php'; 
-include_once '../../controlador/controladminusu.php';
-
-
 include_once 'header.php'; 
 ?>
 

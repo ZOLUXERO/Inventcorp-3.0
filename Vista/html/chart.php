@@ -1,21 +1,11 @@
 <?php 
 include_once '../../controlador/control.php'; 
 include_once '../../controlador/controladminusu.php';
+include_once '../../controlador/controlerprod34.php'; 
 include_once '../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlliststock.php';
 include_once '../../modelo/mdlobtenerstock.php';
 
-if (isset($_GET['edit']) == "") {
-  header('location: crudproductos.php');
-}
-
-$objeto1= new Productoobt;
-$res1=$objeto1->obtener($_GET['edit']);
-
-if($res1->num_rows == 0)
-{ 
-  header('location: crudproductos.php');
-}
 
 ?>
 

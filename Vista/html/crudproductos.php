@@ -1,6 +1,9 @@
 <?php
+include_once '../../controlador/control.php'; 
+include_once '../../controlador/controladminusu.php';
 include_once '../../modelo/mdlcatlistar.php';
 include_once '../../modelo/mdlprodlistar.php';
+include_once '../../controlador/controlprodeditar.php'; 
 include_once'../../modelo/mdlprodobtener.php';
 include_once '../../modelo/mdlescape.php';
 
@@ -40,9 +43,6 @@ if (isset($_GET['edit'])) {
 <body>
 
 <?php
-include_once '../../controlador/control.php'; 
-include_once '../../controlador/controladminusu.php';
-
 
 include_once 'header.php'; 
 ?>
