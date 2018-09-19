@@ -5,26 +5,6 @@ include_once '../../controlador/controlproveeedit.php';
 include_once '../../modelo/mdlescape.php';
 include_once '../../modelo/mdlprovlistar.php';
 include_once'../../modelo/mdlprovobtener.php';
-
-if (isset($_GET['edit'])) {
-    $codprov = $_GET['edit'];
-    $update = true;
-    $objeto3 = new Proveedorobt;
-    $res3 = $objeto3->obtenerprov($codprov);
-    if (count($res3) == 1 ) {
-        $n = mysqli_fetch_array($res3);
-        $nom1prov=$n['primer_nombre_provee_clie'];
-        $nom2prov=$n['segundo_nombre_provee_clie'];
-        $nom3prov=$n['primer_apellido_provee_clie'];
-        $nom4prov=$n['segundo_apellido_provee_clie'];
-        $emaprov=$n['email_proveedor_cliente'];
-        $telprov=$n['telefono_proveedor_cliente'];
-
-
-    }
-//$row = $res->fetch_array(MYSQLI_ASSOC)
-}
-
 ?>
 
 

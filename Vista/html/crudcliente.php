@@ -5,29 +5,6 @@ include_once '../../controlador/controlclienteedit.php';
 include_once '../../modelo/mdlescape.php';
 include_once '../../modelo/mdlclielistar.php';
 include_once '../../modelo/mdlclieobtener.php';
-
-if (isset($_GET['edit'])) {
-    $codclie = $_GET['edit'];
-    $update = true;
-
-    $objeto3 = new Clienteobt;
-    $res3 = $objeto3->obtenerclie($codclie);
-
-    if (count($res3) == 1 ) {
-        $n = mysqli_fetch_array($res3);
-        $nom1clie=$n['primer_nombre_provee_clie'];
-        $nom2clie=$n['segundo_nombre_provee_clie'];
-        $nom3clie=$n['primer_apellido_provee_clie'];
-        $nom4clie=$n['segundo_apellido_provee_clie'];
-        $emaclie=$n['email_proveedor_cliente'];
-        $telclie=$n['telefono_proveedor_cliente'];
-
-
-    }
-//$row = $res->fetch_array(MYSQLI_ASSOC)
-
-}
-
 ?>
 
 
