@@ -59,7 +59,7 @@ if(isset($_POST["enviar"])) {
 if(isset($_POST["verificar"])) {
  
     $tok = $_REQUEST["token"];
-
+	$objeto3= new Usuarioto;
      		$pruebaarray34 = array($tok);
 
 			$segu2 = str_replace("<", "'", implode($pruebaarray34));//esto deberia ir en otro archivo pero que mamera
