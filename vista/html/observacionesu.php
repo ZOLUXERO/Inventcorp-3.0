@@ -42,8 +42,7 @@ include_once 'menulateral.php';
     <hr style="border-top: 1px double #797979;">
     <form method="post" action="../../controlador/controlobservacion.php"> 
       <textarea name="des" rows="5" cols="50" maxlength="200" wrap="hard">
-        
-      </textarea>
+</textarea>
       <br>
       <button type="submit" name="guardar">Enviar</button>
     </form>  
@@ -68,8 +67,8 @@ include_once 'menulateral.php';
 
 <table class="table table-hover table-striped"  align="center">
 
-  <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Id observacion</td> 
-  <td class="col-sm-5 col-md-5" align="center" style="font-family:Tahoma, Geneva, sans-serif">Descripcion</td>                    
+  <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Id observación</td> 
+  <td class="col-sm-5 col-md-5" align="center" style="font-family:Tahoma, Geneva, sans-serif">Descripción</td>                    
   <td align="center" style="font-family:Tahoma, Geneva, sans-serif">Fecha</td>
                     
 <?php                      
