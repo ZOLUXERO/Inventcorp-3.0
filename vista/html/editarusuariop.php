@@ -1,21 +1,9 @@
 <?php 
 include_once '../../controlador/control.php'; 
-include_once '../../controlador/controladmin.php';
+include_once '../../controlador/controladminusu.php';
+include_once '../../controlador/controeditusu.php';
 include_once 'header.php'; 
 include_once '../../modelo/mdlusuobtener.php';
-$id=$_REQUEST['id'];
-
-if (isset($_GET['id']) == "") {
-  header('location: perfilusuario.php');
-}
-
-$objeto1= new Usuarioo;
-$res1=$objeto1->obtenerusuarios($id);
-
-if($res1->num_rows == 0)
-{ 
-  header('location: perfilusuario.php');
-}
 
 ?>
 
