@@ -1,6 +1,6 @@
 <?php  
 //export.php  
-$connect = mysqli_connect("localhost", "root", "", "inventcorp");
+$connect = mysqli_connect("", "", "", "");
 $output = '';
 if(isset($_POST["exportar"]))
 {

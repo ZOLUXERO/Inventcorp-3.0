@@ -1,10 +1,10 @@
 <?php  
 //export.php  
-$connect = mysqli_connect("localhost", "root", "", "inventcorp");
+$connect = mysqli_connect("", "", "", "");
 $output = '';
 if(isset($_POST["exportar"]))
 {
- $query = "SELECT codigo_proveedor_cliente,primer_nombre_provee_clie,segundo_nombre_provee_clie,primer_apellido_provee_clie,segundo_apellido_provee_clie,email_proveedor_cliente,telefono_proveedor_cliente FROM listar_clientes_proveedores WHERE estado_proveedor_cliente = '1'";
+ $query = "SELECT codigo_proveedor_cliente,primer_nombre_provee_clie,segundo_nombre_provee_clie,primer_apellido_provee_clie,segundo_apellido_provee_clie,email_proveedor_cliente,telefono_proveedor_cliente FROM listar_clientes_proveedores WHERE estado_proveedor_cliente = '1' AND id_rol_listar='1'";
  $result = mysqli_query($connect, $query);
  if(mysqli_num_rows($result) > 0)
  {
@@ -18,7 +18,6 @@ if(isset($_POST["exportar"]))
                    <th>Segundo apellido</th>
                    <th>Email</th>
                    <th>Telefono</th>
-                   </tr>
                    </tr>
   ';
   while($row = mysqli_fetch_array($result))
