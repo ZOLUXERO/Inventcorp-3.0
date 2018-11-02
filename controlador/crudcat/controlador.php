@@ -45,7 +45,7 @@ if (isset($_POST['actualizar'])) {
 
 			$cod=$_REQUEST['cod'];
 			$nom=$_REQUEST['nom'];
-			$des=$_REQUEST['des'];
+			$des=$_REQUEST['des'];asdasdasdadasdas
 
 			$pruebaarray34 = array($cod,$nom,$des);
 
