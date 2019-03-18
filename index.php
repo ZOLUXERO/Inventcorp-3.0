@@ -32,7 +32,7 @@ include_once 'n2.php';
 <br>
 <br>
 
-  <!-- prueba comentariada -->
+  <!-- mas prueba comentariada -->
 
 
 <div class="container marketing">
