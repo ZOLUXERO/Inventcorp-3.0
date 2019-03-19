@@ -38,10 +38,14 @@ i        \**\ */-[]|`.|#| /       i
                 `-'
 </pre>
 	
+<<<<<<< HEAD
 asd
 sadad
 asdasda
 sdad
+=======
+
+>>>>>>> prueba_branch
 
 </body>
 </html>
