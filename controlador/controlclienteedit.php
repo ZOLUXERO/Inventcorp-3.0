@@ -45,7 +45,7 @@ if (isset($_GET['edit'])) {
 
     		if ($n['id_rol_listar'] == 1) {
 
-    			if (count($res3) == 1 ) {
+    			if ( $res3 ) {
 		        
 			        $nom1clie=$n['primer_nombre_provee_clie'];
 			        $nom2clie=$n['segundo_nombre_provee_clie'];

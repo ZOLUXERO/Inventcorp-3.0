@@ -39,11 +39,11 @@ else
 
 
 
-      <a class="navbar-brand" href="<?php echo $ruta;?>../../index.php">NOMBREDEPAGINA</a>
+      <a class="navbar-brand" href="<?php echo $ruta;?>../../index.php">INVENTCORP</a>
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="<?php echo $ruta;?>../../index.php">Home</a></li>
-      <li><a href="<?php echo $ruta;?>acercadelapagina.php">Acerca de la pagina</a></li>
+      <li><a href="<?php echo $ruta;?>acercadelapagina.php">Instrucciones / Leer</a></li>
       <li><a href="#">Contáctenos</a></li>
       <li >
         <?php if(isset($_SESSION["session"])): ?> 
@@ -90,13 +90,14 @@ else
       </li>
      
      <li class="pull-right">
-      <a href="<?php if(isset($_SESSION['session'])){}else { echo $ruta.'registro.php';}?>">
-        <span class="glyphicon glyphicon-user">         
-        </span>
-       <?php if(isset($_SESSION["session"])){ echo $_SESSION["session"];} else{echo "Registro";}?>
-      </a>
-    </li>
+        <a href="<?php if(isset($_SESSION['session'])){}else { echo $ruta.'registro.php';}?>">
+          <span class="glyphicon glyphicon-user">         
+          </span>
+         <?php if(isset($_SESSION["session"])){ echo $_SESSION["session"];} else{echo "Registro";}?>
+        </a>
+      </li>
       
+      <li class="pull-right"><a href="<?php echo $ruta;?>admon.php?demo=si">Prueba</a></li>
 
     </ul>
 

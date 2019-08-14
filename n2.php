@@ -13,6 +13,6 @@
 	<div id="d4"></div>
 </div>
 
-<div id="content"><a style="color:  #033D55" href="vista/html/acercadelapagina.php">ACERCA DE<br> NOSOTROS</a></div>
+<div id="content"><a style="color:  #033D55" href="vista/html/acercadelapagina.php">INSTRUCCIONES<br> LEER</a></div>
 </body>
 </html>

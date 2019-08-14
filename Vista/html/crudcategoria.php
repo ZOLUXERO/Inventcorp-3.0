@@ -9,7 +9,7 @@ if (isset($_GET['edit'])) {
     $objeto3 = new Categoriaobt;
     $res3 = $objeto3->obtenercat($cod);
 
-    if (count($res3) == 1 ) {
+    if ( $res3 ) {
         $n = mysqli_fetch_array($res3);
         $nom=$n['nombre_categoria'];
         $des=$n['desc_categoria'];

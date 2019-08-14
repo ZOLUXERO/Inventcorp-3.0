@@ -34,7 +34,6 @@ if (isset($_GET['edit'])) {
 	    $n = mysqli_fetch_array($res3);
 
 
-
 	    if ($n['estado_producto'] == 0) {
 
 				header('location: crudproductos.php');
@@ -42,7 +41,7 @@ if (isset($_GET['edit'])) {
     	}
     	else{
 
-	    		if (count($res3) == 1 ) {
+	    		if ( $res3 ) {
 
 		        
 		        $nom=$n['nombre_producto'];

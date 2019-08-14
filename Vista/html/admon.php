@@ -17,7 +17,6 @@ include_once '../../controlador/control.php';
 include_once '../../controlador/controladmin.php';
 require '../../modelo/mdlusulistar.php';
 require '../../modelo/mdlescape.php';
-
 include_once 'header.php'; 
 ?>
 
